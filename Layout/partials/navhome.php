@@ -1,0 +1,30 @@
+<?php
+$assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo.jpeg')) ? '' : '../');
+?>
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="h-20 w-full px-gutter flex items-center justify-between">
+    <div class="flex items-center gap-space-sm">
+      <img alt="Lumitech Logo" class="h-8 w-auto object-contain" src="<?= $assetBase ?>assets/img/logo.jpeg" />
+      <span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">
+        Lumitech<span class="text-primary-container">.id</span>
+      </span>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-[0_4px_16px_rgba(0,71,255,0.24)]">
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors px-space-sm py-space-xs" data-path="beranda" href="#">Beranda</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors px-space-sm py-space-xs" data-path="portofolio-&-studi-kasus" href="#">Portofolio &amp; Studi Kasus</a>
+      <a aria-current="page" class="transition-colors bg-primary-container text-on-primary font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-[0_4px_16px_rgba(0,71,255,0.24)]" data-path="layanan" href="#paket-harga">Layanan</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors px-space-sm py-space-xs" data-path="tentang-kami" href="#">Tentang Kami</a>
+    </nav>
+
+    <div class="flex items-center gap-space-md">
+      <a class="hidden sm:inline-flex items-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-space-lg py-space-sm rounded-full transition-all shadow-[0_12px_24px_-4px_rgba(0,71,255,0.28)]" data-path="konsultasi-gratis" href="https://wa.me/6281234567890?text=Halo%20Lumitech%2C%20saya%20mau%20konsultasi%20pembuatan%20website" target="_blank" rel="noopener">
+        <span>Konsultasi Gratis</span>
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+      <div class="flex items-center pl-space-xs">
+        <img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_nkwD0_Vd_VTmGhRp1FTP69bpXru8OkzxR6taLqgft3VXeBrKUL8KEe25jMUt36I5Wfv7iqufSmIThTbCBffo9tWkwWqoYD-QYqiNQiSzMMsi1fu_pOhqa_k9YdAKHcnvG3icb8D5tpFOQZ_JT-Bb1enEty-ridW-IJZHs0ZAA3Y3IftneFDfeE0PygnK8TiO6Y4p0K0htYGrrTvYABOw5vIYGftZL1RIcBVMSMpanXtwsHT-eCo8" />
+      </div>
+    </div>
+  </div>
+</header>
