@@ -1,10 +1,37 @@
+<?php
+$assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo.jpeg')) ? '' : '../');
+?>
 <!doctype html>
 
-<html lang="id">
+<html lang="id" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Lumitech.id - Jasa Pembuatan Website &amp; Digital Presence Bisnis</title>
+    <meta name="description" content="Jasa pembuatan website profesional, landing page konversi tinggi, dan toko online modern di Indonesia. Garansi 3 bulan, cepat, dan SEO-friendly." />
+    <meta name="keywords" content="jasa website, buat website, bikin website murah, web developer indonesia, lumitech, landing page bisnis, website umkm" />
+    <meta name="author" content="Lumitech.id" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lumitech.id/" />
+    <meta property="og:site_name" content="Lumitech.id" />
+    <meta property="og:title" content="Lumitech.id - Solusi Website & Digital Presence Bisnismu" />
+    <meta property="og:description" content="Bikin website bisnis modern, cepat, dan profesional tanpa ribet. Tingkatkan kredibilitas dan konversi penjualan bersama Lumitech." />
+    <meta property="og:image" content="<?= $assetBase ?>assets/img/logo.jpeg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lumitech.id - Jasa Pembuatan Website Profesional" />
+    <meta name="twitter:description" content="Bikin website bisnis modern, cepat, dan profesional tanpa ribet bersama Lumitech.id." />
+    <meta name="twitter:image" content="<?= $assetBase ?>assets/img/logo.jpeg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="<?= $assetBase ?>assets/img/logo.jpeg" />
+    <link rel="apple-touch-icon" href="<?= $assetBase ?>assets/img/logo.jpeg" />
+
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -25,9 +52,6 @@
           margin: 0;
           padding: 0;
         }
-        body {
-          overscroll-behavior: none;
-        }
         main > :first-child {
           margin-top: 0 !important;
         }
@@ -35,8 +59,20 @@
           margin-bottom: 0 !important;
         }
       }
+      /* Modern accessible thin scrollbar */
       ::-webkit-scrollbar {
-        display: none;
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f4f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c4c5da;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #0047ff;
       }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>

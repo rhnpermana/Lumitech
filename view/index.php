@@ -299,6 +299,307 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
           </div>
         </section>
 
+        <!-- Section: Portofolio & Studi Kasus -->
+        <section id="portofolio" class="w-full py-space-2xl px-gutter bg-surface scroll-mt-24">
+          <div class="mx-auto max-w-[1320px]">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-xl">
+              <div>
+                <span class="inline-flex items-center gap-space-xs rounded-full bg-primary-fixed px-space-md py-1 font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider mb-space-sm">
+                  Hasil Produksi Nyata
+                </span>
+                <h2 class="font-headline-xl text-headline-lg md:text-headline-xl text-on-surface tracking-tight font-bold">
+                  Koleksi Portofolio &amp; Studi Kasus
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant pt-space-xs max-w-2xl">
+                  Setiap proyek kami rancang dengan metrik performa tinggi, visual berkarakter, dan arsitektur kode yang teruji menghasilkan konversi penjualan.
+                </p>
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface-variant hidden sm:inline-block bg-surface-container px-space-md py-space-sm rounded-full">
+                6 Studi Kasus Unggulan Terverifikasi
+              </span>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="portfolioGrid">
+              <!-- Project 1: Zenith Audio -->
+              <article class="project-card flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_-8px_rgba(0,71,255,0.2)] transition-all duration-300 group">
+                <div class="relative h-60 w-full overflow-hidden bg-surface-container">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Zenith Audio Store" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0HHxRu5z8bvFhkUSLq0ayCIzL9KskVdFQBrsaBik6d3H42roOOPahWNaiwJFaYclGalEqP6-WYPyzdZxZ1qijqCb5Oy1f4M7nJ-R319beDf1S9ynloQaAAyaxzvdve17SyM8vVyVoXqt9LiknGzFsfoygzp3Ct3ioFSw9gYmYNNk1b9lEdNC-H3-P8YcrzXn260T0bWx1hTgLsu_-rpZdvmzB2RmXee3df6OAjeO6Nhlsm3-ZttkZ" />
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold shadow-md">
+                      E-Commerce
+                    </span>
+                  </div>
+                  <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span class="font-label-sm text-label-sm text-on-surface font-bold">Konversi +64%</span>
+                  </div>
+                </div>
+                <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="font-label-sm text-label-sm text-primary uppercase font-bold">Perangkat Audio</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">2024</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                      Zenith Audio: Flagship Headphone Store &amp; 3D Visualizer
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                      Pembangunan toko online interaktif berbasis WebGL untuk testing virtual akustik produk headphone nirkabel premium.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex flex-wrap gap-1.5 mb-space-md">
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Three.js</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Shopify API</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Tailwind</span>
+                    </div>
+                    <div class="flex items-center justify-between pt-space-xs border-t border-surface-container">
+                      <div class="flex flex-col">
+                        <span class="text-[11px] text-outline">Checkout Abandonment</span>
+                        <span class="font-headline-sm text-headline-sm text-primary font-bold">Turun 35%</span>
+                      </div>
+                      <a class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary transition-colors text-on-surface" href="#paket-harga">
+                        <span class="material-symbols-outlined text-lg">arrow_outward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 2: Nusantara Logistics -->
+              <article class="project-card flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_-8px_rgba(0,71,255,0.2)] transition-all duration-300 group">
+                <div class="relative h-60 w-full overflow-hidden bg-surface-container">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Nusantara Logistics Portal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW7ljVF2alig9y17E94lDfpVaQm3cK5y6gnER6FCNCsG1inRkyy3aW33YrAjWhkgOa1pDno8MgcC_cZ4vTr5EdhE5loM4UrDFcaLW6Ou912MXAO9apMZbHV-MzCealVSdcdbMFbCM-Skj8DGGiUTB1ORu1IeHFY4elO1r1v9idA6gkwpPnozMSN8qOvf5hv20dzRud4eU41qqTK17Ia5HaOsD0KkCgJPtCa7WeYZQVDFqKfM4fMva_" />
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold shadow-md">
+                      Custom Web App
+                    </span>
+                  </div>
+                  <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span class="font-label-sm text-label-sm text-on-surface font-bold">12k+ Armada Aktif</span>
+                  </div>
+                </div>
+                <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="font-label-sm text-label-sm text-primary uppercase font-bold">Supply Chain &amp; Tech</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">2024</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                      Nusantara Logistics: Dashboard Pelacakan Armada Real-Time
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                      Sistem internal cloud untuk memonitor 12.000+ armada truk dan kontainer kargo laut dengan latensi di bawah 200ms.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex flex-wrap gap-1.5 mb-space-md">
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Next.js 14</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Supabase</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">WebSockets</span>
+                    </div>
+                    <div class="flex items-center justify-between pt-space-xs border-t border-surface-container">
+                      <div class="flex flex-col">
+                        <span class="text-[11px] text-outline">Efisiensi Rute</span>
+                        <span class="font-headline-sm text-headline-sm text-primary font-bold">+41.2%</span>
+                      </div>
+                      <a class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary transition-colors text-on-surface" href="#paket-harga">
+                        <span class="material-symbols-outlined text-lg">arrow_outward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 3: KopiKarsa -->
+              <article class="project-card flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_-8px_rgba(0,71,255,0.2)] transition-all duration-300 group">
+                <div class="relative h-60 w-full overflow-hidden bg-surface-container">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="KopiKarsa Web Ordering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjgoVWoTpwu3_jtzRS9rl_TFR6RwC-RrIyjVk3zNPd78xRDOVK2T9h6sT6Vu0c0e4ODn7okVFLV5zg2JP0ixfzpi3-brA_vtEgNEE2xsBbLXZOPXhEE2mW85-QQMfKBVMAB9B8gFtYNgszJuCOY_q8PV6tKpt6MLBB9LP20tVrGU_LiNFy1tZ58C75Bm2Ru1dHy5pR3u4OCR3mT-JfNQNvbN6vT2FcmTvof4UItUJJArCNFMlz2ULv" />
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold shadow-md">
+                      E-Commerce / PWA
+                    </span>
+                  </div>
+                  <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span class="font-label-sm text-label-sm text-on-surface font-bold">180k+ Transaksi</span>
+                  </div>
+                </div>
+                <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="font-label-sm text-label-sm text-primary uppercase font-bold">F&amp;B Retail Chain</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">2024</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                      KopiKarsa: Web Ordering System &amp; Loyalitas 35 Gerai
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                      Progressive Web App tanpa unduh aplikasi, integrasi QR meja langsung dan point system loyalty repeat order.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex flex-wrap gap-1.5 mb-space-md">
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">React PWA</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">PostgreSQL</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">QRIS API</span>
+                    </div>
+                    <div class="flex items-center justify-between pt-space-xs border-t border-surface-container">
+                      <div class="flex flex-col">
+                        <span class="text-[11px] text-outline">Repeat Order Rate</span>
+                        <span class="font-headline-sm text-headline-sm text-primary font-bold">+52%</span>
+                      </div>
+                      <a class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary transition-colors text-on-surface" href="#paket-harga">
+                        <span class="material-symbols-outlined text-lg">arrow_outward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 4: Aura Skin Clinic -->
+              <article class="project-card flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_-8px_rgba(0,71,255,0.2)] transition-all duration-300 group">
+                <div class="relative h-60 w-full overflow-hidden bg-surface-container">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Aura Skin Clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQYyWMWeMzra1biYFSKJ7SFNLUS-r3MY1rEd6Xp_N1ChCd52ugdNIl6DIfF7It_Y5skuP2UEg2wXxGflQmR8LOgUItjOKp9R3I-jNdntaaZxRVN8vyvsz6No3wci1JeQ6ZOKlLeKccJQBHOJyIsWbynp9-kUHCe1a1B6q-1o1aWY57dUOwkEULkfOHpadjkwI-aFatcGpWLnvnXuwscVqSLz8IrOH0qY_2hmeWrTQdOHzd9-jXgfTm" />
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="px-3 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold shadow-md">
+                      Company Profile
+                    </span>
+                  </div>
+                  <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span class="font-label-sm text-label-sm text-on-surface font-bold">Booking Otomatis 92%</span>
+                  </div>
+                </div>
+                <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="font-label-sm text-label-sm text-primary uppercase font-bold">Beauty &amp; Wellness</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">2023</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                      Aura Skin Clinic: Appointment Booking &amp; Catalog
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                      Migrasi sistem reservasi manual via chat menjadi portal self-service terintegrasi kalender dokter spesialis kulit.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex flex-wrap gap-1.5 mb-space-md">
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">WordPress Headless</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Next.js</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Twilio WA</span>
+                    </div>
+                    <div class="flex items-center justify-between pt-space-xs border-t border-surface-container">
+                      <div class="flex flex-col">
+                        <span class="text-[11px] text-outline">Lead Handling Time</span>
+                        <span class="font-headline-sm text-headline-sm text-primary font-bold">-75% Durasi</span>
+                      </div>
+                      <a class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary transition-colors text-on-surface" href="#paket-harga">
+                        <span class="material-symbols-outlined text-lg">arrow_outward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 5: Finova Capital -->
+              <article class="project-card flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_-8px_rgba(0,71,255,0.2)] transition-all duration-300 group">
+                <div class="relative h-60 w-full overflow-hidden bg-surface-container">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Finova Capital Portal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlfQ1R6xw0-PS3V4bHrssPbpAMf3VH7bdXiFdPHEPRYI8uEyxM0lfw952w26Y4E8kD5EqXsL9aVzUlpvj_GSumi5ATqE5zcAqQ_LCud_4Ntq9vsSvWYzL9bB10yr9yIXc7fQIZe3FUnFCPGhM0CaJGbDvFL87q907grCqkVRt_gOO3SWhoYKnp-PFrvYMpooguw7Zga55O4ey60W1X0bL7fE_4fWg6TekgfDL1TeLvhsDz6KP3J5r" />
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="px-3 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold shadow-md">
+                      Corporate &amp; IR
+                    </span>
+                  </div>
+                  <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span class="font-label-sm text-label-sm text-on-surface font-bold">ISO-27001 Ready</span>
+                  </div>
+                </div>
+                <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="font-label-sm text-label-sm text-primary uppercase font-bold">Financial Services</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">2024</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                      Finova Capital: FinTech Institutional Web &amp; IR
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                      Portal korporat berkeamanan tinggi dengan dynamic compliance report dan live fund performance charting engine.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex flex-wrap gap-1.5 mb-space-md">
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">TypeScript</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Cloudflare</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Recharts</span>
+                    </div>
+                    <div class="flex items-center justify-between pt-space-xs border-t border-surface-container">
+                      <div class="flex flex-col">
+                        <span class="text-[11px] text-outline">Lead Institutional</span>
+                        <span class="font-headline-sm text-headline-sm text-primary font-bold">+120%</span>
+                      </div>
+                      <a class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary transition-colors text-on-surface" href="#paket-harga">
+                        <span class="material-symbols-outlined text-lg">arrow_outward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 6: EduPintar -->
+              <article class="project-card flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_-8px_rgba(0,71,255,0.2)] transition-all duration-300 group">
+                <div class="relative h-60 w-full overflow-hidden bg-surface-container">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="EduPintar Campaign" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCETD6mAFqHCrIiwYNchVjkFC9D1bKpgMgzHGTCEX8-ekAjytYxPSmLRLgd_G_Z64PrUtCn62RhniMFX4AqyCtFxd7x3IZuROy3-QaX20aLqnXd1MaWPoU5PQj8ssDK-mMiGLjg1Aoa3-cJSj44iB53_dz338j1XdbGzVYDtFTf5MwDVFoPEc4p0Kr2cl6P3mLDcFxiikWvVP7BSJF348LdOO7i84H4zWw6DyM7367S2ZwJQcmTaP6r" />
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold shadow-md">
+                      Campaign Landing Page
+                    </span>
+                  </div>
+                  <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span class="font-label-sm text-label-sm text-on-surface font-bold">14.2% Opt-In</span>
+                  </div>
+                </div>
+                <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="font-label-sm text-label-sm text-primary uppercase font-bold">EdTech Platform</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">2024</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                      EduPintar: Interactive Bootcamp Enrollment Campaign
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                      Landing page kampanye dengan optimasi SEO teknis &amp; skor Google Lighthouse 100/100, sukses menjaring ribuan pendaftar.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex flex-wrap gap-1.5 mb-space-md">
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Astro.js</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Tailwind</span>
+                      <span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">ActiveCampaign</span>
+                    </div>
+                    <div class="flex items-center justify-between pt-space-xs border-t border-surface-container">
+                      <div class="flex flex-col">
+                        <span class="text-[11px] text-outline">Pendaftar Masuk</span>
+                        <span class="font-headline-sm text-headline-sm text-primary font-bold">18,500+</span>
+                      </div>
+                      <a class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary transition-colors text-on-surface" href="#paket-harga">
+                        <span class="material-symbols-outlined text-lg">arrow_outward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <!-- Section: Cara Kerja Lumitech -->
         <section class="w-full py-space-2xl px-gutter bg-surface">
           <div class="mx-auto max-w-[1320px]">
@@ -601,7 +902,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
         </section>
 
         <!-- Section: Garansi Lumitech -->
-        <section class="w-full py-space-2xl px-gutter bg-surface-container-high/40">
+        <section id="garansi" class="w-full py-space-2xl px-gutter bg-surface-container-high/40 scroll-mt-24">
           <div class="mx-auto max-w-[1320px]">
             <div class="text-center max-w-2xl mx-auto pb-space-xl">
               <span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Garansi Layanan</span>
@@ -643,7 +944,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
         </section>
 
         <!-- Section: FAQ Interaktif -->
-        <section class="w-full py-space-2xl px-gutter bg-surface">
+        <section id="faq" class="w-full py-space-2xl px-gutter bg-surface scroll-mt-24">
           <div class="mx-auto max-w-[960px]">
             <div class="text-center pb-space-xl">
               <span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">FAQ</span>
@@ -759,9 +1060,10 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
           </div>
         </section>
 
-        <!-- Interactive Accordion Script -->
+        <!-- Interactive Scripts -->
         <script>
           document.addEventListener("DOMContentLoaded", function () {
+            // FAQ Accordion
             const toggles = document.querySelectorAll(".faq-toggle");
             toggles.forEach((toggle) => {
               toggle.addEventListener("click", function () {
@@ -782,70 +1084,62 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                 }
               });
             });
+
+            // Mobile Navigation Toggle
+            const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+            const mobileMenuDrawer = document.getElementById("mobileMenuDrawer");
+            const menuIcon = document.getElementById("menuIcon");
+            const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+            if (mobileMenuBtn && mobileMenuDrawer) {
+              mobileMenuBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                const isOpen = !mobileMenuDrawer.classList.contains("hidden");
+                if (isOpen) {
+                  mobileMenuDrawer.classList.add("hidden");
+                  mobileMenuBtn.setAttribute("aria-expanded", "false");
+                  if (menuIcon) menuIcon.textContent = "menu";
+                } else {
+                  mobileMenuDrawer.classList.remove("hidden");
+                  mobileMenuBtn.setAttribute("aria-expanded", "true");
+                  if (menuIcon) menuIcon.textContent = "close";
+                }
+              });
+
+              // Close drawer when clicking any link inside it
+              mobileNavLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                  mobileMenuDrawer.classList.add("hidden");
+                  mobileMenuBtn.setAttribute("aria-expanded", "false");
+                  if (menuIcon) menuIcon.textContent = "menu";
+                });
+              });
+
+              // Close drawer when clicking outside
+              document.addEventListener("click", function (e) {
+                if (!mobileMenuDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                  mobileMenuDrawer.classList.add("hidden");
+                  mobileMenuBtn.setAttribute("aria-expanded", "false");
+                  if (menuIcon) menuIcon.textContent = "menu";
+                }
+              });
+            }
           });
         </script>
       </div>
     </main>
 
-    <footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-      <div class="w-full px-gutter py-space-2xl">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl">
-          <div class="md:col-span-5 flex flex-col gap-space-md">
-            <div class="flex items-center gap-space-sm">
-              <span class="font-headline-md text-headline-md tracking-tight font-bold text-on-surface">
-                Lumitech<span class="text-primary-container">.id</span>
-              </span>
-            </div>
-            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-              Solusi pembuatan website profesional, cepat, dan terpercaya untuk kembangkan bisnismu di era digital.
-            </p>
-            <div class="flex items-center gap-space-sm pt-space-xs">
-              <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-all">
-                <span class="material-symbols-outlined text-lg">photo_camera</span>
-              </a>
-              <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-all">
-                <span class="material-symbols-outlined text-lg">work</span>
-              </a>
-              <a href="https://wa.me/6281234567890" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-all">
-                <span class="material-symbols-outlined text-lg">chat</span>
-              </a>
-            </div>
-          </div>
+    <?php include_once __DIR__ . '/../Layout/partials/footer.php'; ?>
 
-          <div class="md:col-span-3 flex flex-col gap-space-sm">
-            <span class="font-label-lg text-label-lg text-on-surface uppercase">Eksplorasi</span>
-            <a href="#" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Beranda</a>
-            <a href="#" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Portofolio &amp; Studi Kasus</a>
-            <a href="#paket-harga" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Layanan Unggulan</a>
-            <a href="#" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Tentang Lumitech</a>
-          </div>
-
-          <div class="md:col-span-4 flex flex-col gap-space-sm">
-            <span class="font-label-lg text-label-lg text-on-surface uppercase">Hubungi Tim Kami</span>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">
-              Siap meningkatkan performa digital bisnismu? Hubungi kami langsung via WhatsApp atau email.
-            </p>
-            <div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm pt-space-xs">
-              <span class="material-symbols-outlined text-primary-container text-base">mail</span>
-              <span>halo@lumitech.id</span>
-            </div>
-            <div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm">
-              <span class="material-symbols-outlined text-primary-container text-base">call</span>
-              <span>+62 812-3456-7890</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md border-t border-surface-container">
-          <span class="font-body-sm text-body-sm text-on-surface-variant">
-            &copy; 2025 Lumitech.id. All rights reserved.
-          </span>
-          <div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
-            <a href="#" class="hover:text-primary transition-colors">Kebijakan Privasi</a>
-            <a href="#" class="hover:text-primary transition-colors">Syarat &amp; Ketentuan</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- Sticky Floating WhatsApp CTA Button -->
+    <aside aria-label="Kontak WhatsApp Cepat" class="fixed bottom-6 right-6 z-50 flex items-center group">
+      <span class="pointer-events-none hidden md:inline-block mr-3 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/95 backdrop-blur-md text-on-surface font-label-sm text-label-sm font-semibold shadow-lg border border-surface-container opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+        Konsultasi via WhatsApp
+      </span>
+      <a href="https://wa.me/6281234567890?text=Halo%20Lumitech%2C%20saya%20mau%20konsultasi%20pembuatan%20website" target="_blank" rel="noopener" aria-label="Hubungi WhatsApp Lumitech" class="relative flex items-center justify-center w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-[0_12px_28px_rgba(34,197,94,0.4)] transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-300">
+        <span class="absolute -inset-1 rounded-full bg-green-400 opacity-40 animate-ping"></span>
+        <span class="material-symbols-outlined text-3xl relative z-10">chat</span>
+      </a>
+    </aside>
   </body>
 </html>

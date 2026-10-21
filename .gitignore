@@ -1,0 +1,23 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor Files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# PHP / Composer / Local Logs
+vendor/
+composer.lock
+*.log
+error_log
+
+# Temporary / Scratch Files
+*.tmp
+*.bak
