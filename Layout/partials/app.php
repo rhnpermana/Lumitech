@@ -1,5 +1,5 @@
 <?php
-$assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo.jpeg')) ? '' : '../');
+$assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo-icon.png')) ? '' : '../');
 ?>
 <!doctype html>
 
@@ -18,18 +18,18 @@ $assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo.j
     <meta property="og:url" content="https://lumitech.id/" />
     <meta property="og:site_name" content="Lumitech.id" />
     <meta property="og:title" content="Lumitech.id - Solusi Website & Digital Presence Bisnismu" />
-    <meta property="og:description" content="Bikin website bisnis modern, cepat, dan profesional tanpa ribet. Tingkatkan kredibilitas dan konversi penjualan bersama Lumitech." />
+    <meta property="og:description" content="Jasa pembuatan website, konsultasi & insight bisnis UMKM, desain grafis & branding, video editing, social media management, dan format dokumen." />
     <meta property="og:image" content="<?= $assetBase ?>assets/img/logo.jpeg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lumitech.id - Jasa Pembuatan Website Profesional" />
-    <meta name="twitter:description" content="Bikin website bisnis modern, cepat, dan profesional tanpa ribet bersama Lumitech.id." />
+    <meta name="twitter:title" content="Lumitech.id - Jasa Website, Branding & Digital Creative" />
+    <meta name="twitter:description" content="Layanan digital lengkap: Website, Konsultasi UMKM, Desain Grafis, Video Editing, Social Media Management & Joki Cihuyyy." />
     <meta name="twitter:image" content="<?= $assetBase ?>assets/img/logo.jpeg" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="<?= $assetBase ?>assets/img/logo.jpeg" />
-    <link rel="apple-touch-icon" href="<?= $assetBase ?>assets/img/logo.jpeg" />
+    <link rel="icon" type="image/png" href="<?= $assetBase ?>assets/img/logo-icon.png" />
+    <link rel="apple-touch-icon" href="<?= $assetBase ?>assets/img/logo-icon.png" />
 
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
