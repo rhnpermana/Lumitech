@@ -42,23 +42,18 @@ $assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo-i
         <a href="index.php#portofolio" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Portofolio &amp; Hasil Proyek</a>
         <a href="index.php#cara-order" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Cara Pesan Mudah</a>
         <a href="index.php#garansi" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Garansi &amp; Komitmen</a>
-        <a href="index.php#faq" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Tanya Jawab (FAQ)</a>
       </div>
 
-      <!-- Contact Info (2 Jalur Resmi) -->
+      <!-- Contact Info -->
       <div class="md:col-span-4 flex flex-col gap-space-sm">
         <span class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Hubungi Tim Kami</span>
         <p class="font-body-sm text-body-sm text-on-surface-variant">
-          Punya pertanyaan seputar website atau butuh order cepat? Tim kami siap merespons via WhatsApp:
+          Punya pertanyaan atau ingin langsung order? Tim kami siap merespons cepat via WhatsApp:
         </p>
         <div class="space-y-2 pt-1">
-          <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20konsultasi%20layanan%20digital" target="_blank" rel="noopener" class="flex items-center gap-2 text-on-surface hover:text-primary font-body-sm text-body-sm transition-colors group">
-            <span class="material-symbols-outlined text-green-600 text-lg group-hover:scale-110 transition-transform">forum</span>
-            <span><strong>Konsultasi Bisnis:</strong> 0878-6175-6916</span>
-          </a>
-          <a href="https://wa.me/6281388191291?text=Halo%20Admin%20Lumitech%2C%20saya%20mau%20order%20layanan" target="_blank" rel="noopener" class="flex items-center gap-2 text-on-surface hover:text-primary font-body-sm text-body-sm transition-colors group">
-            <span class="material-symbols-outlined text-amber-500 text-lg group-hover:scale-110 transition-transform">support_agent</span>
-            <span><strong>Admin &amp; Joki:</strong> 0813-8819-1291</span>
+          <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20%2F%20tanya%20layanan" target="_blank" rel="noopener" class="flex items-center gap-2 text-on-surface hover:text-primary font-body-sm text-body-sm transition-colors group">
+            <span class="material-symbols-outlined text-green-600 text-lg group-hover:scale-110 transition-transform">chat</span>
+            <span><strong>WhatsApp:</strong> 0878-6175-6916</span>
           </a>
           <a href="mailto:halo@lumitech.id" class="flex items-center gap-2 text-on-surface hover:text-primary font-body-sm text-body-sm transition-colors">
             <span class="material-symbols-outlined text-primary text-lg">mail</span>

@@ -6,14 +6,13 @@ Website resmi landing page dan profil bisnis untuk **Lumitech.id** — solusi pe
 
 ## 🚀 Fitur Unggulan
 
-- **Katalog Produk & Layanan Terpadu:** Seluruh 11 layanan (Website, Konsultasi UMKM, Desain Grafis, Video Editing, Social Media, Format Word, dan Joki Tugas Cihuyyy) digabung dalam satu katalog interaktif dengan filter instan di `index.php#katalog` dan halaman khusus `produk.php`.
+- **Bottom Navigation Bar Android:** Navigasi mobile diletakkan di bawah layar (*thumb-friendly bottom bar*) layaknya aplikasi Android modern (Beranda, Katalog, Tombol Utama Chat WA di tengah, Portofolio, dan Cara Pesan) sehingga tampilan HP jauh lebih simpel, bersih, dan bebas repot.
+- **Katalog Produk & Layanan Ringkas (14 Layanan):** Seluruh 14 layanan (Website, Konsultasi UMKM, Desain Grafis, Video Editing, Social Media, Format Word, Pembuatan Pakaian/Konveksi, Olah Data Microsoft Excel, Slide Microsoft PowerPoint, dan Joki Tugas Cihuyyy) didesain kompak, rapi, dan proporsional dengan filter instan di `index.php#katalog` dan halaman khusus `produk.php`.
 - **Desain Ramah Semua Umur (*All-Ages Friendly*):** Tampilan bersih, tipografi besar dan jelas, bahasa sederhana tanpa istilah teknis membingungkan, dan tombol pemesanan WhatsApp yang mudah ditekan.
-- **Dua Jalur Kontak Resmi:**
-  - 💬 **Konsultasi Bisnis & Website:** `+62 878-6175-6916`
-  - ⚡ **Admin Pemesanan & Joki Tugas:** `+62 813-8819-1291`
+- **WhatsApp Terpusat Tanpa Admin Lain:** Seluruh 14 layanan ditangani langsung melalui satu nomor resmi: `+62 878-6175-6916`.
 - **Arsitektur Modular PHP:** Terstruktur rapi dengan pemisahan komponen `Layout/partials/app.php`, `navhome.php`, `footer.php`, `view/index.php`, dan `view/produk.php`.
-- **Dual Floating WhatsApp Button:** Tombol melayang cerdas dengan menu pop-up untuk memilih chat Konsultasi atau Admin.
-- **Showcase Portofolio & Studi Kasus:** Menampilkan hasil kerja pilihan dengan penjelasan sederhana dan metrik konversi nyata.
+- **Floating WhatsApp Button Cerdas:** Otomatis tampil di desktop dan berintegrasi harmonis di mobile navbar tanpa tumpang tindih.
+- **Showcase Portofolio & Karya Nyata:** Menampilkan hasil kerja live project dengan screenshot asli (`barbershop.png`, `mathlab.png`, `tempat spot.png`, `hbd.jpg`), caption penjelasan mendalam, fitur utama, dan metrik hasil konversi nyata.
 
 ---
 
@@ -61,6 +60,5 @@ Lalu buka browser di `http://localhost:8000` atau `http://localhost:8000/produk.
 
 ## 🛠️ Kontak & Dukungan
 - **Website:** [Lumitech.id](https://lumitech.id)
-- **Konsultasi Bisnis & Web:** +62 878-6175-6916
-- **Admin Pemesanan & Joki:** +62 813-8819-1291
+- **WhatsApp Resmi:** +62 878-6175-6916
 - **Email:** halo@lumitech.id
