@@ -1,6 +1,7 @@
 <?php
 $assetBase = (file_exists('assets/img/logo-icon.png')) ? '' : '../';
 $currentPage = 'home';
+require_once __DIR__ . '/../Layout/partials/whatsapp_helper.php';
 include_once __DIR__ . '/../Layout/partials/app.php';
 include_once __DIR__ . '/../Layout/partials/navhome.php';
 ?>
@@ -39,7 +40,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   <span class="material-symbols-outlined text-xl">shopping_bag</span>
                   <span>Lihat Semua Produk &amp; Harga</span>
                 </a>
-                <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20konsultasi%20layanan%20digital" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-green-600 hover:bg-green-700 text-white px-6 py-3.5 text-sm md:text-base font-bold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
+                <a href="https://wa.me/6287861756916?text=<?= rawurlencode("Halo Admin Lumitech, saya ingin konsultasi layanan digital.") ?>" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-green-600 hover:bg-green-700 text-white px-6 py-3.5 text-sm md:text-base font-bold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
                   <span class="material-symbols-outlined text-xl">chat</span>
                   <span>Konsultasi WA (0878-6175-6916)</span>
                 </a>
@@ -147,7 +148,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
               🌐 Pembuatan Website (3)
             </button>
             <button type="button" data-filter="bisnis" class="home-filter-btn px-5 py-2.5 rounded-full text-sm md:text-base font-bold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
-              💼 Bisnis, Desain &amp; Konveksi (8)
+              💼 Bisnis, Desain &amp; Pakaian (8)
             </button>
             <button type="button" data-filter="joki" class="home-filter-btn px-5 py-2.5 rounded-full text-sm md:text-base font-bold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
               🎓 Dokumen, Office &amp; Joki (5)
@@ -167,7 +168,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </div>
                   <h3 class="text-base sm:text-lg font-bold text-on-surface">Paket Starter Website UMKM</h3>
                   <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Website 1 halaman profesional untuk usaha kuliner, jasa, toko, dan profil bisnis.
+                    Website 1 halaman profesional untuk usaha kuliner, jasa, toko, dan profil bisnis agar mudah ditemukan pelanggan di Google.
                   </p>
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
@@ -187,12 +188,12 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                     </li>
                     <li class="flex items-start gap-1.5">
                       <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">T &amp; Medsos</span>
+                      <span class="line-clamp-1">Integrasi Google Maps &amp; Medsos</span>
                     </li>
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20berminat%20dengan%20Paket%20Starter%20Website%20UMKM%20(Rp%201.490.000)" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('starter_umkm') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -241,7 +242,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20berminat%20dengan%20Paket%20Website%20Professional%20(Rp%203.890.000)" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('pro_business') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -249,17 +250,17 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
               </div>
             </div>
 
-            <!-- 3. TOKO ONLINE / CUSTOM APP -->
+            <!-- 3. CUSTOM APP -->
             <div class="home-product-card" data-category="website">
               <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div>
                   <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Custom</span>
+                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Custom &amp; Toko</span>
                     <span class="material-symbols-outlined text-primary text-xl">shopping_cart</span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Website/Aplikasi</h3>
+                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Toko Online / Web Aplikasi</h3>
                   <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Sistem Custom untuk semua jenis website sesuai kebutuhan dan akan di kerjakan sesuai request anda
+                    Sistem toko online dengan katalog, keranjang belanja, cek ongkir otomatis, hingga sistem informasi bisnis sesuai request.
                   </p>
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
@@ -268,10 +269,23 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                     </div>
                     <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Estimasi transparan setelah diskusi santai</span>
                   </div>
-                 
+                  <ul class="space-y-1.5 text-xs text-on-surface">
+                    <li class="flex items-start gap-1.5">
+                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
+                      <span class="line-clamp-1">Keranjang belanja &amp; pembayaran otomatis QRIS</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
+                      <span class="line-clamp-1">Hitung ongkos kirim kurir otomatis</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
+                      <span class="line-clamp-1">Laporan penjualan &amp; database terstruktur</span>
+                    </li>
+                  </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20konsultasi%20toko%20online%20%2F%20web%20custom" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('custom_app') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Konsultasi via WhatsApp</span>
                   </a>
@@ -314,7 +328,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20jadwalkan%20Konsultasi%20Bisnis%20UMKM" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('konsultasi_umkm') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -357,7 +371,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Desain%20Grafis%20%2F%20Logo" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('desain_grafis') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -400,7 +414,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Video%20Editing%20Reels%2FTikTok" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('video_editing') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -416,7 +430,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                     <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Sosmed</span>
                     <span class="material-symbols-outlined text-primary text-xl">share</span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface"> Analisis Insight Dan Pengelolaan Media Sosial</h3>
+                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Analisis Insight Dan Pengelolaan Media Sosial</h3>
                   <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
                     Serahkan urusan akun Instagram &amp; TikTok bisnis Anda. Kami buatkan jadwal, feed, caption, dan hashtag.
                   </p>
@@ -447,7 +461,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20konsultasi%20Social%20Media%20Management" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('sosmed_management') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -490,7 +504,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Pengetikan%20Dokumen%20Word" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('format_dokumen') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -498,42 +512,42 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
               </div>
             </div>
 
-            <!-- 9. JASA PEMBUATAN PAKAIAN & KONVEKSI -->
+            <!-- 9. JASA DESAIN PAKAIAN & APPAREL -->
             <div class="home-product-card" data-category="bisnis">
               <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div>
                   <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Konveksi &amp; Pakaian</span>
+                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Desain Pakaian</span>
                     <span class="material-symbols-outlined text-primary text-xl">apparel</span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Jasa Pembuatan Pakaian &amp; Konveksi</h3>
+                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Jasa Desain Pakaian</h3>
                   <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Pembuatan kaos custom, kemeja kerja/organisasi, jaket, hoodie, seragam, sablon DTF &amp; bordir komputer rapi.
+                    Desain mockup kaos, hoodie, kemeja, celana, seragam &amp; apparel streetwear siap cetak sablon / bordir konveksi.
                   </p>
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
                       <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
                       <span class="text-lg sm:text-xl font-black text-primary">Rp 45.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Minimal order fleksibel • Bahan adem &amp; awet</span>
+                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Mockup depan &amp; belakang • Siap cetak vendor</span>
                   </div>
                   <ul class="space-y-1.5 text-xs text-on-surface">
                     <li class="flex items-start gap-1.5">
                       <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Kaos, polo, kemeja, hoodie &amp; seragam</span>
+                      <span class="line-clamp-1">Mockup tampak depan &amp; belakang realistis HD</span>
                     </li>
                     <li class="flex items-start gap-1.5">
                       <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Sablon presisi &amp; bordir komputer rapi</span>
+                      <span class="line-clamp-1">File mentahan siap sablon &amp; bordir (PNG &amp; PDF)</span>
                     </li>
                     <li class="flex items-start gap-1.5">
                       <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Free konsultasi desain &amp; mockup gratis</span>
+                      <span class="line-clamp-1">Free konsultasi konsep &amp; revisi sampai puas</span>
                     </li>
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Pembuatan%20Pakaian%20%2F%20Konveksi" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('desain_pakaian') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -576,7 +590,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Jasa%20Microsoft%20Excel" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('excel_olah_data') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -619,7 +633,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Jasa%20Microsoft%20PowerPoint" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('ppt_slide') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -641,7 +655,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </p>
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
+                      <span class="text-[11px] text-on-surface-variant font-medium">Mulai Harga:</span>
                       <span class="text-lg sm:text-xl font-black text-primary">Rp 10.000</span>
                     </div>
                     <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Pengerjaan kilat 1 - 24 jam • Privasi Aman</span>
@@ -662,7 +676,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Joki%20Tugas%20(PPT%2FWord%2FPDF)" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('joki_tugas') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -670,7 +684,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
               </div>
             </div>
 
-            <!-- 10. JOKI WEBSITE & CODING CRUD -->
+            <!-- 13. JOKI WEBSITE & CODING CRUD -->
             <div class="home-product-card" data-category="joki">
               <div class="h-full rounded-2xl bg-surface-container-lowest border-2 border-primary/70 hover:border-primary p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div>
@@ -705,7 +719,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Joki%20Website%20CRUD" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('joki_coding') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -713,7 +727,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
               </div>
             </div>
 
-            <!-- 11. JOKI DESAIN CANVA & PRESENTASI -->
+            <!-- 14. JOKI DESAIN CANVA & PRESENTASI -->
             <div class="home-product-card" data-category="joki">
               <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div>
@@ -748,7 +762,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Desain%20Canva" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('joki_canva') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -772,198 +786,270 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
         </div>
       </section>
 
-      <!-- Section: Bukti Hasil Kerja (Portofolio Nyata dengan Gambar & Caption) -->
+      <!-- Section: Bukti Hasil Kerja (Portofolio Nyata Desain Grafis, Pakaian, Website & Dokumen) -->
       <section id="portofolio" class="w-full py-space-2xl px-gutter bg-surface-container-low/50 border-t border-surface-container scroll-mt-24">
         <div class="max-w-[1320px] mx-auto">
-          <div class="text-center max-w-3xl mx-auto pb-space-xl">
-            <span class="text-xs md:text-sm font-bold text-primary uppercase tracking-wider">Portofolio &amp; Hasil Karya Nyata</span>
-            <h2 class="text-3xl md:text-4xl font-black text-on-surface pt-1">Karya Digital &amp; Website Klien Kami</h2>
+          <div class="text-center max-w-2xl mx-auto pb-8">
+            <span class="text-xs md:text-sm font-bold text-primary uppercase tracking-wider">Hasil Nyata &amp; Bukti Karya</span>
+            <h2 class="text-3xl md:text-4xl font-black text-on-surface pt-1">Contoh Desain Grafis, Pakaian &amp; Website Kami</h2>
             <p class="text-base text-on-surface-variant pt-2">
-              Lihat bukti nyata kualitas pengerjaan tim Lumitech. Dari website profil bisnis profesional, web aplikasi edukasi interaktif, hingga platform reservasi modern yang cepat dan responsif di HP.
+              Bukti hasil pengerjaan nyata dari tim Lumitech. Mulai dari desain pakaian &amp; apparel streetwear, landing page website modern, hingga penataan dokumen resmi dan olah data.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            <!-- Portofolio 1: District Studio Barbershop -->
-            <div class="rounded-3xl bg-surface-container-lowest border border-surface-container hover:border-primary/40 p-5 sm:p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <!-- Filter Kategori Portofolio -->
+          <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pb-8">
+            <button type="button" data-portfolio-filter="all" class="portfolio-filter-btn active-portfolio-filter px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-primary text-white shadow-sm transition-all">
+              Semua Karya (6)
+            </button>
+            <button type="button" data-portfolio-filter="desain" class="portfolio-filter-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
+              🎨 Desain Grafis &amp; Pakaian (2)
+            </button>
+            <button type="button" data-portfolio-filter="website" class="portfolio-filter-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
+              🌐 Website &amp; UI (2)
+            </button>
+            <button type="button" data-portfolio-filter="dokumen" class="portfolio-filter-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
+              📄 Dokumen Word &amp; Excel (2)
+            </button>
+          </div>
+
+          <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Portfolio 1: Desain Pakaian (Setelan Hoodie & Pants) -->
+            <div class="portfolio-card flex flex-col justify-between rounded-3xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300" data-category="desain">
               <div>
-                <!-- Gambar Portofolio -->
-                <div class="h-56 sm:h-64 w-full rounded-2xl overflow-hidden relative border border-surface-container bg-surface-container-low mb-4">
-                  <img src="<?= $assetBase ?>assets/portfolio/barbershop.png" alt="Portofolio Website Barbershop District Studio" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <span class="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/10 flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Sistem Reservasi &amp; Antrean
+                <div class="h-56 sm:h-60 w-full rounded-2xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/apparel-mockup-set.jpg" data-title="Mockup Setelan Hoodie &amp; Pants LTH Lumitech">
+                  <img src="<?= $assetBase ?>assets/portfolio/apparel-mockup-set.jpg" alt="Desain Pakaian Streetwear Hoodie dan Pants LTH Lumitech" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-extrabold text-primary shadow-sm flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">apparel</span>
+                    <span>Desain Pakaian &amp; Streetwear</span>
                   </span>
-                  <span class="absolute bottom-3 right-3 bg-primary/90 text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md">
-                    Web UMKM &amp; Bisnis
-                  </span>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
+                    <span class="px-4 py-2 rounded-full bg-surface/90 backdrop-blur-md text-on-surface text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
+                      <span>Lihat Gambar Penuh</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-3 left-3 text-white text-xs font-medium bg-black/50 backdrop-blur-sm px-2.5 py-0.5 rounded-md">Mockup Depan &amp; Belakang</span>
                 </div>
-
-                <div class="flex items-center gap-2 pb-1">
-                  <span class="text-xs font-bold text-primary uppercase tracking-wider">Salon &amp; Barbershop Modern</span>
-                </div>
-                <h3 class="text-xl sm:text-2xl font-black text-on-surface">District Studio Barbershop</h3>
-                
-                <!-- Caption & Penjelasan Lengkap -->
-                <p class="text-sm text-on-surface-variant pt-2 leading-relaxed">
-                  Website bisnis bertema <em>dark industrial</em> untuk salon rambut &amp; barbershop premium. Dilengkapi katalog layanan grooming, profil hair artist, sistem antrean <em>real-time</em>, formulir registrasi online, dan tombol booking cepat via WhatsApp.
+                <h3 class="text-lg sm:text-xl font-bold text-on-surface pt-3.5">Mockup Setelan Hoodie &amp; Pants LTH</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant pt-1 leading-relaxed">
+                  Desain grafis pakaian streetwear setelan hoodie &amp; baggy pants tampak depan-belakang dengan typography "West Side", layout saku presisi, dan proporsi pola siap produksi konveksi.
                 </p>
-
-                <!-- Fitur Utama -->
                 <div class="flex flex-wrap gap-1.5 pt-3">
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">✂️ Papan Antrean Live</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">📅 Reservasi Online</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">💬 Fast Chat WhatsApp</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">📱 Tampilan HP Responsif</span>
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Format HD Vektor</span>
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Siap Sablon &amp; Bordir</span>
+                  <span class="text-[11px] font-semibold bg-green-500/10 text-green-700 px-2.5 py-0.5 rounded-full">🟢 Contoh Desain Nyata</span>
                 </div>
               </div>
-
-              <div class="pt-4 border-t border-surface-container mt-5 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <div class="flex items-center gap-1.5 font-bold text-green-700 bg-green-50 px-2.5 py-1 rounded-full border border-green-200">
-                  <span class="material-symbols-outlined text-sm">trending_up</span>
-                  <span>Booking Online Meningkat 85%</span>
-                </div>
-                <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20tertarik%20bikin%20website%20seperti%20District%20Studio%20Barbershop" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-primary font-bold hover:underline">
-                  <span>Pesan Serupa</span>
-                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <div class="pt-4 border-t border-surface-container mt-4 flex items-center justify-between gap-2">
+                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:text-primary-container flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/apparel-mockup-set.jpg" data-title="Mockup Setelan Hoodie &amp; Pants LTH Lumitech">
+                  <span class="material-symbols-outlined text-base">visibility</span>
+                  <span>Lihat Detail</span>
+                </button>
+                <a href="<?= getWaOrderUrl('desain_pakaian') ?>" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1.5 rounded-lg transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-sm">chat</span>
+                  <span>Order Desain Ini</span>
                 </a>
               </div>
             </div>
 
-            <!-- Portofolio 2: MathLab Smart Calculator -->
-            <div class="rounded-3xl bg-surface-container-lowest border border-surface-container hover:border-primary/40 p-5 sm:p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <!-- Portfolio 2: Desain Apparel Hoodie Putih Pop-Streetwear -->
+            <div class="portfolio-card flex flex-col justify-between rounded-3xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300" data-category="desain">
               <div>
-                <!-- Gambar Portofolio -->
-                <div class="h-56 sm:h-64 w-full rounded-2xl overflow-hidden relative border border-surface-container bg-surface-container-low mb-4">
-                  <img src="<?= $assetBase ?>assets/portfolio/mathlab.png" alt="Portofolio Web App MathLab" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <span class="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/10 flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-                    Progressive Web App (PWA)
+                <div class="h-56 sm:h-60 w-full rounded-2xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/apparel-hoodie-white.jpg" data-title="Desain Hoodie Grafis Don't Looking Around">
+                  <img src="<?= $assetBase ?>assets/portfolio/apparel-hoodie-white.jpg" alt="Desain Hoodie Streetwear Don't Looking Around Lumitech" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-extrabold text-primary shadow-sm flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">palette</span>
+                    <span>Desain Grafis &amp; Apparel</span>
                   </span>
-                  <span class="absolute bottom-3 right-3 bg-primary/90 text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md">
-                    Web Application &amp; Edukasi
-                  </span>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
+                    <span class="px-4 py-2 rounded-full bg-surface/90 backdrop-blur-md text-on-surface text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
+                      <span>Lihat Gambar Penuh</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-3 left-3 text-white text-xs font-medium bg-black/50 backdrop-blur-sm px-2.5 py-0.5 rounded-md">Artwork Depan &amp; Belakang</span>
                 </div>
-
-                <div class="flex items-center gap-2 pb-1">
-                  <span class="text-xs font-bold text-primary uppercase tracking-wider">Aplikasi Rumus Pintar</span>
-                </div>
-                <h3 class="text-xl sm:text-2xl font-black text-on-surface">MathLab - Smart Calculator</h3>
-                
-                <!-- Caption & Penjelasan Lengkap -->
-                <p class="text-sm text-on-surface-variant pt-2 leading-relaxed">
-                  Aplikasi web edukatif yang dirancang untuk pelajar, mahasiswa, dan UMKM. Memiliki fitur kalkulator pintar 12+ kategori rumus (aljabar, bangun ruang, trigonometri, statistika, hingga perhitungan uang kas &amp; diskon) dengan dukungan mode gelap (*dark theme*) dan instalasi PWA di HP.
+                <h3 class="text-lg sm:text-xl font-bold text-on-surface pt-3.5">Desain Hoodie "Don't Looking Around"</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant pt-1 leading-relaxed">
+                  Karya desain grafis apparel streetwear pop-modern dengan visual karakter bold, tipografi 3D melengkung Lumitech, dan penempatan mockup photorealistic depan-belakang.
                 </p>
-
-                <!-- Fitur Utama -->
                 <div class="flex flex-wrap gap-1.5 pt-3">
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">📐 12+ Kategori Rumus</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">📲 Bisa Diinstal di HP (PWA)</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">🌓 Dark &amp; Light Mode</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">⚡ Loading Instan Tanpa Lag</span>
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Artwork Pop-Streetwear</span>
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Revisi Sampai Puas</span>
+                  <span class="text-[11px] font-semibold bg-green-500/10 text-green-700 px-2.5 py-0.5 rounded-full">🟢 Contoh Desain Nyata</span>
                 </div>
               </div>
-
-              <div class="pt-4 border-t border-surface-container mt-5 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <div class="flex items-center gap-1.5 font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
-                  <span class="material-symbols-outlined text-sm">speed</span>
-                  <span>100% Client-Side Cepat &amp; Offline Ready</span>
-                </div>
-                <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20tertarik%20bikin%20web%20app%20seperti%20MathLab" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-primary font-bold hover:underline">
-                  <span>Pesan Serupa</span>
-                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <div class="pt-4 border-t border-surface-container mt-4 flex items-center justify-between gap-2">
+                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:text-primary-container flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/apparel-hoodie-white.jpg" data-title="Desain Hoodie Grafis Don't Looking Around">
+                  <span class="material-symbols-outlined text-base">visibility</span>
+                  <span>Lihat Detail</span>
+                </button>
+                <a href="<?= getWaOrderUrl('desain_pakaian') ?>" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1.5 rounded-lg transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-sm">chat</span>
+                  <span>Order Desain Ini</span>
                 </a>
               </div>
             </div>
 
-            <!-- Portofolio 3: i-Find Hangout Spot -->
-            <div class="rounded-3xl bg-surface-container-lowest border border-surface-container hover:border-primary/40 p-5 sm:p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <!-- Portfolio 3: Website Outerwear Tech -->
+            <div class="portfolio-card flex flex-col justify-between rounded-3xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300" data-category="website">
               <div>
-                <!-- Gambar Portofolio -->
-                <div class="h-56 sm:h-64 w-full rounded-2xl overflow-hidden relative border border-surface-container bg-surface-container-low mb-4">
-                  <img src="<?= $assetBase ?>assets/portfolio/tempat%20spot.png" alt="Portofolio Platform i-Find Tempat Spot Nongkrong" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <span class="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/10 flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
-                    Location-Based Service (LBS)
+                <div class="h-56 sm:h-60 w-full rounded-2xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/lumitech-outerwear-web.jpg" data-title="Website Lumitech Outerwear Tech - Urban Jacket">
+                  <img src="<?= $assetBase ?>assets/portfolio/lumitech-outerwear-web.jpg" alt="Website Outerwear Tech Jaket Urban Lumitech" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-extrabold text-primary shadow-sm flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">language</span>
+                    <span>Website &amp; Landing Page</span>
                   </span>
-                  <span class="absolute bottom-3 right-3 bg-primary/90 text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md">
-                    Portal Reservasi &amp; LBS
-                  </span>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
+                    <span class="px-4 py-2 rounded-full bg-surface/90 backdrop-blur-md text-on-surface text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
+                      <span>Lihat Gambar Penuh</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-3 left-3 text-white text-xs font-medium bg-black/50 backdrop-blur-sm px-2.5 py-0.5 rounded-md">Dark Mode &amp; High Converting</span>
                 </div>
-
-                <div class="flex items-center gap-2 pb-1">
-                  <span class="text-xs font-bold text-primary uppercase tracking-wider">Platform Kafe &amp; Hangout</span>
-                </div>
-                <h3 class="text-xl sm:text-2xl font-black text-on-surface">i-Find - Spot Hemat Pelajar</h3>
-                
-                <!-- Caption & Penjelasan Lengkap -->
-                <p class="text-sm text-on-surface-variant pt-2 leading-relaxed">
-                  Platform digital pencarian tempat kumpul dan kafe hemat khusus pelajar dan mahasiswa berbasis GPS lokasi. Menyajikan rekomendasi tempat nongkrong ramah kantong (di bawah Rp 25.000), estimasi jarak terdekat, panduan Hangout Pedia, dan booking meja langsung.
+                <h3 class="text-lg sm:text-xl font-bold text-on-surface pt-3.5">Lumitech Outerwear Tech Catalog</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant pt-1 leading-relaxed">
+                  Landing page toko pakaian &amp; jaket taktis perkotaan dengan desain dark mode elegan, integrasi konsultasi ukuran via WhatsApp, dan performa akses super cepat.
                 </p>
-
-                <!-- Fitur Utama -->
                 <div class="flex flex-wrap gap-1.5 pt-3">
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">📍 GPS Akurat &amp; Radius Dekat</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">💰 Kurasi Budget &lt; Rp 25rb</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">🪑 Instant Table Booking</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">🧭 Integrasi Google Maps</span>
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">UI/UX Modern</span>
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Fast Loading</span>
+                  <span class="text-[11px] font-semibold bg-green-500/10 text-green-700 px-2.5 py-0.5 rounded-full">🟢 Live Concept</span>
                 </div>
               </div>
-
-              <div class="pt-4 border-t border-surface-container mt-5 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <div class="flex items-center gap-1.5 font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-200">
-                  <span class="material-symbols-outlined text-sm">location_on</span>
-                  <span>Akurasi GPS Real-Time &amp; Filter Hemat</span>
-                </div>
-                <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20tertarik%20bikin%20platform%20seperti%20i-Find%20Spot" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-primary font-bold hover:underline">
-                  <span>Pesan Serupa</span>
-                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <div class="pt-4 border-t border-surface-container mt-4 flex items-center justify-between gap-2">
+                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:text-primary-container flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/lumitech-outerwear-web.jpg" data-title="Website Lumitech Outerwear Tech - Urban Jacket">
+                  <span class="material-symbols-outlined text-base">visibility</span>
+                  <span>Lihat Detail</span>
+                </button>
+                <a href="<?= getWaOrderUrl('starter_umkm') ?>" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1.5 rounded-lg transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-sm">chat</span>
+                  <span>Bikin Web Serupa</span>
                 </a>
               </div>
             </div>
 
-            <!-- Portofolio 4: Make a Wish Birthday Web -->
-            <div class="rounded-3xl bg-surface-container-lowest border border-surface-container hover:border-primary/40 p-5 sm:p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <!-- Portfolio 4: Website District Studio Barbershop -->
+            <div class="portfolio-card flex flex-col justify-between rounded-3xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300" data-category="website">
               <div>
-                <!-- Gambar Portofolio -->
-                <div class="h-56 sm:h-64 w-full rounded-2xl overflow-hidden relative border border-surface-container bg-surface-container-low mb-4">
-                  <img src="<?= $assetBase ?>assets/portfolio/hbd.jpg" alt="Portofolio Website Interaktif Make a Wish Birthday" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <span class="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/10 flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span>
-                    Interactive Web Animation
+                <div class="h-56 sm:h-60 w-full rounded-2xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/barbershop.png" data-title="Website District Studio Digital Barbershop">
+                  <img src="<?= $assetBase ?>assets/portfolio/barbershop.png" alt="Website District Studio Digital Barbershop" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-extrabold text-primary shadow-sm flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">storefront</span>
+                    <span>Website Bisnis &amp; UMKM</span>
                   </span>
-                  <span class="absolute bottom-3 right-3 bg-primary/90 text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md">
-                    Creative Web &amp; Event
-                  </span>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
+                    <span class="px-4 py-2 rounded-full bg-surface/90 backdrop-blur-md text-on-surface text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
+                      <span>Lihat Gambar Penuh</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-3 left-3 text-white text-xs font-medium bg-black/50 backdrop-blur-sm px-2.5 py-0.5 rounded-md">Live Production Project</span>
                 </div>
-
-                <div class="flex items-center gap-2 pb-1">
-                  <span class="text-xs font-bold text-primary uppercase tracking-wider">Website Ucapan &amp; Momen Spesial</span>
-                </div>
-                <h3 class="text-xl sm:text-2xl font-black text-on-surface">Make a Wish! - Birthday Web</h3>
-                
-                <!-- Caption & Penjelasan Lengkap -->
-                <p class="text-sm text-on-surface-variant pt-2 leading-relaxed">
-                  Website interaktif bertema pastel hangat untuk ucapan ulang tahun, anniversary, dan hadiah kenangan spesial. Dilengkapi fitur interaktif unik meniup lilin kue virtual di layar HP, pemutar musik favorit, galeri foto kenangan, dan pesan rahasia yang muncul otomatis.
+                <h3 class="text-lg sm:text-xl font-bold text-on-surface pt-3.5">District Studio Barbershop</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant pt-1 leading-relaxed">
+                  Website company profile &amp; platform pangkas rambut eksekutif dengan katalog gaya rambut, jam operasional cabang, dan sistem booking antrean WhatsApp real-time.
                 </p>
-
-                <!-- Fitur Utama -->
                 <div class="flex flex-wrap gap-1.5 pt-3">
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">🎂 Animasi Interaktif Tiup Lilin</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">🎵 Background Music Spesial</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">💌 Surat &amp; Pesan Tersembunyi</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface text-xs font-medium">✨ Sentuhan Desain Unik &amp; Lucu</span>
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Company Profile UMKM</span>
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Booking WhatsApp</span>
+                  <span class="text-[11px] font-semibold bg-green-500/10 text-green-700 px-2.5 py-0.5 rounded-full">🟢 Live Project</span>
                 </div>
               </div>
+              <div class="pt-4 border-t border-surface-container mt-4 flex items-center justify-between gap-2">
+                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:text-primary-container flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/barbershop.png" data-title="Website District Studio Digital Barbershop">
+                  <span class="material-symbols-outlined text-base">visibility</span>
+                  <span>Lihat Detail</span>
+                </button>
+                <a href="<?= getWaOrderUrl('starter_umkm') ?>" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1.5 rounded-lg transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-sm">chat</span>
+                  <span>Bikin Web Serupa</span>
+                </a>
+              </div>
+            </div>
 
-              <div class="pt-4 border-t border-surface-container mt-5 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <div class="flex items-center gap-1.5 font-bold text-pink-700 bg-pink-50 px-2.5 py-1 rounded-full border border-pink-200">
-                  <span class="material-symbols-outlined text-sm">favorite</span>
-                  <span>100% Personal, Unik &amp; Menarik</span>
+            <!-- Portfolio 5: Dokumen Microsoft Word Resmi -->
+            <div class="portfolio-card flex flex-col justify-between rounded-3xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300" data-category="dokumen">
+              <div>
+                <div class="h-56 sm:h-60 w-full rounded-2xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/word-district-studio.png" data-title="Format Dokumen Word Resmi - District Studio">
+                  <img src="<?= $assetBase ?>assets/portfolio/word-district-studio.png" alt="Format Dokumen Word Resmi District Studio" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-extrabold text-primary shadow-sm flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">description</span>
+                    <span>Format Dokumen Word</span>
+                  </span>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
+                    <span class="px-4 py-2 rounded-full bg-surface/90 backdrop-blur-md text-on-surface text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
+                      <span>Lihat Gambar Penuh</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-3 left-3 text-white text-xs font-medium bg-black/50 backdrop-blur-sm px-2.5 py-0.5 rounded-md">Standar Resmi &amp; Rapi</span>
                 </div>
-                <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20tertarik%20bikin%20website%20ucapan%20seperti%20Make%20a%20Wish" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-primary font-bold hover:underline">
-                  <span>Pesan Serupa</span>
-                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <h3 class="text-lg sm:text-xl font-bold text-on-surface pt-3.5">Dokumentasi Teknis 16 Halaman (Word)</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant pt-1 leading-relaxed">
+                  Penataan dokumen panduan teknis dan SOP resmi dengan cover elegan, tabel hak akses pengguna (RBAC), penomoran halaman otomatis, dan format margin standar korporat.
+                </p>
+                <div class="flex flex-wrap gap-1.5 pt-3">
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Margin &amp; Spasi Rapi</span>
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Daftar Isi Otomatis</span>
+                  <span class="text-[11px] font-semibold bg-green-500/10 text-green-700 px-2.5 py-0.5 rounded-full">🟢 Siap Cetak &amp; PDF</span>
+                </div>
+              </div>
+              <div class="pt-4 border-t border-surface-container mt-4 flex items-center justify-between gap-2">
+                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:text-primary-container flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/word-district-studio.png" data-title="Format Dokumen Word Resmi - District Studio">
+                  <span class="material-symbols-outlined text-base">visibility</span>
+                  <span>Lihat Detail</span>
+                </button>
+                <a href="<?= getWaOrderUrl('format_dokumen') ?>" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1.5 rounded-lg transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-sm">chat</span>
+                  <span>Order Format Word</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio 6: Olah Data & Laporan Keuangan Excel -->
+            <div class="portfolio-card flex flex-col justify-between rounded-3xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300" data-category="dokumen">
+              <div>
+                <div class="h-56 sm:h-60 w-full rounded-2xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/excel-district-studio.png" data-title="Laporan Keuangan &amp; Olah Data Excel District Studio">
+                  <img src="<?= $assetBase ?>assets/portfolio/excel-district-studio.png" alt="Olah Data Laporan Keuangan Microsoft Excel" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-extrabold text-primary shadow-sm flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">table_chart</span>
+                    <span>Microsoft Excel &amp; Olah Data</span>
+                  </span>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
+                    <span class="px-4 py-2 rounded-full bg-surface/90 backdrop-blur-md text-on-surface text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
+                      <span>Lihat Gambar Penuh</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-3 left-3 text-white text-xs font-medium bg-black/50 backdrop-blur-sm px-2.5 py-0.5 rounded-md">Buku Kas &amp; Komisi Otomatis</span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-on-surface pt-3.5">Laporan Keuangan &amp; Rekap Komisi</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant pt-1 leading-relaxed">
+                  Penyusunan spreadsheet kas operasional, rekap omzet kotor, pembagian komisi karyawan/stylist, dan formula ringkasan metrik eksekutif yang akurat tanpa risiko salah hitung.
+                </p>
+                <div class="flex flex-wrap gap-1.5 pt-3">
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Rumus Otomatis (SUM/IF)</span>
+                  <span class="text-[11px] font-semibold bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant">Buku Kas Operasional</span>
+                  <span class="text-[11px] font-semibold bg-green-500/10 text-green-700 px-2.5 py-0.5 rounded-full">🟢 Bebas Human Error</span>
+                </div>
+              </div>
+              <div class="pt-4 border-t border-surface-container mt-4 flex items-center justify-between gap-2">
+                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:text-primary-container flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/excel-district-studio.png" data-title="Laporan Keuangan &amp; Olah Data Excel District Studio">
+                  <span class="material-symbols-outlined text-base">visibility</span>
+                  <span>Lihat Detail</span>
+                </button>
+                <a href="<?= getWaOrderUrl('excel_olah_data') ?>" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1.5 rounded-lg transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-sm">chat</span>
+                  <span>Order Jasa Excel</span>
                 </a>
               </div>
             </div>
@@ -1060,10 +1146,28 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
     <?php include_once __DIR__ . '/../Layout/partials/footer.php'; ?>
 
     <!-- Floating WhatsApp Button (Desktop only: di mobile sudah ada tombol Chat WA di Bottom Bar) -->
-    <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20tanya%20layanan" target="_blank" rel="noopener" aria-label="Chat WhatsApp" class="hidden lg:flex fixed bottom-6 right-6 z-50 items-center gap-2.5 px-4 py-3 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300">
+    <a href="https://wa.me/6287861756916?text=<?= rawurlencode("Halo Admin Lumitech, saya ingin bertanya dan konsultasi seputar layanan Lumitech.id.") ?>" target="_blank" rel="noopener" aria-label="Chat WhatsApp" class="hidden lg:flex fixed bottom-6 right-6 z-50 items-center gap-2.5 px-4 py-3 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300">
       <span class="material-symbols-outlined text-2xl">chat</span>
       <span class="text-sm font-bold pr-1">Tanya Kami via WA</span>
     </a>
+
+    <!-- Lightbox Modal untuk Preview Gambar Portofolio -->
+    <div id="portfolioModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-5" role="dialog" aria-modal="true">
+      <div class="relative max-w-4xl w-full bg-surface rounded-2xl overflow-hidden shadow-2xl border border-surface-container flex flex-col max-h-[92vh] animate-in fade-in duration-200">
+        <div class="flex items-center justify-between p-3.5 sm:p-4 border-b border-surface-container bg-surface-container-low shrink-0">
+          <div class="flex items-center gap-2 min-w-0 pr-2">
+            <span class="material-symbols-outlined text-primary text-xl">palette</span>
+            <h3 id="portfolioModalTitle" class="font-bold text-sm sm:text-base text-on-surface truncate">Preview Portofolio</h3>
+          </div>
+          <button id="portfolioModalClose" type="button" aria-label="Tutup Preview" class="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors shrink-0">
+            <span class="material-symbols-outlined text-lg sm:text-xl">close</span>
+          </button>
+        </div>
+        <div class="p-2 sm:p-4 overflow-auto flex items-center justify-center bg-slate-950/70 grow min-h-0">
+          <img id="portfolioModalImg" src="" alt="Preview Portofolio Lumitech" class="max-h-[72vh] w-auto max-w-full rounded-xl object-contain shadow-2xl" />
+        </div>
+      </div>
+    </div>
 
     <!-- Script Filter & Interaktif -->
     <script>
@@ -1095,6 +1199,77 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
             });
           });
         });
+
+        // Filter Portofolio di Beranda
+        const portfolioFilterBtns = document.querySelectorAll(".portfolio-filter-btn");
+        const portfolioCards = document.querySelectorAll(".portfolio-card");
+
+        portfolioFilterBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const filter = this.getAttribute("data-portfolio-filter");
+
+            portfolioFilterBtns.forEach((b) => {
+              b.classList.remove("active-portfolio-filter", "bg-primary", "text-white");
+              b.classList.add("bg-surface-container", "text-on-surface");
+            });
+            this.classList.add("active-portfolio-filter", "bg-primary", "text-white");
+            this.classList.remove("bg-surface-container", "text-on-surface");
+
+            portfolioCards.forEach((card) => {
+              const category = card.getAttribute("data-category") || "";
+              if (filter === "all" || category.includes(filter)) {
+                card.style.display = "flex";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+
+        // Lightbox Modal untuk Preview Gambar Portofolio
+        const portfolioModal = document.getElementById("portfolioModal");
+        const portfolioModalImg = document.getElementById("portfolioModalImg");
+        const portfolioModalTitle = document.getElementById("portfolioModalTitle");
+        const portfolioModalClose = document.getElementById("portfolioModalClose");
+        const previewTriggers = document.querySelectorAll(".portfolio-preview-trigger");
+
+        if (portfolioModal && portfolioModalImg && portfolioModalTitle) {
+          previewTriggers.forEach((trigger) => {
+            trigger.addEventListener("click", function (e) {
+              e.preventDefault();
+              const imgSrc = this.getAttribute("data-image");
+              const titleText = this.getAttribute("data-title") || "Preview Portofolio";
+              if (imgSrc) {
+                portfolioModalImg.src = imgSrc;
+                portfolioModalTitle.textContent = titleText;
+                portfolioModal.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+              }
+            });
+          });
+
+          const closeModal = () => {
+            portfolioModal.classList.add("hidden");
+            portfolioModalImg.src = "";
+            document.body.style.overflow = "";
+          };
+
+          if (portfolioModalClose) {
+            portfolioModalClose.addEventListener("click", closeModal);
+          }
+
+          portfolioModal.addEventListener("click", function (e) {
+            if (e.target === portfolioModal) {
+              closeModal();
+            }
+          });
+
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && !portfolioModal.classList.contains("hidden")) {
+              closeModal();
+            }
+          });
+        }
 
         // Mobile Nav Drawer Toggle
         const mobileMenuBtn = document.getElementById("mobileMenuBtn");

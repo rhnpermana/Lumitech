@@ -1,6 +1,7 @@
 <?php
 $assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo-icon.png')) ? '' : '../');
 $currentPage = 'produk';
+require_once __DIR__ . '/../Layout/partials/whatsapp_helper.php';
 include_once __DIR__ . '/../Layout/partials/app.php';
 include_once __DIR__ . '/../Layout/partials/navhome.php';
 ?>
@@ -23,7 +24,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
 
           <!-- Jalur Kontak Resmi Banner -->
           <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
-            <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20tanya%20seputar%20layanan" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface-container-lowest border border-surface-container shadow-sm hover:border-green-500 transition-colors">
+            <a href="https://wa.me/6287861756916?text=<?= rawurlencode("Halo Admin Lumitech, saya ingin bertanya dan konsultasi seputar layanan Lumitech.id.") ?>" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface-container-lowest border border-surface-container shadow-sm hover:border-green-500 transition-colors">
               <span class="material-symbols-outlined text-green-600 text-lg">chat</span>
               <span class="text-on-surface">Hubungi Kami via WhatsApp: <strong>0878-6175-6916</strong></span>
             </a>
@@ -43,7 +44,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
               🌐 Pembuatan Website (3)
             </button>
             <button type="button" data-filter="bisnis" class="filter-btn px-5 py-2.5 rounded-full text-sm md:text-base font-bold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
-              💼 Bisnis, Desain &amp; Konveksi (8)
+              💼 Bisnis, Desain &amp; Pakaian (8)
             </button>
             <button type="button" data-filter="joki" class="filter-btn px-5 py-2.5 rounded-full text-sm md:text-base font-bold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
               🎓 Dokumen, Office &amp; Joki (5)
@@ -68,9 +69,9 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
                       <span class="text-[11px] text-on-surface-variant font-medium">Mulai Harga:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 1.490.000</span>
+                      <span class="text-lg sm:text-xl font-black text-primary">Rp 150.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Domain .com + hosting 1 tahun</span>
+                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Belum Termasuk Domain .com + hosting 1 tahun</span>
                   </div>
                   <ul class="space-y-1.5 text-xs text-on-surface">
                     <li class="flex items-start gap-1.5">
@@ -88,7 +89,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20berminat%20dengan%20Paket%20Starter%20Website%20UMKM%20(Rp%201.490.000)" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('starter_umkm') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -116,8 +117,8 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </p>
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Harga Investasi:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 3.890.000</span>
+                      <span class="text-[11px] text-on-surface-variant font-medium">Mulai Harga :</span>
+                      <span class="text-lg sm:text-xl font-black text-primary">Rp 1.000.000</span>
                     </div>
                     <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Gratis email bisnis (nama@perusahaan.com)</span>
                   </div>
@@ -137,7 +138,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20berminat%20dengan%20Paket%20Website%20Professional%20(Rp%203.890.000)" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('pro_business') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -159,7 +160,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </p>
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Harga Investasi:</span>
+                      <span class="text-[11px] text-on-surface-variant font-medium">Mulai Harga:</span>
                       <span class="text-lg sm:text-xl font-black text-primary">Sesuai Kebutuhan</span>
                     </div>
                     <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Estimasi transparan setelah diskusi santai</span>
@@ -180,7 +181,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20konsultasi%20toko%20online%20%2F%20web%20custom" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('custom_app') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Konsultasi via WhatsApp</span>
                   </a>
@@ -223,7 +224,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20jadwalkan%20Konsultasi%20Bisnis%20UMKM" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('konsultasi_umkm') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -266,7 +267,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Desain%20Grafis%20%2F%20Logo" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('desain_grafis') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -309,7 +310,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Video%20Editing%20Reels%2FTikTok" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('video_editing') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -325,16 +326,16 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                     <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Sosmed</span>
                     <span class="material-symbols-outlined text-primary text-xl">share</span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Pengelolaan Media Sosial</h3>
+                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Analisis Insight Dan Pengelolaan Media Sosial</h3>
                   <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
                     Serahkan urusan akun Instagram &amp; TikTok bisnis Anda. Kami buatkan jadwal, feed, caption, dan hashtag.
                   </p>
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 650.000</span>
+                      <span class="text-[11px] text-on-surface-variant font-medium">Mulai Harga:</span>
+                      <span class="text-lg sm:text-xl font-black text-primary">Rp 30.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Per bulan (Paket 12 postingan rapi)</span>
+                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Perpostingan</span>
                   </div>
                   <ul class="space-y-1.5 text-xs text-on-surface">
                     <li class="flex items-start gap-1.5">
@@ -349,10 +350,14 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                       <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
                       <span class="line-clamp-1">Jadwal upload konsisten &amp; rapi</span>
                     </li>
+                    <li class="flex items-start gap-1.5">
+                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
+                      <span class="line-clamp-1">Riset berbentuk dokument</span>
+                    </li>
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20konsultasi%20Social%20Media%20Management" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('sosmed_management') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -395,7 +400,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Pengetikan%20Dokumen%20Word" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('format_dokumen') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -403,42 +408,42 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
               </div>
             </div>
 
-            <!-- PRODUK 9: JASA PEMBUATAN PAKAIAN & KONVEKSI -->
+            <!-- PRODUK 9: JASA DESAIN PAKAIAN & APPAREL -->
             <div class="product-card" data-category="bisnis">
               <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div>
                   <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Konveksi &amp; Pakaian</span>
+                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Desain Pakaian</span>
                     <span class="material-symbols-outlined text-primary text-xl">apparel</span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Jasa Pembuatan Pakaian &amp; Konveksi</h3>
+                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Jasa Desain Pakaian</h3>
                   <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Pembuatan kaos custom, kemeja kerja/organisasi, jaket, hoodie, seragam, sablon DTF &amp; bordir komputer rapi.
+                    Desain mockup kaos, hoodie, kemeja, celana, seragam &amp; apparel streetwear siap cetak sablon / bordir konveksi.
                   </p>
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
                       <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
                       <span class="text-lg sm:text-xl font-black text-primary">Rp 45.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Minimal order fleksibel • Bahan adem &amp; awet</span>
+                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Mockup depan &amp; belakang • Siap cetak vendor</span>
                   </div>
                   <ul class="space-y-1.5 text-xs text-on-surface">
                     <li class="flex items-start gap-1.5">
                       <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Kaos, polo, kemeja, hoodie &amp; seragam</span>
+                      <span class="line-clamp-1">Mockup tampak depan &amp; belakang realistis HD</span>
                     </li>
                     <li class="flex items-start gap-1.5">
                       <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Sablon presisi &amp; bordir komputer rapi</span>
+                      <span class="line-clamp-1">File mentahan siap sablon &amp; bordir (PNG &amp; PDF)</span>
                     </li>
                     <li class="flex items-start gap-1.5">
                       <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Free konsultasi desain &amp; mockup gratis</span>
+                      <span class="line-clamp-1">Free konsultasi konsep &amp; revisi sampai puas</span>
                     </li>
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Pembuatan%20Pakaian%20%2F%20Konveksi" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('desain_pakaian') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -481,7 +486,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Jasa%20Microsoft%20Excel" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('excel_olah_data') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -524,7 +529,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Jasa%20Microsoft%20PowerPoint" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('ppt_slide') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -567,7 +572,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Joki%20Tugas%20(PPT%2FWord%2FPDF)" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('joki_tugas') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -575,7 +580,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
               </div>
             </div>
 
-            <!-- PRODUK 10: JOKI WEBSITE & CODING CRUD -->
+            <!-- PRODUK 13: JOKI WEBSITE & CODING CRUD -->
             <div class="product-card" data-category="joki">
               <div class="h-full rounded-2xl bg-surface-container-lowest border-2 border-primary/70 hover:border-primary p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div>
@@ -610,7 +615,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Joki%20Website%20CRUD" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('joki_coding') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -618,7 +623,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
               </div>
             </div>
 
-            <!-- PRODUK 11: JOKI DESAIN CANVA & PRESENTASI -->
+            <!-- PRODUK 14: JOKI DESAIN CANVA & PRESENTASI -->
             <div class="product-card" data-category="joki">
               <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div>
@@ -653,7 +658,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
                   </ul>
                 </div>
                 <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20Desain%20Canva" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
+                  <a href="<?= getWaOrderUrl('joki_canva') ?>" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
                     <span class="material-symbols-outlined text-base">chat</span>
                     <span>Pesan via WhatsApp</span>
                   </a>
@@ -667,7 +672,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
           <div class="mt-12 p-6 rounded-3xl bg-surface-container-low border border-surface-container flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div>
               <h4 class="font-bold text-lg text-on-surface">Ingin melihat contoh hasil website &amp; karya nyata kami?</h4>
-              <p class="text-sm text-on-surface-variant pt-0.5">Lihat portofolio live project District Studio Barbershop, Web App MathLab, dan Platform i-Find.</p>
+              <p class="text-sm text-on-surface-variant pt-0.5">Lihat portofolio nyata contoh desain pakaian, landing page website modern, dan olah data resmi.</p>
             </div>
             <a href="index.php#portofolio" class="shrink-0 px-6 py-3 rounded-full bg-primary text-white font-bold text-sm shadow hover:bg-primary-container transition-colors flex items-center gap-2">
               <span>Lihat Portofolio Lengkap</span>
@@ -722,7 +727,7 @@ include_once __DIR__ . '/../Layout/partials/navhome.php';
     <?php include_once __DIR__ . '/../Layout/partials/footer.php'; ?>
 
     <!-- Floating WhatsApp Button (Desktop only: di mobile sudah ada tombol Chat WA di Bottom Bar) -->
-    <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20tanya%20layanan" target="_blank" rel="noopener" aria-label="Chat WhatsApp" class="hidden lg:flex fixed bottom-6 right-6 z-50 items-center gap-2.5 px-4 py-3 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300">
+    <a href="https://wa.me/6287861756916?text=<?= rawurlencode("Halo Admin Lumitech, saya ingin bertanya dan konsultasi seputar layanan Lumitech.id.") ?>" target="_blank" rel="noopener" aria-label="Chat WhatsApp" class="hidden lg:flex fixed bottom-6 right-6 z-50 items-center gap-2.5 px-4 py-3 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300">
       <span class="material-symbols-outlined text-2xl">chat</span>
       <span class="text-sm font-bold pr-1">Tanya Kami via WA</span>
     </a>
