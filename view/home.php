@@ -1,5 +1,5 @@
 <?php
-$assetBase = (file_exists('assets/img/logo-icon.png')) ? '' : '../';
+$assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo-icon.png')) ? '' : '../');
 $currentPage = 'home';
 require_once __DIR__ . '/../Layout/partials/whatsapp_helper.php';
 include_once __DIR__ . '/../Layout/partials/app.php';

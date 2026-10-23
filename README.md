@@ -10,7 +10,7 @@ Website resmi landing page dan profil bisnis untuk **Lumitech.id** — solusi pe
 - **Katalog Produk & Layanan Ringkas (14 Layanan):** Seluruh 14 layanan (Website, Konsultasi UMKM, Desain Grafis, Video Editing, Social Media, Format Word, Pembuatan Pakaian/Konveksi, Olah Data Microsoft Excel, Slide Microsoft PowerPoint, dan Joki Tugas Cihuyyy) didesain kompak, rapi, dan proporsional dengan filter instan di `index.php#katalog` dan halaman khusus `produk.php`.
 - **Desain Ramah Semua Umur (*All-Ages Friendly*):** Tampilan bersih, tipografi besar dan jelas, bahasa sederhana tanpa istilah teknis membingungkan, dan tombol pemesanan WhatsApp yang mudah ditekan.
 - **WhatsApp Terpusat Tanpa Admin Lain:** Seluruh 14 layanan ditangani langsung melalui satu nomor resmi: `+62 878-6175-6916`.
-- **Arsitektur Modular PHP:** Terstruktur rapi dengan pemisahan komponen `Layout/partials/app.php`, `navhome.php`, `footer.php`, `view/index.php`, dan `view/produk.php`.
+- **Arsitektur Modular PHP:** Terstruktur rapi dengan pemisahan komponen `Layout/partials/app.php`, `navhome.php`, `footer.php`, `view/home.php`, dan `view/katalog.php`.
 - **Floating WhatsApp Button Cerdas:** Otomatis tampil di desktop dan berintegrasi harmonis di mobile navbar tanpa tumpang tindih.
 - **Showcase Portofolio & Karya Nyata:** Menampilkan hasil kerja live project dengan screenshot asli (`barbershop.png`, `mathlab.png`, `tempat spot.png`, `hbd.jpg`), caption penjelasan mendalam, fitur utama, dan metrik hasil konversi nyata.
 
@@ -32,8 +32,8 @@ Lumitech/
 │       ├── joki-logo.png    # Logo heksagonal Joki Cihuyyy
 │       └── joki-flyer.jpg   # Flyer referensi Joki Cihuyyy
 ├── view/
-│   ├── index.php            # Halaman utama (Hero, Katalog Terpadu, Portofolio, Cara Order, Garansi, FAQ)
-│   └── produk.php           # Halaman katalog produk & layanan berdiri sendiri
+│   ├── home.php             # Halaman utama (Hero, Katalog Terpadu, Portofolio, Cara Order, Garansi, FAQ)
+│   └── katalog.php          # Halaman katalog produk & layanan berdiri sendiri
 ├── .gitignore               # Konfigurasi pengabaian Git
 ├── index.php                # Entry point utama aplikasi
 ├── produk.php               # Entry point katalog produk

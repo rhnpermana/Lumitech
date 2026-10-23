@@ -4,4 +4,4 @@
  */
 $assetBase = '';
 $currentPage = 'produk';
-require_once __DIR__ . '/view/produk.php';
+require_once __DIR__ . '/view/katalog.php';
