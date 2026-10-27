@@ -20,23 +20,26 @@ Website resmi landing page dan profil bisnis untuk **Lumitech.id** — solusi pe
 
 ```
 Lumitech/
+├── api/
+│   ├── index.php            # Entry point Serverless Function Vercel (Halaman Utama)
+│   └── produk.php           # Entry point Serverless Function Vercel (Katalog Produk)
 ├── Layout/
 │   └── partials/
 │       ├── app.php          # HTML <head>, favicon, SEO meta tags, dan Tailwind config
 │       ├── navhome.php      # Top notice bar kontak, navbar responsif & mobile menu drawer
-│       └── footer.php       # Footer modular dengan kontak resmi dan navigasi
+│       ├── footer.php       # Footer modular dengan kontak resmi dan navigasi
+│       └── whatsapp_helper.php # Helper pembuat format pesan & harga WhatsApp
 ├── assets/
-│   └── img/
-│       ├── logo.jpeg        # Banner utama logo Lumitech
-│       ├── logo-icon.png    # High-res square icon neon L untuk favicon & navbar
-│       ├── joki-logo.png    # Logo heksagonal Joki Cihuyyy
-│       └── joki-flyer.jpg   # Flyer referensi Joki Cihuyyy
+│   ├── img/                 # Gambar logo, icon, dan flyer
+│   └── portfolio/           # Screenshot hasil portofolio nyata
 ├── view/
 │   ├── home.php             # Halaman utama (Hero, Katalog Terpadu, Portofolio, Cara Order, Garansi, FAQ)
 │   └── katalog.php          # Halaman katalog produk & layanan berdiri sendiri
 ├── .gitignore               # Konfigurasi pengabaian Git
-├── index.php                # Entry point utama aplikasi
-├── produk.php               # Entry point katalog produk
+├── .vercelignore            # Konfigurasi pengabaian upload Vercel
+├── vercel.json              # Konfigurasi runtime PHP & routing Vercel
+├── index.php                # Entry point lokal (Laragon / Apache)
+├── produk.php               # Entry point lokal (Laragon / Apache)
 └── README.md                # Dokumentasi proyek
 ```
 
@@ -44,7 +47,7 @@ Lumitech/
 
 ## 💻 Cara Menjalankan Proyek
 
-### 1. Menggunakan Laragon (Rekomendasi)
+### 1. Menggunakan Laragon (Lokal)
 - Pastikan folder proyek berada di direktori `C:\laragon\www\Lumitech`.
 - Buka Laragon lalu klik **Start All**.
 - Akses website melalui browser di: `http://localhost/Lumitech` atau `http://localhost/Lumitech/produk.php`.
@@ -55,6 +58,17 @@ Buka terminal PowerShell / Command Prompt di folder proyek:
 php -S localhost:8000
 ```
 Lalu buka browser di `http://localhost:8000` atau `http://localhost:8000/produk.php`.
+
+### 3. Deploy ke Vercel (Online / Production)
+Proyek ini sudah dilengkapi konfigurasi runtime Serverless PHP (`vercel.json`, folder `api/`, dan `.vercelignore`):
+1. Push commit ke repository GitHub kamu (`main`):
+   ```bash
+   git add .
+   git commit -m "fix: configure Vercel Serverless PHP runtime and routes"
+   git push origin main
+   ```
+2. Vercel akan secara otomatis melakukan rebuild/redeploy.
+3. Halaman sekarang akan terbuka normal sebagai website interaktif tanpa mendownload file `.php`.
 
 ---
 
