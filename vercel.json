@@ -1,9 +1,8 @@
 {
   "version": 2,
   "functions": {
-    "*.php": {
-      "runtime": "vercel-php@0.9.0",
-      "directory": "."
+    "api/*.php": {
+      "runtime": "vercel-php@0.9.0"
     }
   },
   "routes": [
@@ -17,15 +16,15 @@
     },
     {
       "src": "/produk(\\.php)?",
-      "dest": "/produk.php"
+      "dest": "/api/produk.php"
     },
     {
       "src": "/index(\\.php)?",
-      "dest": "/index.php"
+      "dest": "/api/index.php"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.php"
+      "dest": "/api/index.php"
     }
   ]
 }
