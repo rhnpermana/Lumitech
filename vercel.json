@@ -1,21 +1,30 @@
 {
   "version": 2,
-  "rewrites": [
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "routes": [
     {
-      "source": "/assets/(.*)",
-      "destination": "/assets/$1"
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
     },
     {
-      "source": "/favicon.ico",
-      "destination": "/assets/img/logo-icon.png"
+      "src": "/favicon.ico",
+      "dest": "/assets/img/logo-icon.png"
     },
     {
-      "source": "/produk",
-      "destination": "/api/produk.php"
+      "src": "/produk",
+      "dest": "/api/produk.php"
     },
     {
-      "source": "/((?!api/).*)",
-      "destination": "/api/index.php"
+      "src": "/",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
     }
   ]
 }
