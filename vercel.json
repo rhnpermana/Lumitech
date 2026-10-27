@@ -1,25 +1,21 @@
 {
   "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
     },
     {
-      "src": "/favicon.ico",
-      "dest": "/assets/img/logo-icon.png"
+      "source": "/favicon.ico",
+      "destination": "/assets/img/logo-icon.png"
     },
     {
-      "src": "/produk",
-      "dest": "/api/produk.php"
+      "source": "/produk",
+      "destination": "/api/produk.php"
     },
     {
-      "src": "/index",
-      "dest": "/api/index.php"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
+      "source": "/((?!api/).*)",
+      "destination": "/api/index.php"
     }
   ]
 }
