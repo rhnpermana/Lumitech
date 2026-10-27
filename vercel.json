@@ -1,7 +1,7 @@
 {
   "version": 2,
   "functions": {
-    "api/*.php": {
+    "*.php": {
       "runtime": "vercel-php@0.9.0"
     }
   },
@@ -16,15 +16,15 @@
     },
     {
       "src": "/produk(\\.php)?",
-      "dest": "/api/produk.php"
+      "dest": "/produk.php"
     },
     {
       "src": "/index(\\.php)?",
-      "dest": "/api/index.php"
+      "dest": "/index.php"
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.php"
+      "dest": "/index.php"
     }
   ]
 }
