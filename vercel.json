@@ -1,25 +1,26 @@
 {
-  "version": 2,
-  "routes": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "source": "/favicon.ico",
+      "destination": "/assets/img/logo-icon.png"
     },
     {
-      "src": "/favicon.ico",
-      "dest": "/assets/img/logo-icon.png"
+      "source": "/produk.php",
+      "destination": "/produk.html"
     },
     {
-      "src": "/produk",
-      "dest": "/api/produk.php"
+      "source": "/produk",
+      "destination": "/produk.html"
     },
     {
-      "src": "/",
-      "dest": "/api/index.php"
+      "source": "/index.php",
+      "destination": "/index.html"
     },
     {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
+      "source": "/",
+      "destination": "/index.html"
     }
   ]
 }

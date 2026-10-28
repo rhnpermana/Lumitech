@@ -60,15 +60,19 @@ php -S localhost:8000
 Lalu buka browser di `http://localhost:8000` atau `http://localhost:8000/produk.php`.
 
 ### 3. Deploy ke Vercel (Online / Production)
-Proyek ini sudah dilengkapi konfigurasi runtime Serverless PHP (`vercel.json`, folder `api/`, dan `.vercelignore`):
-1. Push commit ke repository GitHub kamu (`main`):
+Proyek ini siap dideploy ke Vercel dengan performa super cepat (Edge CDN):
+1. Jika baru saja mengubah tampilan PHP di folder `view/` atau `Layout/`, jalankan build terlebih dahulu:
+   ```bash
+   php build.php
+   # atau klik ganda build.bat di Windows
+   ```
+2. Push commit ke repository GitHub kamu (`main`):
    ```bash
    git add .
-   git commit -m "fix: configure Vercel Serverless PHP runtime and routes"
+   git commit -m "fix: static html build & routing for Vercel"
    git push origin main
    ```
-2. Vercel akan secara otomatis melakukan rebuild/redeploy.
-3. Halaman sekarang akan terbuka normal sebagai website interaktif tanpa mendownload file `.php`.
+3. Vercel akan otomatis melakukan deploy dalam beberapa detik dan website langsung live di domain Vercel kamu tanpa error 404!
 
 ---
 
