@@ -11,7 +11,7 @@
       "destination": "/produk.html"
     },
     {
-      "source": "/produk",
+      "source": "/produk.php",
       "destination": "/produk.html"
     },
     {
