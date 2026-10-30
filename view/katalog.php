@@ -1,9 +1,11 @@
 <?php
 $assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo-icon.png')) ? '' : '../');
 $currentPage = 'produk';
+$pageTitle = 'Katalog Produk & Solusi Digital - Lumitech.id';
+$pageDescription = 'Katalog resmi seluruh layanan Lumitech.id: Pembuatan website, konsultasi bisnis UMKM, desain grafis & pakaian, olah data Excel & Word, dan joki tugas coding.';
 require_once __DIR__ . '/../Layout/partials/whatsapp_helper.php';
-include_once __DIR__ . '/../Layout/partials/app.php';
-include_once __DIR__ . '/../Layout/partials/navhome.php';
+require __DIR__ . '/../Layout/partials/app.php';
+require __DIR__ . '/../Layout/partials/navhome.php';
 
 // Definisi data 14 Layanan untuk Dashboard Produk (Ringkas, Rapi & Tidak Berat Teks)
 $catalogItems = [
@@ -186,7 +188,6 @@ $catalogItems = [
 
 $allServiceData = getServiceDetails();
 ?>
-  <body class="bg-surface font-body-md text-on-surface antialiased pt-20 lg:pt-28 pb-24 lg:pb-0">
 
     <main class="w-full">
       <!-- Top Dashboard Header (Kompak & Bersih) -->
@@ -415,7 +416,7 @@ $allServiceData = getServiceDetails();
     </div>
 
     <!-- Footer -->
-    <?php include_once __DIR__ . '/../Layout/partials/footer.php'; ?>
+    <?php require __DIR__ . '/../Layout/partials/footer.php'; ?>
 
     <!-- Floating WhatsApp Button (Desktop only) -->
     <a href="https://wa.me/6287861756916?text=<?= rawurlencode("Halo Admin Lumitech, saya ingin bertanya dan konsultasi seputar layanan Lumitech.id.") ?>" target="_blank" rel="noopener" aria-label="Chat WhatsApp" class="hidden lg:flex fixed bottom-6 right-6 z-50 items-center gap-2.5 px-4 py-3 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300">

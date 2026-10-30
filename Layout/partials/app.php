@@ -7,8 +7,8 @@ $assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo-i
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Lumitech.id - Jasa Pembuatan Website &amp; Digital Presence Bisnis</title>
-    <meta name="description" content="Jasa pembuatan website profesional, landing page konversi tinggi, dan toko online modern di Indonesia. Garansi 3 bulan, cepat, dan SEO-friendly." />
+    <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Lumitech.id - Jasa Pembuatan Website &amp; Digital Presence Bisnis' ?></title>
+    <meta name="description" content="<?= isset($pageDescription) ? htmlspecialchars($pageDescription) : 'Jasa pembuatan website profesional, landing page konversi tinggi, dan toko online modern di Indonesia. Garansi 3 bulan, cepat, dan SEO-friendly.' ?>" />
     <meta name="keywords" content="jasa website, buat website, bikin website murah, web developer indonesia, lumitech, landing page bisnis, website umkm" />
     <meta name="author" content="Lumitech.id" />
     <meta name="robots" content="index, follow" />
@@ -17,14 +17,14 @@ $assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo-i
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lumitech.id/" />
     <meta property="og:site_name" content="Lumitech.id" />
-    <meta property="og:title" content="Lumitech.id - Solusi Website & Digital Presence Bisnismu" />
-    <meta property="og:description" content="Jasa pembuatan website, konsultasi & insight bisnis UMKM, desain grafis & branding, video editing, social media management, dan format dokumen." />
+    <meta property="og:title" content="<?= isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Lumitech.id - Solusi Website &amp; Digital Presence Bisnismu' ?>" />
+    <meta property="og:description" content="<?= isset($pageDescription) ? htmlspecialchars($pageDescription) : 'Jasa pembuatan website, konsultasi &amp; insight bisnis UMKM, desain grafis &amp; branding, video editing, social media management, dan format dokumen.' ?>" />
     <meta property="og:image" content="<?= $assetBase ?>assets/img/logo.jpeg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lumitech.id - Jasa Website, Branding & Digital Creative" />
-    <meta name="twitter:description" content="Layanan digital lengkap: Website, Konsultasi UMKM, Desain Grafis, Video Editing, Social Media Management & Joki Cihuyyy." />
+    <meta name="twitter:title" content="<?= isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Lumitech.id - Jasa Website, Branding &amp; Digital Creative' ?>" />
+    <meta name="twitter:description" content="<?= isset($pageDescription) ? htmlspecialchars($pageDescription) : 'Layanan digital lengkap: Website, Konsultasi UMKM, Desain Grafis, Video Editing, Social Media Management &amp; Joki Cihuyyy.' ?>" />
     <meta name="twitter:image" content="<?= $assetBase ?>assets/img/logo.jpeg" />
 
     <!-- Favicon -->
@@ -236,3 +236,4 @@ $assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo-i
       };
     </script>
   </head>
+  <body class="bg-surface font-body-md text-on-surface antialiased pt-20 lg:pt-28 pb-24 lg:pb-0">
