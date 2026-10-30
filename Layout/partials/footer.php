@@ -15,54 +15,48 @@ $assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo-i
           </span>
         </div>
         <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-          Solusi all-in-one pembuatan website, konsultasi bisnis UMKM, desain grafis &amp; branding, video editing, social media management, pembuatan dokumen, dan layanan akademik Joki Cihuyyy.
+          Partner digital terpercaya: Pembuatan website bisnis, desain grafis &amp; pakaian, olah data dokumen, dan bantuan tugas akademik.
         </p>
         <!-- Social Icons -->
         <div class="flex items-center gap-space-sm pt-space-xs">
-          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-all">
-            <span class="material-symbols-outlined text-lg">photo_camera</span>
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-all">
-            <span class="material-symbols-outlined text-lg">work</span>
-          </a>
-          <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20konsultasi%20layanan" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-all">
+          <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20konsultasi%20layanan" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-green-600 hover:text-white transition-all">
             <span class="material-symbols-outlined text-lg">chat</span>
+          </a>
+          <a href="mailto:lumitech.id43@gmail.com" aria-label="Email" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all">
+            <span class="material-symbols-outlined text-lg">mail</span>
           </a>
         </div>
       </div>
 
       <!-- Quick Links -->
       <div class="md:col-span-3 flex flex-col gap-space-sm">
-        <span class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Navigasi Cepat</span>
-        <a href="index.php#" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Beranda Utama</a>
-        <a href="produk.php" class="font-body-sm text-body-sm text-primary font-bold hover:underline transition-colors flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-sm">shopping_bag</span>
-          <span>Semua Produk &amp; Harga</span>
+        <span class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Navigasi</span>
+        <a href="index.html#" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Beranda Utama</a>
+        <a href="produk.html" class="font-body-sm text-body-sm text-primary font-bold hover:underline transition-colors flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-sm">grid_view</span>
+          <span>Dashboard Produk &amp; Harga</span>
         </a>
-        <a href="index.php#portofolio" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Portofolio &amp; Hasil Proyek</a>
-        <a href="index.php#cara-order" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Cara Pesan Mudah</a>
-        <a href="index.php#garansi" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Garansi &amp; Komitmen</a>
+        <a href="index.html#portofolio" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Portofolio Hasil Kerja</a>
+        <a href="index.html#cara-order" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Cara Pesan</a>
+        <a href="index.html#garansi" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Garansi &amp; Komitmen</a>
       </div>
 
       <!-- Contact Info -->
       <div class="md:col-span-4 flex flex-col gap-space-sm">
-        <span class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Hubungi Tim Kami</span>
-        <p class="font-body-sm text-body-sm text-on-surface-variant">
-          Punya pertanyaan atau ingin langsung order? Tim kami siap merespons cepat via WhatsApp:
-        </p>
+        <span class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Kontak Cepat</span>
         <div class="space-y-2 pt-1">
           <a href="https://wa.me/6287861756916?text=Halo%20Lumitech%2C%20saya%20mau%20order%20%2F%20tanya%20layanan" target="_blank" rel="noopener" class="flex items-center gap-2 text-on-surface hover:text-primary font-body-sm text-body-sm transition-colors group">
             <span class="material-symbols-outlined text-green-600 text-lg group-hover:scale-110 transition-transform">chat</span>
             <span><strong>WhatsApp:</strong> 0878-6175-6916</span>
           </a>
-          <a href="mailto:halo@lumitech.id" class="flex items-center gap-2 text-on-surface hover:text-primary font-body-sm text-body-sm transition-colors">
+          <a href="mailto:lumitech.id43@gmail.com" class="flex items-center gap-2 text-on-surface hover:text-primary font-body-sm text-body-sm transition-colors">
             <span class="material-symbols-outlined text-primary text-lg">mail</span>
-            <span>halo@lumitech.id</span>
+            <span>lumitech.id43@gmail.com</span>
           </a>
         </div>
         <div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm pt-1">
           <span class="material-symbols-outlined text-primary text-base">schedule</span>
-          <span>Buka Setiap Hari: 08:00 - 23:00 WIB</span>
+          <span>Fast Response: 08:00 - 23:00 WIB</span>
         </div>
       </div>
     </div>
@@ -73,8 +67,8 @@ $assetBase = (isset($assetBase)) ? $assetBase : ((file_exists('assets/img/logo-i
         &copy; <?= date('Y') ?> Lumitech.id. All rights reserved.
       </span>
       <div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
-        <a href="#faq" class="hover:text-primary transition-colors">Kebijakan Layanan</a>
-        <a href="#garansi" class="hover:text-primary transition-colors">Syarat &amp; Ketentuan Garansi</a>
+        <a href="index.html#garansi" class="hover:text-primary transition-colors">Ketentuan Garansi</a>
+        <a href="https://wa.me/6287861756916" target="_blank" rel="noopener" class="hover:text-primary transition-colors">Customer Service</a>
       </div>
     </div>
   </div>

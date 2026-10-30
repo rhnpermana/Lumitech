@@ -1,797 +1,1175 @@
   <body class="bg-surface font-body-md text-on-surface antialiased pt-20 lg:pt-28 pb-24 lg:pb-0">
 
     <main class="w-full">
-      <!-- Header Banner Katalog -->
-      <section class="w-full py-space-xl px-gutter bg-surface-container-low/60 border-b border-surface-container">
-        <div class="max-w-[1320px] mx-auto text-center">
-          <div class="inline-flex items-center gap-2 rounded-full bg-primary-fixed/60 border border-primary/20 px-4 py-1.5 text-xs md:text-sm font-bold text-primary mb-3">
-            <span class="material-symbols-outlined text-base">storefront</span>
-            <span>Katalog Resmi Semua Layanan Lumitech.id</span>
-          </div>
-          <h1 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight">
-            Pilih Layanan Sesuai Kebutuhan Anda
-          </h1>
-          <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto pt-3">
-            Harga jujur &amp; transparan, tanpa biaya tersembunyi. Pengerjaan cepat, rapi, dan bergaransi hasil memuaskan untuk semua umur.
-          </p>
+      <!-- Top Dashboard Header (Kompak & Bersih) -->
+      <section class="w-full py-8 md:py-12 px-gutter bg-surface-container-low/60 border-b border-surface-container">
+        <div class="max-w-[1320px] mx-auto">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <div class="inline-flex items-center gap-1.5 rounded-full bg-primary-fixed/60 border border-primary/20 px-3.5 py-1 text-xs font-bold text-primary mb-2.5">
+                <span class="material-symbols-outlined text-sm">grid_view</span>
+                <span>Dashboard Katalog Layanan</span>
+              </div>
+              <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-on-surface tracking-tight">
+                Katalog Produk &amp; Solusi Digital
+              </h1>
+              <p class="text-sm sm:text-base text-on-surface-variant max-w-xl pt-1">
+                Pilih layanan, bandingkan harga jujur transparan, dan order langsung via WhatsApp tanpa ribet.
+              </p>
+            </div>
 
-          <!-- Jalur Kontak Resmi Banner -->
-          <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
-            <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20bertanya%20dan%20konsultasi%20seputar%20layanan%20Lumitech.id." target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface-container-lowest border border-surface-container shadow-sm hover:border-green-500 transition-colors">
-              <span class="material-symbols-outlined text-green-600 text-lg">chat</span>
-              <span class="text-on-surface">Hubungi Kami via WhatsApp: <strong>0878-6175-6916</strong></span>
+            <!-- Quick WhatsApp Fast Line -->
+            <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20konsultasi%20seputar%20layanan%20Lumitech.id." target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:border-green-500 hover:shadow-md transition-all self-start md:self-center shrink-0">
+              <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+              <span class="text-xs sm:text-sm font-semibold text-on-surface">Konsultasi WA: <strong class="font-mono text-green-700">0878-6175-6916</strong></span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- Katalog Interaktif Filter -->
-      <section class="w-full py-space-xl px-gutter">
+      <!-- Dashboard Controls & Grid Section -->
+      <section class="w-full py-8 px-gutter">
         <div class="max-w-[1320px] mx-auto">
-          <!-- Filter Kategori Tombol Mudah (Ramah Semua Umur) -->
-          <div class="flex flex-wrap items-center justify-center gap-2 pb-8 border-b border-surface-container">
-            <button type="button" data-filter="all" class="filter-btn active-filter px-5 py-2.5 rounded-full text-sm md:text-base font-bold bg-primary text-white shadow-sm transition-all hover:opacity-90">
-              Semua Layanan (14)
-            </button>
-            <button type="button" data-filter="website" class="filter-btn px-5 py-2.5 rounded-full text-sm md:text-base font-bold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
-              🌐 Pembuatan Website (3)
-            </button>
-            <button type="button" data-filter="bisnis" class="filter-btn px-5 py-2.5 rounded-full text-sm md:text-base font-bold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
-              💼 Bisnis, Desain &amp; Pakaian (8)
-            </button>
-            <button type="button" data-filter="joki" class="filter-btn px-5 py-2.5 rounded-full text-sm md:text-base font-bold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
-              🎓 Dokumen, Office &amp; Joki (5)
-            </button>
-          </div>
-
-          <!-- Grid Produk / Layanan (Dibuat Kompak & Rapi) -->
-          <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 pt-6">
-
-            <!-- PRODUK 1: WEBSITE STARTER UMKM -->
-            <div class="product-card" data-category="website">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Website UMKM</span>
-                    <span class="material-symbols-outlined text-primary text-xl">devices</span>
-                  </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Paket Starter Website UMKM</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Website 1 halaman profesional untuk usaha kuliner, jasa, toko, dan profil bisnis agar mudah ditemukan pelanggan di Google.
-                  </p>
-                  <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
-                    <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Mulai Harga:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 150.000</span>
-                    </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Belum Termasuk Domain .com + hosting 1 tahun</span>
-                  </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">1 Halaman Landing Page responsif</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Tombol pesan langsung WhatsApp</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Integrasi Google Maps &amp; Medsos</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Paket%20Starter%20Website%20UMKM%0A%F0%9F%92%B0%20Harga%3A%20Rp%20150.000%20%28Belum%20Termasuk%20Domain%20.com%20%2B%20hosting%201%20tahun%29%0A%F0%9F%93%8B%20Kategori%3A%20Website%20UMKM%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%201%20Halaman%20Landing%20Page%20Responsif%0A%20%20%E2%80%A2%20Tombol%20Pesan%20Langsung%20WhatsApp%0A%20%20%E2%80%A2%20Integrasi%20Google%20Maps%20%26%20Medsos%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Nama%20Usaha%20%2F%20Brand%3A%20%0A%E2%80%A2%20Bidang%20Usaha%3A%20%0A%E2%80%A2%20Status%20Domain%2FHosting%20%28Sudah%20Ada%20%2F%20Belum%29%3A%20%0A%E2%80%A2%20Catatan%20%2F%20Request%20Khusus%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
-                  </a>
-                </div>
-              </div>
+          
+          <!-- Filter Bar & Search Input (Dashboard Style) -->
+          <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 pb-6 border-b border-surface-container">
+            
+            <!-- Category Filter Tabs -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none" id="categoryFilterContainer">
+              <button type="button" data-filter="all" class="dashboard-filter-btn active-filter px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-primary text-white shadow-sm transition-all whitespace-nowrap">
+                Semua (14)
+              </button>
+              <button type="button" data-filter="website" class="dashboard-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all whitespace-nowrap">
+                🌐 Website &amp; App (3)
+              </button>
+              <button type="button" data-filter="kreatif" class="dashboard-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all whitespace-nowrap">
+                🎨 Desain &amp; Bisnis (5)
+              </button>
+              <button type="button" data-filter="office" class="dashboard-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all whitespace-nowrap">
+                📊 Office &amp; Data (3)
+              </button>
+              <button type="button" data-filter="joki" class="dashboard-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all whitespace-nowrap">
+                ⚡ Joki Cihuyyy (3)
+              </button>
             </div>
 
-            <!-- PRODUK 2: WEBSITE BISNIS PRO (FAVORIT) -->
-            <div class="product-card" data-category="website">
-              <div class="relative h-full rounded-2xl bg-surface-container-lowest border-2 border-primary p-4 sm:p-5 flex flex-col justify-between shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span class="inline-flex items-center gap-1 rounded-full bg-primary px-3 py-0.5 text-[10px] font-bold text-white shadow-sm uppercase tracking-wider">
-                    <span class="material-symbols-outlined text-xs">stars</span>
-                    Favorit Bisnis
+            <!-- Instant Search Bar -->
+            <div class="relative w-full md:w-72 shrink-0">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+              <input type="text" id="dashboardSearchInput" placeholder="Cari layanan (web, excel, joki)..." class="w-full pl-9 pr-8 py-2 rounded-full bg-surface-container-lowest border border-surface-container focus:outline-none focus:border-primary text-xs sm:text-sm transition-all shadow-sm" />
+              <button type="button" id="clearSearchBtn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface text-xs">
+                <span class="material-symbols-outlined text-base">close</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Counter Status -->
+          <div class="flex items-center justify-between py-4 text-xs text-on-surface-variant">
+            <span id="productCounterText">Menampilkan 14 dari 14 Layanan</span>
+            <span class="hidden sm:inline font-mono">Respon WA: &lt; 15 Menit</span>
+          </div>
+
+          <!-- Product Dashboard Grid -->
+          <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
+                        <div class="dashboard-card" data-category="website" data-title="paket starter website umkm" data-desc="website 1 halaman responsif untuk usaha kuliner, jasa, atau profil bisnis agar mudah ditemukan pelanggan.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 shadow-sm p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                
+                <div>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">devices</span>
+                      <span>Landing Page</span>
+                    </span>
+                  </div>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Paket Starter Website UMKM                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Website 1 halaman responsif untuk usaha kuliner, jasa, atau profil bisnis agar mudah ditemukan pelanggan.                  </p>
+
+                  <!-- Compact Price Box -->
+                  <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
+                    <div class="flex items-baseline justify-between gap-1">
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 150.000</span>
+                    </div>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Domain & hosting disesuaikan</span>
+                  </div>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>1 Halaman Responsif</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Tombol WhatsApp</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Google Maps & Medsos</span>
+                    </span>
+                                      </div>
+                </div>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Paket%20Starter%20Website%20UMKM%0A%F0%9F%92%B0%20Harga%3A%20Rp%20150.000%20%28Belum%20Termasuk%20Domain%20.com%20%2B%20hosting%201%20tahun%29%0A%F0%9F%93%8B%20Kategori%3A%20Website%20UMKM%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%201%20Halaman%20Landing%20Page%20Responsif%0A%20%20%E2%80%A2%20Tombol%20Pesan%20Langsung%20WhatsApp%0A%20%20%E2%80%A2%20Integrasi%20Google%20Maps%20%26%20Medsos%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Nama%20Usaha%20%2F%20Brand%3A%20%0A%E2%80%A2%20Bidang%20Usaha%3A%20%0A%E2%80%A2%20Status%20Domain%2FHosting%20%28Sudah%20Ada%20%2F%20Belum%29%3A%20%0A%E2%80%A2%20Catatan%20%2F%20Request%20Khusus%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
+                  </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="starter_umkm" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+                        <div class="dashboard-card" data-category="website" data-title="website professional business" data-desc="website profesional 5-7 halaman untuk cv, pt, klinik, sekolah, dan brand dengan reputasi tinggi.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-primary ring-1 ring-primary/30 shadow-md p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                                <div class="absolute -top-2.5 right-4">
+                  <span class="inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm uppercase tracking-wider">
+                    <span class="material-symbols-outlined text-[11px]">star</span>
+                    Favorit
                   </span>
                 </div>
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2 pt-1">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Multi-Halaman</span>
-                    <span class="material-symbols-outlined text-primary text-xl">domain</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">domain</span>
+                      <span>Multi-Halaman</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Website Professional Business</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Website lengkap 5-7 halaman untuk CV, PT, klinik, konsultan, sekolah, dan brand yang ingin kredibilitas kuat.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Website Professional Business                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Website profesional 5-7 halaman untuk CV, PT, klinik, sekolah, dan brand dengan reputasi tinggi.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Mulai Harga :</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 1.000.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 1.000.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Gratis email bisnis (nama@perusahaan.com)</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Gratis email bisnis resmi</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">5-7 Halaman (Home, Tentang, Layanan)</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Panel admin mudah update artikel/produk</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Garansi maintenance 6 bulan + backup</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>5-7 Halaman Menu</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Admin Panel Mudah</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Garansi 6 Bulan</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Website%20Professional%20Business%0A%F0%9F%92%B0%20Harga%3A%20Rp%201.000.000%20%28Gratis%20email%20bisnis%20%28nama%40perusahaan.com%29%29%0A%F0%9F%93%8B%20Kategori%3A%20Multi-Halaman%20%26%20Bisnis%20Pro%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%205-7%20Halaman%20%28Home%2C%20Tentang%2C%20Layanan%2C%20Kontak%2C%20dll%29%0A%20%20%E2%80%A2%20Panel%20Admin%20Mudah%20Update%20Artikel%20%2F%20Produk%0A%20%20%E2%80%A2%20Garansi%20Maintenance%206%20Bulan%20%2B%20Backup%20Rutin%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Nama%20Perusahaan%20%2F%20Instansi%3A%20%0A%E2%80%A2%20Bidang%20Usaha%3A%20%0A%E2%80%A2%20Kebutuhan%20Fitur%20%2F%20Halaman%3A%20%0A%E2%80%A2%20Catatan%20Tambahan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Website%20Professional%20Business%0A%F0%9F%92%B0%20Harga%3A%20Rp%201.000.000%20%28Gratis%20email%20bisnis%20%28nama%40perusahaan.com%29%29%0A%F0%9F%93%8B%20Kategori%3A%20Multi-Halaman%20%26%20Bisnis%20Pro%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%205-7%20Halaman%20%28Home%2C%20Tentang%2C%20Layanan%2C%20Kontak%2C%20dll%29%0A%20%20%E2%80%A2%20Panel%20Admin%20Mudah%20Update%20Artikel%20%2F%20Produk%0A%20%20%E2%80%A2%20Garansi%20Maintenance%206%20Bulan%20%2B%20Backup%20Rutin%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Nama%20Perusahaan%20%2F%20Instansi%3A%20%0A%E2%80%A2%20Bidang%20Usaha%3A%20%0A%E2%80%A2%20Kebutuhan%20Fitur%20%2F%20Halaman%3A%20%0A%E2%80%A2%20Catatan%20Tambahan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="pro_business" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 3: TOKO ONLINE / CUSTOM APP -->
-            <div class="product-card" data-category="website">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="website" data-title="toko online & web app custom" data-desc="sistem toko online dengan katalog produk, hitung ongkir otomatis, checkout qris, atau dashboard sistem.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 shadow-sm p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Custom &amp; Toko</span>
-                    <span class="material-symbols-outlined text-primary text-xl">shopping_cart</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">shopping_cart</span>
+                      <span>E-Commerce / App</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Toko Online / Web Aplikasi</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Sistem toko online dengan katalog, keranjang belanja, cek ongkir otomatis, hingga sistem informasi bisnis.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Toko Online & Web App Custom                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Sistem toko online dengan katalog produk, hitung ongkir otomatis, checkout QRIS, atau dashboard sistem.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Mulai Harga:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Sesuai Kebutuhan</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Sesuai Kebutuhan</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Estimasi transparan setelah diskusi santai</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Estimasi transparan via diskusi</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Keranjang belanja &amp; pembayaran otomatis QRIS</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Hitung ongkos kirim kurir otomatis</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Laporan penjualan &amp; database terstruktur</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Keranjang & QRIS</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Cek Ongkir Otomatis</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Database Terstruktur</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Toko%20Online%20%2F%20Web%20Aplikasi%20Custom%0A%F0%9F%92%B0%20Harga%3A%20Sesuai%20Kebutuhan%20%28Estimasi%20transparan%20setelah%20diskusi%20santai%29%0A%F0%9F%93%8B%20Kategori%3A%20Custom%20%26%20Toko%20Online%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Keranjang%20Belanja%20%26%20Pembayaran%20Otomatis%20QRIS%0A%20%20%E2%80%A2%20Hitung%20Ongkos%20Kirim%20Kurir%20Otomatis%0A%20%20%E2%80%A2%20Laporan%20Penjualan%20%26%20Database%20Terstruktur%20Sesuai%20Request%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Nama%20Usaha%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Konsep%20Sistem%20%2F%20Aplikasi%20yang%20Diinginkan%3A%20%0A%E2%80%A2%20Fitur%20Utama%20yang%20Dibutuhkan%3A%20%0A%E2%80%A2%20Target%20Deadline%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Konsultasi via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Toko%20Online%20%2F%20Web%20Aplikasi%20Custom%0A%F0%9F%92%B0%20Harga%3A%20Sesuai%20Kebutuhan%20%28Estimasi%20transparan%20setelah%20diskusi%20santai%29%0A%F0%9F%93%8B%20Kategori%3A%20Custom%20%26%20Toko%20Online%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Keranjang%20Belanja%20%26%20Pembayaran%20Otomatis%20QRIS%0A%20%20%E2%80%A2%20Hitung%20Ongkos%20Kirim%20Kurir%20Otomatis%0A%20%20%E2%80%A2%20Laporan%20Penjualan%20%26%20Database%20Terstruktur%20Sesuai%20Request%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Nama%20Usaha%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Konsep%20Sistem%20%2F%20Aplikasi%20yang%20Diinginkan%3A%20%0A%E2%80%A2%20Fitur%20Utama%20yang%20Dibutuhkan%3A%20%0A%E2%80%A2%20Target%20Deadline%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="custom_app" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 4: KONSULTASI & INSIGHT BISNIS UMKM -->
-            <div class="product-card" data-category="bisnis">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="kreatif" data-title="desain grafis & logo" data-desc="pembuatan logo bisnis, kemasan produk, poster promosi, dan feed instagram resolusi tinggi.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 shadow-sm p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">UMKM</span>
-                    <span class="material-symbols-outlined text-primary text-xl">insights</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">palette</span>
+                      <span>Vektor & Brand</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Konsultasi Bisnis UMKM</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Diskusi privat dan terjamin keamanannya dalam membantu strategi &amp; pengembangan usaha Anda.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Desain Grafis & Logo                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Pembuatan logo bisnis, kemasan produk, poster promosi, dan feed Instagram resolusi tinggi.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Harga Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 30.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 30.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Via Google Meet atau WhatsApp Call/Chat</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Format PNG, JPG & PDF Siap Cetak</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Bedah kelemahan promosi &amp; sosmed usaha</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Rencana aksi praktis langsung terarah</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Rangkuman insight materi format PDF</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Resolusi Tinggi HD</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Bebas Revisi</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>File Mentahan</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Konsultasi%20Bisnis%20UMKM%0A%F0%9F%92%B0%20Harga%3A%20Rp%2030.000%20%28Via%20Google%20Meet%20atau%20WhatsApp%20Call%2FChat%29%0A%F0%9F%93%8B%20Kategori%3A%20Konsultasi%20UMKM%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Bedah%20Kelemahan%20Promosi%20%26%20Sosmed%20Usaha%0A%20%20%E2%80%A2%20Rencana%20Aksi%20Praktis%20Langsung%20Terarah%0A%20%20%E2%80%A2%20Rangkuman%20Insight%20Materi%20Format%20PDF%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%3A%20%0A%E2%80%A2%20Nama%20Usaha%20%2F%20Produk%3A%20%0A%E2%80%A2%20Bidang%20Usaha%3A%20%0A%E2%80%A2%20Topik%20%2F%20Kendala%20yang%20Ingin%20Dibahas%3A%20%0A%E2%80%A2%20Pilihan%20Waktu%20Luang%20Konsultasi%20%28Hari%20%26%20Jam%29%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Desain%20Grafis%20%26%20Logo%0A%F0%9F%92%B0%20Harga%3A%20Rp%2030.000%20%28Desain%20Perkonten%20%E2%80%A2%20Bebas%20Revisi%29%0A%F0%9F%93%8B%20Kategori%3A%20Desain%20Grafis%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Desain%20Resolusi%20Tinggi%20HD%20Siap%20Cetak%20%2F%20Sosmed%0A%20%20%E2%80%A2%20File%20Lengkap%20%28PNG%20Transparan%2C%20JPG%2C%20PDF%29%0A%20%20%E2%80%A2%20Gratis%20Revisi%20Sampai%20Puas%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Jenis%20Desain%20%28Logo%20%2F%20Kemasan%20%2F%20Poster%20%2F%20Feed%20Sosmed%29%3A%20%0A%E2%80%A2%20Nama%20Brand%20%2F%20Teks%20dalam%20Desain%3A%20%0A%E2%80%A2%20Konsep%20%2F%20Nuansa%20Warna%20yang%20Diinginkan%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="desain_grafis" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 5: DESAIN GRAFIS & LOGO -->
-            <div class="product-card" data-category="bisnis">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="kreatif" data-title="jasa desain pakaian & apparel" data-desc="mockup realistis kaos, hoodie, kemeja & jaket tampak depan-belakang siap cetak sablon / bordir.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-primary ring-1 ring-primary/30 shadow-md p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                                <div class="absolute -top-2.5 right-4">
+                  <span class="inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm uppercase tracking-wider">
+                    <span class="material-symbols-outlined text-[11px]">star</span>
+                    Favorit
+                  </span>
+                </div>
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Desain</span>
-                    <span class="material-symbols-outlined text-primary text-xl">palette</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">apparel</span>
+                      <span>Streetwear & Mockup</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Desain Grafis &amp; Logo</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Jasa pembuatan desain kemasan produk, logo, poster promosi, bahan postingan instagram.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Jasa Desain Pakaian & Apparel                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Mockup realistis kaos, hoodie, kemeja & jaket tampak depan-belakang siap cetak sablon / bordir.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Harga Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 30.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 45.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Desain Perkonten • Bebas Revisi</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Mockup depan & belakang</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Desain resolusi tinggi HD siap cetak/sosmed</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">File lengkap (PNG transparan, JPG, PDF)</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Gratis revisi sampai puas</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Mockup Realistis</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Vektor Siap Sablon</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Free Konsultasi</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Desain%20Grafis%20%26%20Logo%0A%F0%9F%92%B0%20Harga%3A%20Rp%2030.000%20%28Desain%20Perkonten%20%E2%80%A2%20Bebas%20Revisi%29%0A%F0%9F%93%8B%20Kategori%3A%20Desain%20Grafis%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Desain%20Resolusi%20Tinggi%20HD%20Siap%20Cetak%20%2F%20Sosmed%0A%20%20%E2%80%A2%20File%20Lengkap%20%28PNG%20Transparan%2C%20JPG%2C%20PDF%29%0A%20%20%E2%80%A2%20Gratis%20Revisi%20Sampai%20Puas%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Jenis%20Desain%20%28Logo%20%2F%20Kemasan%20%2F%20Poster%20%2F%20Feed%20Sosmed%29%3A%20%0A%E2%80%A2%20Nama%20Brand%20%2F%20Teks%20dalam%20Desain%3A%20%0A%E2%80%A2%20Konsep%20%2F%20Nuansa%20Warna%20yang%20Diinginkan%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Jasa%20Desain%20Pakaian%20%26%20Apparel%0A%F0%9F%92%B0%20Harga%3A%20Rp%2045.000%20%28Mockup%20depan%20%26%20belakang%20%E2%80%A2%20Siap%20kirim%20ke%20vendor%20konveksi%29%0A%F0%9F%93%8B%20Kategori%3A%20Desain%20Pakaian%20%26%20Apparel%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Desain%20Mockup%20Depan%20%26%20Belakang%20Resolusi%20Tinggi%20HD%0A%20%20%E2%80%A2%20File%20Mentahan%20Siap%20Sablon%20%2F%20Bordir%20%28PNG%20Transparan%20%26%20PDF%29%0A%20%20%E2%80%A2%20Free%20Konsultasi%20Konsep%2C%20Pilihan%20Font%20%26%20Palet%20Warna%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Jenis%20Pakaian%20%28Kaos%20%2F%20Hoodie%20%2F%20Kemeja%20%2F%20Jersey%20%2F%20Celana%29%3A%20%0A%E2%80%A2%20Tema%20%2F%20Konsep%20Desain%20yang%20Diinginkan%3A%20%0A%E2%80%A2%20Teks%20%2F%20Logo%20yang%20Ingin%20Dicantumkan%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="desain_pakaian" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 6: VIDEO EDITING REELS / TIKTOK -->
-            <div class="product-card" data-category="bisnis">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="kreatif" data-title="video editing reels & tiktok" data-desc="edit video produk, promosi, atau konten edukasi dengan teks berjalan kekinian dan efek suara dinamis.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 shadow-sm p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Video</span>
-                    <span class="material-symbols-outlined text-primary text-xl">movie</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">movie</span>
+                      <span>Reels & TikTok</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Video Editing Reels &amp; TikTok</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Edit video produk, promosi, &amp; edukasi dengan teks berjalan kekinian, sound effect, dan musik menarik.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Video Editing Reels & TikTok                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Edit video produk, promosi, atau konten edukasi dengan teks berjalan kekinian dan efek suara dinamis.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 40.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 40.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Per video durasi 30 - 60 detik</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Per video durasi 30-60 detik</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Subtitle dinamis kekinian &amp; sound effect</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Format 9:16 cocok IG Reels &amp; TikTok</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Pengerjaan kilat 1-2 hari kerja</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Subtitle Dinamis</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Format 9:16 HD</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Pengerjaan 1-2 Hari</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Video%20Editing%20Reels%20%26%20TikTok%0A%F0%9F%92%B0%20Harga%3A%20Rp%2040.000%20%28Per%20video%20durasi%2030%20-%2060%20detik%29%0A%F0%9F%93%8B%20Kategori%3A%20Video%20Creative%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Subtitle%20Dinamis%20Kekinian%20%26%20Sound%20Effect%0A%20%20%E2%80%A2%20Format%209%3A16%20Pas%20untuk%20IG%20Reels%20%26%20TikTok%0A%20%20%E2%80%A2%20Pengerjaan%20Kilat%201-2%20Hari%20Kerja%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Jumlah%20Video%20yang%20Ingin%20Diedit%3A%20%0A%E2%80%A2%20Tema%20%2F%20Gaya%20Video%3A%20%0A%E2%80%A2%20Status%20Bahan%20Mentahan%20Video%20%28Sudah%20Ada%20%2F%20Belum%29%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Video%20Editing%20Reels%20%26%20TikTok%0A%F0%9F%92%B0%20Harga%3A%20Rp%2040.000%20%28Per%20video%20durasi%2030%20-%2060%20detik%29%0A%F0%9F%93%8B%20Kategori%3A%20Video%20Creative%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Subtitle%20Dinamis%20Kekinian%20%26%20Sound%20Effect%0A%20%20%E2%80%A2%20Format%209%3A16%20Pas%20untuk%20IG%20Reels%20%26%20TikTok%0A%20%20%E2%80%A2%20Pengerjaan%20Kilat%201-2%20Hari%20Kerja%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Jumlah%20Video%20yang%20Ingin%20Diedit%3A%20%0A%E2%80%A2%20Tema%20%2F%20Gaya%20Video%3A%20%0A%E2%80%A2%20Status%20Bahan%20Mentahan%20Video%20%28Sudah%20Ada%20%2F%20Belum%29%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="video_editing" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 7: SOCIAL MEDIA MANAGEMENT -->
-            <div class="product-card" data-category="bisnis">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="kreatif" data-title="kelola akun & konten sosmed" data-desc="layanan perancangan jadwal posting, pembuatan desain feed estetik, riset hashtag, dan teks caption menarik.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 shadow-sm p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Sosmed</span>
-                    <span class="material-symbols-outlined text-primary text-xl">share</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">share</span>
+                      <span>Kelola Sosmed</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Analisis Insight Dan Pengelolaan Media Sosial</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Serahkan urusan akun Instagram &amp; TikTok bisnis Anda. Kami buatkan jadwal, feed, caption, dan hashtag.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Kelola Akun & Konten Sosmed                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Layanan perancangan jadwal posting, pembuatan desain feed estetik, riset hashtag, dan teks caption menarik.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Mulai Harga:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 30.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 30.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Perpostingan</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Mulai tarif per konten postingan</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">12 Desain feed estetik + teks caption</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Riset hashtag relevan untuk audiens</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Jadwal upload konsisten &amp; rapi</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Riset berbentuk dokument</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Desain Feed Estetik</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Riset Hashtag</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Teks Caption Menarik</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Analisis%20Insight%20Dan%20Pengelolaan%20Media%20Sosial%0A%F0%9F%92%B0%20Harga%3A%20Rp%2030.000%20%28Perpostingan%29%0A%F0%9F%93%8B%20Kategori%3A%20Sosial%20Media%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Desain%20Feed%20Estetik%20%2B%20Teks%20Caption%20Menarik%0A%20%20%E2%80%A2%20Riset%20Hashtag%20Relevan%20Sesuai%20Target%20Audiens%0A%20%20%E2%80%A2%20Jadwal%20Upload%20Rapi%20%26%20Konsisten%0A%20%20%E2%80%A2%20Riset%20Berbentuk%20Dokumen%20Insight%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Username%20Akun%20Instagram%20%2F%20TikTok%3A%20%0A%E2%80%A2%20Bidang%20Usaha%20%2F%20Niche%3A%20%0A%E2%80%A2%20Rencana%20Pemesanan%20%28Satuan%20Perpostingan%20%2F%20Paket%29%3A%20%0A%E2%80%A2%20Catatan%20%2F%20Kebutuhan%20Khusus%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Analisis%20Insight%20Dan%20Pengelolaan%20Media%20Sosial%0A%F0%9F%92%B0%20Harga%3A%20Rp%2030.000%20%28Perpostingan%29%0A%F0%9F%93%8B%20Kategori%3A%20Sosial%20Media%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Desain%20Feed%20Estetik%20%2B%20Teks%20Caption%20Menarik%0A%20%20%E2%80%A2%20Riset%20Hashtag%20Relevan%20Sesuai%20Target%20Audiens%0A%20%20%E2%80%A2%20Jadwal%20Upload%20Rapi%20%26%20Konsisten%0A%20%20%E2%80%A2%20Riset%20Berbentuk%20Dokumen%20Insight%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Username%20Akun%20Instagram%20%2F%20TikTok%3A%20%0A%E2%80%A2%20Bidang%20Usaha%20%2F%20Niche%3A%20%0A%E2%80%A2%20Rencana%20Pemesanan%20%28Satuan%20Perpostingan%20%2F%20Paket%29%3A%20%0A%E2%80%A2%20Catatan%20%2F%20Kebutuhan%20Khusus%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="sosmed_management" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 8: FORMAT DOKUMEN MS WORD -->
-            <div class="product-card" data-category="bisnis">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="kreatif" data-title="konsultasi bisnis & strategi umkm" data-desc="sesi diskusi privat menganalisis kelemahan promosi usaha dan menyusun strategi pertumbuhan digital.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 shadow-sm p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Dokumen</span>
-                    <span class="material-symbols-outlined text-primary text-xl">description</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">insights</span>
+                      <span>Strategi UMKM</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Format Dokumen Word</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Pengetikan cepat, perapian margin, daftar isi/tabel otomatis, format SOP, surat resmi, dan company profile.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Konsultasi Bisnis & Strategi UMKM                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Sesi diskusi privat menganalisis kelemahan promosi usaha dan menyusun strategi pertumbuhan digital.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 25.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 30.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Format rapi standar resmi siap cetak</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Google Meet / Call WA + PDF</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Daftar isi, gambar &amp; halaman otomatis</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Format margin &amp; spasi rapi standar</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Pengerjaan kilat dan hasil rapi</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Audit Sosmed & Usaha</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Rencana Aksi Jelas</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Ringkasan Materi PDF</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Format%20Dokumen%20Word%20%26%20Pengetikan%0A%F0%9F%92%B0%20Harga%3A%20Rp%2025.000%20%28Format%20rapi%20standar%20resmi%20siap%20cetak%29%0A%F0%9F%93%8B%20Kategori%3A%20Dokumen%20%26%20Administrasi%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Daftar%20Isi%2C%20Daftar%20Gambar%20%26%20Halaman%20Otomatis%0A%20%20%E2%80%A2%20Format%20Margin%20%26%20Spasi%20Rapi%20Standar%20Resmi%0A%20%20%E2%80%A2%20Pengerjaan%20Kilat%20dan%20Hasil%20Rapi%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Jenis%20Dokumen%20%28Makalah%20%2F%20Skripsi%20%2F%20SOP%20%2F%20Surat%20Resmi%20%2F%20Laporan%29%3A%20%0A%E2%80%A2%20Perkiraan%20Jumlah%20Halaman%3A%20%0A%E2%80%A2%20Kebutuhan%20%28Perapian%20Format%20%2F%20Pengetikan%20Ulang%29%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Konsultasi%20Bisnis%20UMKM%0A%F0%9F%92%B0%20Harga%3A%20Rp%2030.000%20%28Via%20Google%20Meet%20atau%20WhatsApp%20Call%2FChat%29%0A%F0%9F%93%8B%20Kategori%3A%20Konsultasi%20UMKM%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Bedah%20Kelemahan%20Promosi%20%26%20Sosmed%20Usaha%0A%20%20%E2%80%A2%20Rencana%20Aksi%20Praktis%20Langsung%20Terarah%0A%20%20%E2%80%A2%20Rangkuman%20Insight%20Materi%20Format%20PDF%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%3A%20%0A%E2%80%A2%20Nama%20Usaha%20%2F%20Produk%3A%20%0A%E2%80%A2%20Bidang%20Usaha%3A%20%0A%E2%80%A2%20Topik%20%2F%20Kendala%20yang%20Ingin%20Dibahas%3A%20%0A%E2%80%A2%20Pilihan%20Waktu%20Luang%20Konsultasi%20%28Hari%20%26%20Jam%29%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="konsultasi_umkm" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 9: JASA DESAIN PAKAIAN & APPAREL -->
-            <div class="product-card" data-category="bisnis">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="office" data-title="jasa olah data microsoft excel" data-desc="pembuatan rumus otomatis (vlookup, if, index match), dashboard grafik visual, dan pembukuan kas rapi.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-primary ring-1 ring-primary/30 shadow-md p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                                <div class="absolute -top-2.5 right-4">
+                  <span class="inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm uppercase tracking-wider">
+                    <span class="material-symbols-outlined text-[11px]">star</span>
+                    Favorit
+                  </span>
+                </div>
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Desain Pakaian</span>
-                    <span class="material-symbols-outlined text-primary text-xl">apparel</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">table_chart</span>
+                      <span>Rumus & Kas</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Jasa Desain Pakaian</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Desain mockup kaos, hoodie, kemeja, celana, seragam &amp; apparel streetwear siap cetak sablon / bordir konveksi.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Jasa Olah Data Microsoft Excel                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Pembuatan rumus otomatis (VLOOKUP, IF, INDEX MATCH), dashboard grafik visual, dan pembukuan kas rapi.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 45.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 25.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Mockup depan &amp; belakang • Siap cetak vendor</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Bebas error rumus & pengerjaan kilat</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Mockup tampak depan &amp; belakang realistis HD</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">File mentahan siap sablon &amp; bordir (PNG &amp; PDF)</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Free konsultasi konsep &amp; revisi sampai puas</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Rumus Kompleks Otomatis</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Dashboard Grafik Visual</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Buku Kas / Tugas</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Jasa%20Desain%20Pakaian%20%26%20Apparel%0A%F0%9F%92%B0%20Harga%3A%20Rp%2045.000%20%28Mockup%20depan%20%26%20belakang%20%E2%80%A2%20Siap%20kirim%20ke%20vendor%20konveksi%29%0A%F0%9F%93%8B%20Kategori%3A%20Desain%20Pakaian%20%26%20Apparel%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Desain%20Mockup%20Depan%20%26%20Belakang%20Resolusi%20Tinggi%20HD%0A%20%20%E2%80%A2%20File%20Mentahan%20Siap%20Sablon%20%2F%20Bordir%20%28PNG%20Transparan%20%26%20PDF%29%0A%20%20%E2%80%A2%20Free%20Konsultasi%20Konsep%2C%20Pilihan%20Font%20%26%20Palet%20Warna%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Jenis%20Pakaian%20%28Kaos%20%2F%20Hoodie%20%2F%20Kemeja%20%2F%20Jersey%20%2F%20Celana%29%3A%20%0A%E2%80%A2%20Tema%20%2F%20Konsep%20Desain%20yang%20Diinginkan%3A%20%0A%E2%80%A2%20Teks%20%2F%20Logo%20yang%20Ingin%20Dicantumkan%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Jasa%20Olah%20Data%20Microsoft%20Excel%0A%F0%9F%92%B0%20Harga%3A%20Rp%2025.000%20%28File%20otomatis%20%26%20bebas%20error%20%E2%80%A2%20Pengerjaan%20cepat%29%0A%F0%9F%93%8B%20Kategori%3A%20Microsoft%20Excel%20%26%20Data%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Rumus%20Otomatis%20%28VLOOKUP%2C%20INDEX%20MATCH%2C%20IF%2C%20dll%29%0A%20%20%E2%80%A2%20Dashboard%20Grafik%20Visual%20%26%20Pivot%20Table%0A%20%20%E2%80%A2%20Rekap%20Kas%20Keuangan%2C%20Stok%20%26%20Tugas%20Praktikum%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Kebutuhan%20%28Rumus%20%2F%20Dashboard%20%2F%20Pembukuan%20Kas%20%2F%20Tugas%20Excel%29%3A%20%0A%E2%80%A2%20Ringkasan%20Masalah%20%2F%20Deskripsi%20Data%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="excel_olah_data" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 10: JASA OLAH DATA MICROSOFT EXCEL -->
-            <div class="product-card" data-category="bisnis joki">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="office" data-title="format dokumen word & sop" data-desc="perapian margin, pengetikan ulang, daftar isi otomatis, penomoran tabel & halaman berstandar resmi.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 shadow-sm p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Microsoft Excel</span>
-                    <span class="material-symbols-outlined text-primary text-xl">table_chart</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">description</span>
+                      <span>Word & Pengetikan</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Jasa Olah Data Microsoft Excel</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Pembuatan rumus kompleks (VLOOKUP, INDEX MATCH, IF), dashboard interaktif, pembukuan kas UMKM, &amp; input data.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Format Dokumen Word & SOP                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Perapian margin, pengetikan ulang, daftar isi otomatis, penomoran tabel & halaman berstandar resmi.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 25.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 25.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">File otomatis &amp; bebas error • Pengerjaan cepat</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Format rapi standar siap cetak</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Rumus otomatis, filter &amp; validasi data</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Dashboard grafik visual &amp; pivot table</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Rekap kas keuangan, stok &amp; tugas Excel</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Daftar Isi Otomatis</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Margin Standar Resmi</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Pengerjaan Cepat</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Jasa%20Olah%20Data%20Microsoft%20Excel%0A%F0%9F%92%B0%20Harga%3A%20Rp%2025.000%20%28File%20otomatis%20%26%20bebas%20error%20%E2%80%A2%20Pengerjaan%20cepat%29%0A%F0%9F%93%8B%20Kategori%3A%20Microsoft%20Excel%20%26%20Data%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Rumus%20Otomatis%20%28VLOOKUP%2C%20INDEX%20MATCH%2C%20IF%2C%20dll%29%0A%20%20%E2%80%A2%20Dashboard%20Grafik%20Visual%20%26%20Pivot%20Table%0A%20%20%E2%80%A2%20Rekap%20Kas%20Keuangan%2C%20Stok%20%26%20Tugas%20Praktikum%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Kebutuhan%20%28Rumus%20%2F%20Dashboard%20%2F%20Pembukuan%20Kas%20%2F%20Tugas%20Excel%29%3A%20%0A%E2%80%A2%20Ringkasan%20Masalah%20%2F%20Deskripsi%20Data%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Format%20Dokumen%20Word%20%26%20Pengetikan%0A%F0%9F%92%B0%20Harga%3A%20Rp%2025.000%20%28Format%20rapi%20standar%20resmi%20siap%20cetak%29%0A%F0%9F%93%8B%20Kategori%3A%20Dokumen%20%26%20Administrasi%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Daftar%20Isi%2C%20Daftar%20Gambar%20%26%20Halaman%20Otomatis%0A%20%20%E2%80%A2%20Format%20Margin%20%26%20Spasi%20Rapi%20Standar%20Resmi%0A%20%20%E2%80%A2%20Pengerjaan%20Kilat%20dan%20Hasil%20Rapi%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Jenis%20Dokumen%20%28Makalah%20%2F%20Skripsi%20%2F%20SOP%20%2F%20Surat%20Resmi%20%2F%20Laporan%29%3A%20%0A%E2%80%A2%20Perkiraan%20Jumlah%20Halaman%3A%20%0A%E2%80%A2%20Kebutuhan%20%28Perapian%20Format%20%2F%20Pengetikan%20Ulang%29%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="format_dokumen" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 11: JASA SLIDE MICROSOFT POWERPOINT -->
-            <div class="product-card" data-category="bisnis joki">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="office" data-title="slide presentasi ppt & pitch deck" data-desc="desain slide presentasi visual modern dengan animasi elegan untuk sidang tugas, seminar, atau proposal bisnis.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 shadow-sm p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">PowerPoint (PPT)</span>
-                    <span class="material-symbols-outlined text-primary text-xl">slideshow</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">slideshow</span>
+                      <span>PowerPoint Presentasi</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Jasa Slide Microsoft PowerPoint</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Desain slide presentasi profesional, animasi menarik, pitch deck bisnis/investor, seminar, dan presentasi tugas.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Slide Presentasi PPT & Pitch Deck                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Desain slide presentasi visual modern dengan animasi elegan untuk sidang tugas, seminar, atau proposal bisnis.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 25.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 25.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Desain visual memukau • Termasuk animasi</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Dapat file .PPTX editable & PDF</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Desain modern, rapi &amp; tidak membosankan</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Transisi &amp; animasi halus siap presentasi</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Dapat file .PPTX bisa diedit + file PDF</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Visual Modern & Bersih</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Animasi Halus</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Editable File PPTX</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Jasa%20Slide%20Microsoft%20PowerPoint%20%28PPT%29%0A%F0%9F%92%B0%20Harga%3A%20Rp%2025.000%20%28Desain%20visual%20memukau%20%E2%80%A2%20Termasuk%20animasi%29%0A%F0%9F%93%8B%20Kategori%3A%20PowerPoint%20%26%20Presentasi%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Desain%20Modern%2C%20Rapi%20%26%20Tidak%20Membosankan%0A%20%20%E2%80%A2%20Transisi%20%26%20Animasi%20Halus%20Siap%20Presentasi%0A%20%20%E2%80%A2%20File%20Mentahan%20.PPTX%20Editable%20%2B%20File%20PDF%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Tema%20%2F%20Topik%20Presentasi%3A%20%0A%E2%80%A2%20Perkiraan%20Jumlah%20Slide%3A%20%0A%E2%80%A2%20Status%20Bahan%20Materi%20%28Sudah%20Ada%20%2F%20Perlu%20Dirangkum%29%3A%20%0A%E2%80%A2%20Deadline%20Presentasi%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Jasa%20Slide%20Microsoft%20PowerPoint%20%28PPT%29%0A%F0%9F%92%B0%20Harga%3A%20Rp%2025.000%20%28Desain%20visual%20memukau%20%E2%80%A2%20Termasuk%20animasi%29%0A%F0%9F%93%8B%20Kategori%3A%20PowerPoint%20%26%20Presentasi%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Desain%20Modern%2C%20Rapi%20%26%20Tidak%20Membosankan%0A%20%20%E2%80%A2%20Transisi%20%26%20Animasi%20Halus%20Siap%20Presentasi%0A%20%20%E2%80%A2%20File%20Mentahan%20.PPTX%20Editable%20%2B%20File%20PDF%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20Pemesan%3A%20%0A%E2%80%A2%20Tema%20%2F%20Topik%20Presentasi%3A%20%0A%E2%80%A2%20Perkiraan%20Jumlah%20Slide%3A%20%0A%E2%80%A2%20Status%20Bahan%20Materi%20%28Sudah%20Ada%20%2F%20Perlu%20Dirangkum%29%3A%20%0A%E2%80%A2%20Deadline%20Presentasi%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="ppt_slide" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 12: JOKI TUGAS MAHASISWA & PELAJAR (CIHUYYY) -->
-            <div class="product-card" data-category="joki">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="joki" data-title="joki tugas pelajar & kuliah" data-desc="bantuan pengerjaan tugas materi umum: word, ppt presentasi, makalah, rangkuman, dan tugas harian.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 shadow-sm p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Joki Cihuyyy</span>
-                    <span class="material-symbols-outlined text-primary text-xl">school</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">school</span>
+                      <span>Pelajar & Mahasiswa</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Joki Tugas Pelajar &amp; Kuliah</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Bantuan tugas all materi: Slide PPT animasi estetik, makalah Word rapi, rangkuman materi, dan tugas harian.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Joki Tugas Pelajar & Kuliah                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Bantuan pengerjaan tugas materi umum: Word, PPT presentasi, makalah, rangkuman, dan tugas harian.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 10.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 10.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Pengerjaan kilat 1 - 24 jam • Privasi Aman</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Pengerjaan 1-24 jam • Privasi aman</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">100% Rahasia &amp; data identitas aman</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Free 3x revisi sampai nilai aman</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Bisa format Word, PPT, dan PDF</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Privasi 100% Rahasia</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Free Revisi</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Word, PPT & PDF</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Joki%20Tugas%20Pelajar%20%26%20Kuliah%0A%F0%9F%92%B0%20Harga%3A%20Rp%2010.000%20%28Pengerjaan%20kilat%201%20-%2024%20jam%20%E2%80%A2%20Privasi%20Aman%29%0A%F0%9F%93%8B%20Kategori%3A%20Joki%20All%20Tugas%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20100%25%20Rahasia%20%26%20Identitas%20Aman%20Terjamin%0A%20%20%E2%80%A2%20Free%203x%20Revisi%20Sampai%20Nilai%20Aman%0A%20%20%E2%80%A2%20Bisa%20Format%20Word%2C%20PPT%2C%20dan%20PDF%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20%2F%20Inisial%3A%20%0A%E2%80%A2%20Jenjang%20Pendidikan%20%28SMP%20%2F%20SMA%20%2F%20SMK%20%2F%20Kuliah%29%3A%20%0A%E2%80%A2%20Mata%20Pelajaran%20%2F%20Mata%20Kuliah%3A%20%0A%E2%80%A2%20Format%20Tugas%20yang%20Diminta%3A%20%0A%E2%80%A2%20Deadline%20Pengumpulan%20%28Hari%20%26%20Jam%29%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Joki%20Tugas%20Pelajar%20%26%20Kuliah%0A%F0%9F%92%B0%20Harga%3A%20Rp%2010.000%20%28Pengerjaan%20kilat%201%20-%2024%20jam%20%E2%80%A2%20Privasi%20Aman%29%0A%F0%9F%93%8B%20Kategori%3A%20Joki%20All%20Tugas%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20100%25%20Rahasia%20%26%20Identitas%20Aman%20Terjamin%0A%20%20%E2%80%A2%20Free%203x%20Revisi%20Sampai%20Nilai%20Aman%0A%20%20%E2%80%A2%20Bisa%20Format%20Word%2C%20PPT%2C%20dan%20PDF%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20%2F%20Inisial%3A%20%0A%E2%80%A2%20Jenjang%20Pendidikan%20%28SMP%20%2F%20SMA%20%2F%20SMK%20%2F%20Kuliah%29%3A%20%0A%E2%80%A2%20Mata%20Pelajaran%20%2F%20Mata%20Kuliah%3A%20%0A%E2%80%A2%20Format%20Tugas%20yang%20Diminta%3A%20%0A%E2%80%A2%20Deadline%20Pengumpulan%20%28Hari%20%26%20Jam%29%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="joki_tugas" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 13: JOKI WEBSITE & CODING CRUD -->
-            <div class="product-card" data-category="joki">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border-2 border-primary/70 hover:border-primary p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="joki" data-title="joki website & praktikum coding" data-desc="pengerjaan sistem web crud, tugas algoritma, database mysql/sqlite, lengkap dengan penjelasan alur program.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-primary ring-1 ring-primary/30 shadow-md p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                                <div class="absolute -top-2.5 right-4">
+                  <span class="inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm uppercase tracking-wider">
+                    <span class="material-symbols-outlined text-[11px]">star</span>
+                    Favorit
+                  </span>
+                </div>
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Tugas Coding</span>
-                    <span class="material-symbols-outlined text-primary text-xl">code</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">code</span>
+                      <span>Tugas Koding</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Joki Website &amp; Coding</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Bantuan praktikum dan tugas pembuatan sistem koding CRUD, hingga website portofolio magang.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Joki Website & Praktikum Coding                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Pengerjaan sistem web CRUD, tugas algoritma, database MySQL/SQLite, lengkap dengan penjelasan alur program.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Harga Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 30.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 30.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Include bimbingan kodingan &amp; instalasi</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Termasuk bimbingan demo program</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Source code rapi &amp; database terstruktur</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Penjelasan alur untuk presentasi/demo</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Bimbingan sampai program berjalan lancar</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Source Code Rapi</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Penjelasan Alur Demo</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Bimbingan Instalasi</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Joki%20Website%20%26%20Coding%0A%F0%9F%92%B0%20Harga%3A%20Rp%2030.000%20%28Include%20bimbingan%20kodingan%20%26%20instalasi%29%0A%F0%9F%93%8B%20Kategori%3A%20Tugas%20Coding%20%26%20Praktikum%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Source%20Code%20Rapi%20%26%20Database%20Terstruktur%0A%20%20%E2%80%A2%20Penjelasan%20Alur%20Sistem%20untuk%20Presentasi%20%2F%20Demo%0A%20%20%E2%80%A2%20Bimbingan%20Sampai%20Program%20Berjalan%20Lancar%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20%2F%20Inisial%3A%20%0A%E2%80%A2%20Bahasa%20Pemrograman%20%2F%20Stack%20%28PHP%20%2F%20Laravel%20%2F%20HTML-CSS-JS%20%2F%20dll%29%3A%20%0A%E2%80%A2%20Deskripsi%20Tugas%20%2F%20Fitur%20CRUD%20yang%20Dibutuhkan%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Joki%20Website%20%26%20Coding%0A%F0%9F%92%B0%20Harga%3A%20Rp%2030.000%20%28Include%20bimbingan%20kodingan%20%26%20instalasi%29%0A%F0%9F%93%8B%20Kategori%3A%20Tugas%20Coding%20%26%20Praktikum%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Source%20Code%20Rapi%20%26%20Database%20Terstruktur%0A%20%20%E2%80%A2%20Penjelasan%20Alur%20Sistem%20untuk%20Presentasi%20%2F%20Demo%0A%20%20%E2%80%A2%20Bimbingan%20Sampai%20Program%20Berjalan%20Lancar%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20%2F%20Inisial%3A%20%0A%E2%80%A2%20Bahasa%20Pemrograman%20%2F%20Stack%20%28PHP%20%2F%20Laravel%20%2F%20HTML-CSS-JS%20%2F%20dll%29%3A%20%0A%E2%80%A2%20Deskripsi%20Tugas%20%2F%20Fitur%20CRUD%20yang%20Dibutuhkan%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="joki_coding" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
-
-            <!-- PRODUK 14: JOKI DESAIN CANVA & PRESENTASI -->
-            <div class="product-card" data-category="joki">
-              <div class="h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 sm:p-5 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="dashboard-card" data-category="joki" data-title="joki desain canva & infografis" data-desc="desain slide canva estetik, poster ilmiah, infografis tugas, banner presentasi, lengkap dengan link editable.">
+              <div class="relative h-full rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 shadow-sm p-4 sm:p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+                
+                
                 <div>
-                  <div class="flex items-center justify-between pb-2">
-                    <span class="text-[11px] uppercase font-extrabold text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">Desain Tugas</span>
-                    <span class="material-symbols-outlined text-primary text-xl">draw</span>
+                  <!-- Category Pill & Icon -->
+                  <div class="flex items-center justify-between pb-2.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed/60 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <span class="material-symbols-outlined text-xs">draw</span>
+                      <span>Desain Tugas</span>
+                    </span>
                   </div>
-                  <h3 class="text-base sm:text-lg font-bold text-on-surface">Joki Desain Canva &amp; PPT</h3>
-                  <p class="text-xs text-on-surface-variant pt-1 pb-3 line-clamp-2">
-                    Desain slide presentasi Canva modern, poster ilmiah, infografis tugas, banner acara organisasi kampus/sekolah.
-                  </p>
+
+                  <!-- Title & 1-Line Description -->
+                  <h3 class="text-base font-bold text-on-surface tracking-tight leading-snug">
+                    Joki Desain Canva & Infografis                  </h3>
+                  <p class="text-xs text-on-surface-variant pt-1.5 pb-3 line-clamp-2 leading-relaxed">
+                    Desain slide Canva estetik, poster ilmiah, infografis tugas, banner presentasi, lengkap dengan link editable.                  </p>
+
+                  <!-- Compact Price Box -->
                   <div class="p-2.5 rounded-xl bg-surface-container-low mb-3">
                     <div class="flex items-baseline justify-between gap-1">
-                      <span class="text-[11px] text-on-surface-variant font-medium">Tarif Mulai:</span>
-                      <span class="text-lg sm:text-xl font-black text-primary">Rp 20.000</span>
+                      <span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Harga:</span>
+                      <span class="text-base sm:text-lg font-black text-primary">Rp 20.000</span>
                     </div>
-                    <span class="text-[10px] text-on-surface-variant block pt-0.5 truncate">Termasuk link template Canva bisa diedit</span>
+                    <span class="text-[10px] text-on-surface-variant block truncate pt-0.5">Termasuk link Canva bisa diedit</span>
                   </div>
-                  <ul class="space-y-1.5 text-xs text-on-surface">
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Layout kekinian, rapi, dan menarik</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Free 2x revisi cepat</span>
-                    </li>
-                    <li class="flex items-start gap-1.5">
-                      <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
-                      <span class="line-clamp-1">Ekspor PDF &amp; PPTX resolusi tinggi</span>
-                    </li>
-                  </ul>
+
+                  <!-- 3 Feature Chips (Ringkas & Visual) -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Template Canva Editable</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Free 2x Revisi</span>
+                    </span>
+                                        <span class="text-[10px] font-medium bg-surface-container/70 text-on-surface px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-primary text-[11px]">✓</span>
+                      <span>Ekspor PDF Resolusi Tinggi</span>
+                    </span>
+                                      </div>
                 </div>
-                <div class="pt-3 border-t border-surface-container mt-4">
-                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Joki%20Desain%20Canva%20%26%20PPT%0A%F0%9F%92%B0%20Harga%3A%20Rp%2020.000%20%28Termasuk%20link%20template%20Canva%20bisa%20diedit%29%0A%F0%9F%93%8B%20Kategori%3A%20Desain%20Tugas%20Pelajar%2FMhs%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Layout%20Kekinian%2C%20Rapi%2C%20dan%20Menarik%0A%20%20%E2%80%A2%20Free%202x%20Revisi%20Cepat%0A%20%20%E2%80%A2%20Ekspor%20PDF%20%26%20PPTX%20Resolusi%20Tinggi%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20%2F%20Inisial%3A%20%0A%E2%80%A2%20Jenis%20Desain%20%28Slide%20PPT%20%2F%20Poster%20Ilmiah%20%2F%20Infografis%20%2F%20Banner%29%3A%20%0A%E2%80%A2%20Topik%20Tugas%20%26%20Nuansa%20Warna%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.01]">
-                    <span class="material-symbols-outlined text-base">chat</span>
-                    <span>Pesan via WhatsApp</span>
+
+                <!-- Action Buttons: WhatsApp Primary + Detail Modal Trigger -->
+                <div class="pt-4 border-t border-surface-container mt-4 flex items-center gap-2">
+                  <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20memesan%20layanan%20berikut%3A%0A%0A%F0%9F%93%8C%20Layanan%3A%20Joki%20Desain%20Canva%20%26%20PPT%0A%F0%9F%92%B0%20Harga%3A%20Rp%2020.000%20%28Termasuk%20link%20template%20Canva%20bisa%20diedit%29%0A%F0%9F%93%8B%20Kategori%3A%20Desain%20Tugas%20Pelajar%2FMhs%0A%0A%E2%9C%A8%20Fasilitas%20Termasuk%3A%0A%20%20%E2%80%A2%20Layout%20Kekinian%2C%20Rapi%2C%20dan%20Menarik%0A%20%20%E2%80%A2%20Free%202x%20Revisi%20Cepat%0A%20%20%E2%80%A2%20Ekspor%20PDF%20%26%20PPTX%20Resolusi%20Tinggi%0A%0A---%20Form%20Pemesanan%20Singkat%20---%0A%E2%80%A2%20Nama%20%2F%20Inisial%3A%20%0A%E2%80%A2%20Jenis%20Desain%20%28Slide%20PPT%20%2F%20Poster%20Ilmiah%20%2F%20Infografis%20%2F%20Banner%29%3A%20%0A%E2%80%A2%20Topik%20Tugas%20%26%20Nuansa%20Warna%3A%20%0A%E2%80%A2%20Deadline%20Pengerjaan%3A%20%0A%0AMohon%20informasi%20ketersediaan%20slot%20pengerjaan%20dan%20langkah%20selanjutnya.%20Terima%20kasih%21" target="_blank" rel="noopener" class="grow flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    <span>Pesan via WA</span>
                   </a>
+                  <button type="button" class="service-detail-btn px-2.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors shrink-0" data-key="joki_canva" title="Lihat Rincian Lengkap">
+                    <span class="material-symbols-outlined text-base">info</span>
+                  </button>
                 </div>
+
               </div>
             </div>
+                      </div>
 
+          <!-- Empty State (Jika Pencarian Tidak Ditemukan) -->
+          <div id="noProductFound" class="hidden py-16 text-center max-w-md mx-auto">
+            <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mx-auto mb-3 text-on-surface-variant">
+              <span class="material-symbols-outlined text-3xl">search_off</span>
+            </div>
+            <h4 class="text-base font-bold text-on-surface">Layanan Tidak Ditemukan</h4>
+            <p class="text-xs text-on-surface-variant pt-1 pb-4">
+              Kata kunci yang Anda cari tidak cocok. Ingin request layanan custom atau konsultasi langsung?
+            </p>
+            <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20khusus%20yang%20belum%20tercantum." target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-600 hover:bg-green-700 text-white font-bold text-xs transition-colors shadow-sm">
+              <span class="material-symbols-outlined text-sm">chat</span>
+              <span>Tanya Langsung via WhatsApp</span>
+            </a>
           </div>
 
-          <!-- Banner Direct to Portfolio Section in Beranda -->
-          <div class="mt-12 p-6 rounded-3xl bg-surface-container-low border border-surface-container flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-            <div>
-              <h4 class="font-bold text-lg text-on-surface">Ingin melihat contoh hasil website &amp; karya nyata kami?</h4>
-              <p class="text-sm text-on-surface-variant pt-0.5">Lihat portofolio nyata contoh desain pakaian, landing page website modern, dan olah data resmi.</p>
+          <!-- Sleek Bottom Strip: Direct to Portfolio -->
+          <div class="mt-12 p-5 sm:p-6 rounded-2xl bg-surface-container-low border border-surface-container flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-xl">photo_library</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm sm:text-base text-on-surface">Ingin melihat contoh hasil nyata karya kami?</h4>
+                <p class="text-xs text-on-surface-variant pt-0.5">Lihat portofolio desain pakaian, website, dan olah data resmi di beranda.</p>
+              </div>
             </div>
-            <a href="index.php#portofolio" class="shrink-0 px-6 py-3 rounded-full bg-primary text-white font-bold text-sm shadow hover:bg-primary-container transition-colors flex items-center gap-2">
-              <span>Lihat Portofolio Lengkap</span>
+            <a href="index.html#portofolio" class="shrink-0 px-5 py-2.5 rounded-full bg-primary text-white font-bold text-xs sm:text-sm shadow hover:bg-primary-container transition-colors flex items-center gap-1.5">
+              <span>Lihat Portofolio</span>
               <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
-        </div>
-      </section>
 
-      <!-- Section: 3 Langkah Cara Pesan Mudah (Ramah Semua Umur) -->
-      <section class="w-full py-space-xl px-gutter bg-surface-container-low/60 border-t border-surface-container">
-        <div class="max-w-[1320px] mx-auto text-center">
-          <span class="text-xs md:text-sm font-bold text-primary uppercase tracking-wider">Sangat Mudah &amp; Cepat</span>
-          <h2 class="text-2xl md:text-4xl font-black text-on-surface pt-1 pb-8">3 Langkah Pesan Tanpa Ribet</h2>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div class="p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col justify-between">
-              <div>
-                <span class="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center font-black text-xl mb-4">1</span>
-                <h3 class="text-lg font-bold text-on-surface">Pilih Layanan yang Dibutuhkan</h3>
-                <p class="text-sm text-on-surface-variant pt-2">
-                  Tentukan paket atau kebutuhan Anda (website, desain, konsultasi, atau joki tugas).
-                </p>
-              </div>
-            </div>
-
-            <div class="p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col justify-between">
-              <div>
-                <span class="w-12 h-12 rounded-2xl bg-green-600 text-white flex items-center justify-center font-black text-xl mb-4">2</span>
-                <h3 class="text-lg font-bold text-on-surface">Klik Tombol WhatsApp</h3>
-                <p class="text-sm text-on-surface-variant pt-2">
-                  Kirim pesan ke nomor WhatsApp kami di 0878-6175-6916. Ceritakan detail kebutuhan Anda dengan santai.
-                </p>
-              </div>
-            </div>
-
-            <div class="p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col justify-between">
-              <div>
-                <span class="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center font-black text-xl mb-4">3</span>
-                <h3 class="text-lg font-bold text-on-surface">Hasil Jadi &amp; Bergaransi</h3>
-                <p class="text-sm text-on-surface-variant pt-2">
-                  Pengerjaan dimulai tepat waktu. Anda menerima hasil berkualitas dengan jaminan revisi.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </main>
 
+    <!-- Detail Service Modal (Pop-up Rapi Tanpa Membebani Layar Utama) -->
+    <div id="serviceDetailModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5" role="dialog" aria-modal="true">
+      <div class="relative max-w-lg w-full bg-surface rounded-2xl overflow-hidden shadow-2xl border border-surface-container flex flex-col max-h-[90vh] animate-in fade-in duration-150">
+        <!-- Modal Header -->
+        <div class="flex items-center justify-between p-4 border-b border-surface-container bg-surface-container-low shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xl">info</span>
+            <h3 id="modalServiceTitle" class="font-bold text-sm sm:text-base text-on-surface truncate">Rincian Layanan</h3>
+          </div>
+          <button id="modalCloseBtn" type="button" aria-label="Tutup" class="h-8 w-8 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-lg">close</span>
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="p-4 sm:p-6 overflow-y-auto space-y-4">
+          <div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+            <span class="text-xs text-on-surface-variant">Estimasi Biaya:</span>
+            <span id="modalServicePrice" class="text-base font-black text-primary">Rp 0</span>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-on-surface mb-2">Fasilitas Termasuk:</h4>
+            <ul id="modalServiceFacilities" class="space-y-1.5 text-xs text-on-surface">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-on-surface mb-2">Informasi yang Diperlukan:</h4>
+            <ul id="modalServiceFields" class="space-y-1 text-xs text-on-surface-variant">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="p-4 border-t border-surface-container bg-surface-container-low shrink-0 flex items-center justify-end gap-2">
+          <button type="button" id="modalDismissBtn" class="px-4 py-2 rounded-xl text-xs font-bold text-on-surface bg-surface-container hover:bg-surface-container-high transition-colors">
+            Tutup
+          </button>
+          <a id="modalWaAction" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl text-xs font-bold text-white bg-green-600 hover:bg-green-700 transition-colors shadow-sm">
+            <span class="material-symbols-outlined text-sm">chat</span>
+            <span>Pesan via WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Footer -->
     
-    <!-- Floating WhatsApp Button (Desktop only: di mobile sudah ada tombol Chat WA di Bottom Bar) -->
+    <!-- Floating WhatsApp Button (Desktop only) -->
     <a href="https://wa.me/6287861756916?text=Halo%20Admin%20Lumitech%2C%20saya%20ingin%20bertanya%20dan%20konsultasi%20seputar%20layanan%20Lumitech.id." target="_blank" rel="noopener" aria-label="Chat WhatsApp" class="hidden lg:flex fixed bottom-6 right-6 z-50 items-center gap-2.5 px-4 py-3 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300">
       <span class="material-symbols-outlined text-2xl">chat</span>
-      <span class="text-sm font-bold pr-1">Tanya Kami via WA</span>
+      <span class="text-sm font-bold pr-1">Tanya via WA</span>
     </a>
 
-    <!-- Script Filter & Interaktif -->
+    <!-- Raw Data Dictionary for Client-Side Modal -->
+    <script>
+      const SERVICES_DATA = {"starter_umkm":{"name":"Paket Starter Website UMKM","price":"Rp 150.000","price_label":"Mulai Harga:","price_sub":"Belum Termasuk Domain .com + hosting 1 tahun","category":"Website UMKM","facilities":["1 Halaman Landing Page Responsif","Tombol Pesan Langsung WhatsApp","Integrasi Google Maps \u0026 Medsos"],"form_fields":["Nama Pemesan","Nama Usaha \/ Brand","Bidang Usaha","Status Domain\/Hosting (Sudah Ada \/ Belum)","Catatan \/ Request Khusus"]},"pro_business":{"name":"Website Professional Business","price":"Rp 1.000.000","price_label":"Mulai Harga :","price_sub":"Gratis email bisnis (nama@perusahaan.com)","category":"Multi-Halaman \u0026 Bisnis Pro","facilities":["5-7 Halaman (Home, Tentang, Layanan, Kontak, dll)","Panel Admin Mudah Update Artikel \/ Produk","Garansi Maintenance 6 Bulan + Backup Rutin"],"form_fields":["Nama Pemesan","Nama Perusahaan \/ Instansi","Bidang Usaha","Kebutuhan Fitur \/ Halaman","Catatan Tambahan"]},"custom_app":{"name":"Toko Online \/ Web Aplikasi Custom","price":"Sesuai Kebutuhan","price_label":"Mulai Harga:","price_sub":"Estimasi transparan setelah diskusi santai","category":"Custom \u0026 Toko Online","facilities":["Keranjang Belanja \u0026 Pembayaran Otomatis QRIS","Hitung Ongkos Kirim Kurir Otomatis","Laporan Penjualan \u0026 Database Terstruktur Sesuai Request"],"form_fields":["Nama Pemesan","Nama Usaha \/ Proyek","Konsep Sistem \/ Aplikasi yang Diinginkan","Fitur Utama yang Dibutuhkan","Target Deadline"]},"konsultasi_umkm":{"name":"Konsultasi Bisnis UMKM","price":"Rp 30.000","price_label":"Harga Mulai:","price_sub":"Via Google Meet atau WhatsApp Call\/Chat","category":"Konsultasi UMKM","facilities":["Bedah Kelemahan Promosi \u0026 Sosmed Usaha","Rencana Aksi Praktis Langsung Terarah","Rangkuman Insight Materi Format PDF"],"form_fields":["Nama","Nama Usaha \/ Produk","Bidang Usaha","Topik \/ Kendala yang Ingin Dibahas","Pilihan Waktu Luang Konsultasi (Hari \u0026 Jam)"]},"desain_grafis":{"name":"Desain Grafis \u0026 Logo","price":"Rp 30.000","price_label":"Harga Mulai:","price_sub":"Desain Perkonten \u2022 Bebas Revisi","category":"Desain Grafis","facilities":["Desain Resolusi Tinggi HD Siap Cetak \/ Sosmed","File Lengkap (PNG Transparan, JPG, PDF)","Gratis Revisi Sampai Puas"],"form_fields":["Nama Pemesan","Jenis Desain (Logo \/ Kemasan \/ Poster \/ Feed Sosmed)","Nama Brand \/ Teks dalam Desain","Konsep \/ Nuansa Warna yang Diinginkan","Deadline Pengerjaan"]},"video_editing":{"name":"Video Editing Reels \u0026 TikTok","price":"Rp 40.000","price_label":"Tarif Mulai:","price_sub":"Per video durasi 30 - 60 detik","category":"Video Creative","facilities":["Subtitle Dinamis Kekinian \u0026 Sound Effect","Format 9:16 Pas untuk IG Reels \u0026 TikTok","Pengerjaan Kilat 1-2 Hari Kerja"],"form_fields":["Nama Pemesan","Jumlah Video yang Ingin Diedit","Tema \/ Gaya Video","Status Bahan Mentahan Video (Sudah Ada \/ Belum)","Deadline Pengerjaan"]},"sosmed_management":{"name":"Analisis Insight Dan Pengelolaan Media Sosial","price":"Rp 30.000","price_label":"Mulai Harga:","price_sub":"Perpostingan","category":"Sosial Media","facilities":["Desain Feed Estetik + Teks Caption Menarik","Riset Hashtag Relevan Sesuai Target Audiens","Jadwal Upload Rapi \u0026 Konsisten","Riset Berbentuk Dokumen Insight"],"form_fields":["Nama Pemesan","Username Akun Instagram \/ TikTok","Bidang Usaha \/ Niche","Rencana Pemesanan (Satuan Perpostingan \/ Paket)","Catatan \/ Kebutuhan Khusus"]},"format_dokumen":{"name":"Format Dokumen Word \u0026 Pengetikan","price":"Rp 25.000","price_label":"Tarif Mulai:","price_sub":"Format rapi standar resmi siap cetak","category":"Dokumen \u0026 Administrasi","facilities":["Daftar Isi, Daftar Gambar \u0026 Halaman Otomatis","Format Margin \u0026 Spasi Rapi Standar Resmi","Pengerjaan Kilat dan Hasil Rapi"],"form_fields":["Nama Pemesan","Jenis Dokumen (Makalah \/ Skripsi \/ SOP \/ Surat Resmi \/ Laporan)","Perkiraan Jumlah Halaman","Kebutuhan (Perapian Format \/ Pengetikan Ulang)","Deadline Pengerjaan"]},"desain_pakaian":{"name":"Jasa Desain Pakaian \u0026 Apparel","price":"Rp 45.000","price_label":"Tarif Mulai:","price_sub":"Mockup depan \u0026 belakang \u2022 Siap kirim ke vendor konveksi","category":"Desain Pakaian \u0026 Apparel","facilities":["Desain Mockup Depan \u0026 Belakang Resolusi Tinggi HD","File Mentahan Siap Sablon \/ Bordir (PNG Transparan \u0026 PDF)","Free Konsultasi Konsep, Pilihan Font \u0026 Palet Warna"],"form_fields":["Nama Pemesan","Jenis Pakaian (Kaos \/ Hoodie \/ Kemeja \/ Jersey \/ Celana)","Tema \/ Konsep Desain yang Diinginkan","Teks \/ Logo yang Ingin Dicantumkan","Deadline Pengerjaan"]},"konveksi_pakaian":{"name":"Jasa Desain Pakaian \u0026 Apparel","price":"Rp 45.000","price_label":"Tarif Mulai:","price_sub":"Mockup depan \u0026 belakang \u2022 Siap kirim ke vendor konveksi","category":"Desain Pakaian \u0026 Apparel","facilities":["Desain Mockup Depan \u0026 Belakang Resolusi Tinggi HD","File Mentahan Siap Sablon \/ Bordir (PNG Transparan \u0026 PDF)","Free Konsultasi Konsep, Pilihan Font \u0026 Palet Warna"],"form_fields":["Nama Pemesan","Jenis Pakaian (Kaos \/ Hoodie \/ Kemeja \/ Jersey \/ Celana)","Tema \/ Konsep Desain yang Diinginkan","Teks \/ Logo yang Ingin Dicantumkan","Deadline Pengerjaan"]},"excel_olah_data":{"name":"Jasa Olah Data Microsoft Excel","price":"Rp 25.000","price_label":"Tarif Mulai:","price_sub":"File otomatis \u0026 bebas error \u2022 Pengerjaan cepat","category":"Microsoft Excel \u0026 Data","facilities":["Rumus Otomatis (VLOOKUP, INDEX MATCH, IF, dll)","Dashboard Grafik Visual \u0026 Pivot Table","Rekap Kas Keuangan, Stok \u0026 Tugas Praktikum"],"form_fields":["Nama Pemesan","Kebutuhan (Rumus \/ Dashboard \/ Pembukuan Kas \/ Tugas Excel)","Ringkasan Masalah \/ Deskripsi Data","Deadline Pengerjaan"]},"ppt_slide":{"name":"Jasa Slide Microsoft PowerPoint (PPT)","price":"Rp 25.000","price_label":"Tarif Mulai:","price_sub":"Desain visual memukau \u2022 Termasuk animasi","category":"PowerPoint \u0026 Presentasi","facilities":["Desain Modern, Rapi \u0026 Tidak Membosankan","Transisi \u0026 Animasi Halus Siap Presentasi","File Mentahan .PPTX Editable + File PDF"],"form_fields":["Nama Pemesan","Tema \/ Topik Presentasi","Perkiraan Jumlah Slide","Status Bahan Materi (Sudah Ada \/ Perlu Dirangkum)","Deadline Presentasi"]},"joki_tugas":{"name":"Joki Tugas Pelajar \u0026 Kuliah","price":"Rp 10.000","price_label":"Mulai Harga:","price_sub":"Pengerjaan kilat 1 - 24 jam \u2022 Privasi Aman","category":"Joki All Tugas","facilities":["100% Rahasia \u0026 Identitas Aman Terjamin","Free 3x Revisi Sampai Nilai Aman","Bisa Format Word, PPT, dan PDF"],"form_fields":["Nama \/ Inisial","Jenjang Pendidikan (SMP \/ SMA \/ SMK \/ Kuliah)","Mata Pelajaran \/ Mata Kuliah","Format Tugas yang Diminta","Deadline Pengumpulan (Hari \u0026 Jam)"]},"joki_coding":{"name":"Joki Website \u0026 Coding","price":"Rp 30.000","price_label":"Harga Mulai:","price_sub":"Include bimbingan kodingan \u0026 instalasi","category":"Tugas Coding \u0026 Praktikum","facilities":["Source Code Rapi \u0026 Database Terstruktur","Penjelasan Alur Sistem untuk Presentasi \/ Demo","Bimbingan Sampai Program Berjalan Lancar"],"form_fields":["Nama \/ Inisial","Bahasa Pemrograman \/ Stack (PHP \/ Laravel \/ HTML-CSS-JS \/ dll)","Deskripsi Tugas \/ Fitur CRUD yang Dibutuhkan","Deadline Pengerjaan"]},"joki_canva":{"name":"Joki Desain Canva \u0026 PPT","price":"Rp 20.000","price_label":"Tarif Mulai:","price_sub":"Termasuk link template Canva bisa diedit","category":"Desain Tugas Pelajar\/Mhs","facilities":["Layout Kekinian, Rapi, dan Menarik","Free 2x Revisi Cepat","Ekspor PDF \u0026 PPTX Resolusi Tinggi"],"form_fields":["Nama \/ Inisial","Jenis Desain (Slide PPT \/ Poster Ilmiah \/ Infografis \/ Banner)","Topik Tugas \u0026 Nuansa Warna","Deadline Pengerjaan"]}};
+      const WA_PHONE = "6287861756916";
+    </script>
+
+    <!-- Dashboard Interactive Scripts -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Filter Katalog Produk
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        const productCards = document.querySelectorAll(".product-card");
+        const filterBtns = document.querySelectorAll(".dashboard-filter-btn");
+        const cards = document.querySelectorAll(".dashboard-card");
+        const searchInput = document.getElementById("dashboardSearchInput");
+        const clearSearchBtn = document.getElementById("clearSearchBtn");
+        const counterText = document.getElementById("productCounterText");
+        const noProductFound = document.getElementById("noProductFound");
+        const totalCards = cards.length;
 
+        let activeFilter = "all";
+        let searchQuery = "";
+
+        function filterProducts() {
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const cardCat = card.getAttribute("data-category") || "";
+            const cardTitle = card.getAttribute("data-title") || "";
+            const cardDesc = card.getAttribute("data-desc") || "";
+
+            const matchCat = (activeFilter === "all" || cardCat.includes(activeFilter));
+            const matchSearch = (!searchQuery || cardTitle.includes(searchQuery) || cardDesc.includes(searchQuery));
+
+            if (matchCat && matchSearch) {
+              card.style.display = "block";
+              visibleCount++;
+            } else {
+              card.style.display = "none";
+            }
+          });
+
+          if (counterText) {
+            counterText.textContent = `Menampilkan ${visibleCount} dari ${totalCards} Layanan`;
+          }
+
+          if (noProductFound) {
+            if (visibleCount === 0) {
+              noProductFound.classList.remove("hidden");
+            } else {
+              noProductFound.classList.add("hidden");
+            }
+          }
+        }
+
+        // Category Tab Filter
         filterBtns.forEach((btn) => {
           btn.addEventListener("click", function () {
-            const filter = this.getAttribute("data-filter");
+            activeFilter = this.getAttribute("data-filter");
 
-            // Update button styles
             filterBtns.forEach((b) => {
-              b.classList.remove("active-filter", "bg-primary", "text-white");
-              b.classList.add("bg-surface-container", "text-on-surface");
+              b.classList.remove("active-filter", "bg-primary", "text-white", "font-bold");
+              b.classList.add("bg-surface-container", "text-on-surface", "font-semibold");
             });
-            this.classList.add("active-filter", "bg-primary", "text-white");
-            this.classList.remove("bg-surface-container", "text-on-surface");
+            this.classList.add("active-filter", "bg-primary", "text-white", "font-bold");
+            this.classList.remove("bg-surface-container", "text-on-surface", "font-semibold");
 
-            // Filter cards
-            productCards.forEach((card) => {
-              const category = card.getAttribute("data-category") || "";
-              if (filter === "all" || category.includes(filter)) {
-                card.style.display = "block";
-              } else {
-                card.style.display = "none";
-              }
-            });
+            filterProducts();
           });
         });
 
-        // Mobile Nav Drawer Toggle
-        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-        const mobileMenuDrawer = document.getElementById("mobileMenuDrawer");
-        const menuIcon = document.getElementById("menuIcon");
-        const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
-
-        if (mobileMenuBtn && mobileMenuDrawer) {
-          mobileMenuBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            const isOpen = !mobileMenuDrawer.classList.contains("hidden");
-            if (isOpen) {
-              mobileMenuDrawer.classList.add("hidden");
-              mobileMenuBtn.setAttribute("aria-expanded", "false");
-              if (menuIcon) menuIcon.textContent = "menu";
-            } else {
-              mobileMenuDrawer.classList.remove("hidden");
-              mobileMenuBtn.setAttribute("aria-expanded", "true");
-              if (menuIcon) menuIcon.textContent = "close";
+        // Search Input Filter
+        if (searchInput) {
+          searchInput.addEventListener("input", function () {
+            searchQuery = this.value.trim().toLowerCase();
+            if (clearSearchBtn) {
+              if (searchQuery.length > 0) {
+                clearSearchBtn.classList.remove("hidden");
+              } else {
+                clearSearchBtn.classList.add("hidden");
+              }
             }
+            filterProducts();
           });
 
-          mobileNavLinks.forEach((link) => {
-            link.addEventListener("click", function () {
-              mobileMenuDrawer.classList.add("hidden");
-              mobileMenuBtn.setAttribute("aria-expanded", "false");
-              if (menuIcon) menuIcon.textContent = "menu";
+          if (clearSearchBtn) {
+            clearSearchBtn.addEventListener("click", function () {
+              searchInput.value = "";
+              searchQuery = "";
+              clearSearchBtn.classList.add("hidden");
+              searchInput.focus();
+              filterProducts();
             });
-          });
+          }
+        }
 
-          document.addEventListener("click", function (e) {
-            if (!mobileMenuDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-              mobileMenuDrawer.classList.add("hidden");
-              mobileMenuBtn.setAttribute("aria-expanded", "false");
-              if (menuIcon) menuIcon.textContent = "menu";
-            }
+        // Detail Modal Logic
+        const modal = document.getElementById("serviceDetailModal");
+        const modalTitle = document.getElementById("modalServiceTitle");
+        const modalPrice = document.getElementById("modalServicePrice");
+        const modalFacilities = document.getElementById("modalServiceFacilities");
+        const modalFields = document.getElementById("modalServiceFields");
+        const modalWaAction = document.getElementById("modalWaAction");
+        const modalCloseBtn = document.getElementById("modalCloseBtn");
+        const modalDismissBtn = document.getElementById("modalDismissBtn");
+        const detailBtns = document.querySelectorAll(".service-detail-btn");
+
+        function openModal(serviceKey) {
+          const s = SERVICES_DATA[serviceKey];
+          if (!s) return;
+
+          modalTitle.textContent = s.name || "Detail Layanan";
+          modalPrice.textContent = (s.price || "") + (s.price_sub ? ` (${s.price_sub})` : "");
+
+          // Facilities
+          modalFacilities.innerHTML = "";
+          if (Array.isArray(s.facilities) && s.facilities.length > 0) {
+            s.facilities.forEach((fac) => {
+              const li = document.createElement("li");
+              li.className = "flex items-start gap-1.5";
+              li.innerHTML = `<span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span><span>${fac}</span>`;
+              modalFacilities.appendChild(li);
+            });
+          } else {
+            modalFacilities.innerHTML = "<li>Konsultasikan kebutuhan langsung via WhatsApp.</li>";
+          }
+
+          // Form Fields
+          modalFields.innerHTML = "";
+          if (Array.isArray(s.form_fields) && s.form_fields.length > 0) {
+            s.form_fields.forEach((f) => {
+              const li = document.createElement("li");
+              li.className = "flex items-center gap-1.5";
+              li.innerHTML = `<span class="text-primary">•</span><span>${f}</span>`;
+              modalFields.appendChild(li);
+            });
+          }
+
+          // WA Action URL
+          const msg = `Halo Admin Lumitech, saya ingin memesan layanan ${s.name} (${s.price}). Mohon info ketersediaan slot pengerjaan. Terima kasih!`;
+          modalWaAction.href = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(msg)}`;
+
+          modal.classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+          modal.classList.add("hidden");
+          document.body.style.overflow = "";
+        }
+
+        detailBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const key = this.getAttribute("data-key");
+            openModal(key);
+          });
+        });
+
+        if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
+        if (modalDismissBtn) modalDismissBtn.addEventListener("click", closeModal);
+        if (modal) {
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) closeModal();
           });
         }
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+            closeModal();
+          }
+        });
       });
     </script>
   </body>
