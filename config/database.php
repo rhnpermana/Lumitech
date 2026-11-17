@@ -61,26 +61,41 @@ function getDatabaseConfig(): array
 
     // Timpa dari .env jika ada
     $env = loadEnv($envPath);
-    if (!empty($env['AIVEN_MYSQL_HOST'])) {
-        $config['host'] = $env['AIVEN_MYSQL_HOST'];
+    
+    // Support environment variables dari Vercel (getenv / $_ENV) atau file .env lokal
+    $envHost = getenv('AIVEN_MYSQL_HOST') ?: ($_ENV['AIVEN_MYSQL_HOST'] ?? ($env['AIVEN_MYSQL_HOST'] ?? ''));
+    if (!empty($envHost)) {
+        $config['host'] = $envHost;
     }
-    if (!empty($env['AIVEN_MYSQL_PORT'])) {
-        $config['port'] = $env['AIVEN_MYSQL_PORT'];
+
+    $envPort = getenv('AIVEN_MYSQL_PORT') ?: ($_ENV['AIVEN_MYSQL_PORT'] ?? ($env['AIVEN_MYSQL_PORT'] ?? ''));
+    if (!empty($envPort)) {
+        $config['port'] = $envPort;
     }
-    if (!empty($env['AIVEN_MYSQL_USER'])) {
-        $config['user'] = $env['AIVEN_MYSQL_USER'];
+
+    $envUser = getenv('AIVEN_MYSQL_USER') ?: ($_ENV['AIVEN_MYSQL_USER'] ?? ($env['AIVEN_MYSQL_USER'] ?? ''));
+    if (!empty($envUser)) {
+        $config['user'] = $envUser;
     }
-    if (isset($env['AIVEN_MYSQL_PASSWORD']) && $env['AIVEN_MYSQL_PASSWORD'] !== '') {
-        $config['password'] = $env['AIVEN_MYSQL_PASSWORD'];
+
+    $envPass = (getenv('AIVEN_MYSQL_PASSWORD') !== false) ? getenv('AIVEN_MYSQL_PASSWORD') : ($_ENV['AIVEN_MYSQL_PASSWORD'] ?? ($env['AIVEN_MYSQL_PASSWORD'] ?? ''));
+    if ($envPass !== '') {
+        $config['password'] = $envPass;
     }
-    if (!empty($env['AIVEN_MYSQL_DATABASE'])) {
-        $config['database'] = $env['AIVEN_MYSQL_DATABASE'];
+
+    $envDb = getenv('AIVEN_MYSQL_DATABASE') ?: ($_ENV['AIVEN_MYSQL_DATABASE'] ?? ($env['AIVEN_MYSQL_DATABASE'] ?? ''));
+    if (!empty($envDb)) {
+        $config['database'] = $envDb;
     }
-    if (!empty($env['AIVEN_MYSQL_SSL_MODE'])) {
-        $config['ssl_mode'] = $env['AIVEN_MYSQL_SSL_MODE'];
+
+    $envSsl = getenv('AIVEN_MYSQL_SSL_MODE') ?: ($_ENV['AIVEN_MYSQL_SSL_MODE'] ?? ($env['AIVEN_MYSQL_SSL_MODE'] ?? ''));
+    if (!empty($envSsl)) {
+        $config['ssl_mode'] = $envSsl;
     }
-    if (!empty($env['AIVEN_MYSQL_SSL_CA'])) {
-        $config['ssl_ca'] = $env['AIVEN_MYSQL_SSL_CA'];
+
+    $envCa = getenv('AIVEN_MYSQL_SSL_CA') ?: ($_ENV['AIVEN_MYSQL_SSL_CA'] ?? ($env['AIVEN_MYSQL_SSL_CA'] ?? ''));
+    if (!empty($envCa)) {
+        $config['ssl_ca'] = $envCa;
     }
 
     return $config;

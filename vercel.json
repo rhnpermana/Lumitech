@@ -1,6 +1,17 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.7.3",
+      "includeFiles": [
+        "admin/**",
+        "config/**",
+        "data/**",
+        "Layout/**"
+      ]
+    }
+  },
   "redirects": [
     {
       "source": "/produk.php",
@@ -17,6 +28,14 @@
     {
       "source": "/favicon.ico",
       "destination": "/assets/img/logo-icon.png"
+    },
+    {
+      "source": "/admin",
+      "destination": "/api/admin.php"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/api/admin.php"
     },
     {
       "source": "/produk",
