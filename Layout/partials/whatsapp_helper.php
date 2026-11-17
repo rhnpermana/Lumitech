@@ -327,6 +327,32 @@ if (!function_exists('getWaOrderUrl')) {
         $phone = getWaPhoneNumber();
 
         if (!isset($services[$serviceKey])) {
+            require_once __DIR__ . "/data_helper.php";
+            $customProduct = getProductByKey($serviceKey);
+            if ($customProduct) {
+                $lines = [];
+                $lines[] = "Halo Admin Lumitech, saya ingin memesan layanan berikut:";
+                $lines[] = "";
+                $lines[] = "📌 Layanan: " . $customProduct['title'];
+                $lines[] = "💰 Harga: " . $customProduct['price'] . (!empty($customProduct['price_sub']) ? " (" . $customProduct['price_sub'] . ")" : "");
+                $lines[] = "📋 Kategori: " . ucfirst($customProduct['category'] ?? 'Layanan');
+                if (!empty($customProduct['tags'])) {
+                    $lines[] = "";
+                    $lines[] = "✨ Fasilitas / Keunggulan:";
+                    foreach ($customProduct['tags'] as $tag) {
+                        $lines[] = "  • " . $tag;
+                    }
+                }
+                $lines[] = "";
+                $lines[] = "--- Form Pemesanan Singkat ---";
+                $lines[] = "• Nama: ";
+                $lines[] = "• Kontak / WA: ";
+                $lines[] = "• Kebutuhan / Request: ";
+                $lines[] = "• Deadline: ";
+                $lines[] = "";
+                $lines[] = "Mohon informasi ketersediaan slot pengerjaan dan langkah selanjutnya. Terima kasih!";
+                return "https://wa.me/{$phone}?text=" . rawurlencode(implode("\n", $lines));
+            }
             return "https://wa.me/{$phone}?text=" . rawurlencode("Halo Lumitech, saya ingin konsultasi layanan.");
         }
 

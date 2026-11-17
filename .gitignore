@@ -14,10 +14,14 @@ desktop.ini
 
 # PHP / Composer / Local Logs
 vendor/
-composer.lock
 *.log
 error_log
 
 # Temporary / Scratch Files
 *.tmp
 *.bak
+
+# === TAMBAHKAN INI AGAR AMAN DARI GITHUB PUSH PROTECTION ===
+.env
+.env.*
+data/database_config.json

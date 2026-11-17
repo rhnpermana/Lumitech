@@ -7,186 +7,23 @@ require_once __DIR__ . '/../Layout/partials/whatsapp_helper.php';
 require __DIR__ . '/../Layout/partials/app.php';
 require __DIR__ . '/../Layout/partials/navhome.php';
 
-// Definisi data 14 Layanan untuk Dashboard Produk (Ringkas, Rapi & Tidak Berat Teks)
-$catalogItems = [
-    // 1. WEBSITE & APP
-    [
-        'key'        => 'starter_umkm',
-        'category'   => 'website',
-        'icon'       => 'devices',
-        'badge'      => 'Landing Page',
-        'title'      => 'Paket Starter Website UMKM',
-        'desc'       => 'Website 1 halaman responsif untuk usaha kuliner, jasa, atau profil bisnis agar mudah ditemukan pelanggan.',
-        'price'      => 'Rp 150.000',
-        'price_sub'  => 'Domain & hosting disesuaikan',
-        'tags'       => ['1 Halaman Responsif', 'Tombol WhatsApp', 'Google Maps & Medsos'],
-        'featured'   => false,
-    ],
-    [
-        'key'        => 'pro_business',
-        'category'   => 'website',
-        'icon'       => 'domain',
-        'badge'      => 'Multi-Halaman',
-        'title'      => 'Website Professional Business',
-        'desc'       => 'Website profesional 5-7 halaman untuk CV, PT, klinik, sekolah, dan brand dengan reputasi tinggi.',
-        'price'      => 'Rp 1.000.000',
-        'price_sub'  => 'Gratis email bisnis resmi',
-        'tags'       => ['5-7 Halaman Menu', 'Admin Panel Mudah', 'Garansi 6 Bulan'],
-        'featured'   => true,
-    ],
-    [
-        'key'        => 'custom_app',
-        'category'   => 'website',
-        'icon'       => 'shopping_cart',
-        'badge'      => 'E-Commerce / App',
-        'title'      => 'Toko Online & Web App Custom',
-        'desc'       => 'Sistem toko online dengan katalog produk, hitung ongkir otomatis, checkout QRIS, atau dashboard sistem.',
-        'price'      => 'Sesuai Kebutuhan',
-        'price_sub'  => 'Estimasi transparan via diskusi',
-        'tags'       => ['Keranjang & QRIS', 'Cek Ongkir Otomatis', 'Database Terstruktur'],
-        'featured'   => false,
-    ],
+require_once __DIR__ . '/../Layout/partials/data_helper.php';
 
-    // 2. DESAIN & BISNIS
-    [
-        'key'        => 'desain_grafis',
-        'category'   => 'kreatif',
-        'icon'       => 'palette',
-        'badge'      => 'Vektor & Brand',
-        'title'      => 'Desain Grafis & Logo',
-        'desc'       => 'Pembuatan logo bisnis, kemasan produk, poster promosi, dan feed Instagram resolusi tinggi.',
-        'price'      => 'Rp 30.000',
-        'price_sub'  => 'Format PNG, JPG & PDF Siap Cetak',
-        'tags'       => ['Resolusi Tinggi HD', 'Bebas Revisi', 'File Mentahan'],
-        'featured'   => false,
-    ],
-    [
-        'key'        => 'desain_pakaian',
-        'category'   => 'kreatif',
-        'icon'       => 'apparel',
-        'badge'      => 'Streetwear & Mockup',
-        'title'      => 'Jasa Desain Pakaian & Apparel',
-        'desc'       => 'Mockup realistis kaos, hoodie, kemeja & jaket tampak depan-belakang siap cetak sablon / bordir.',
-        'price'      => 'Rp 45.000',
-        'price_sub'  => 'Mockup depan & belakang',
-        'tags'       => ['Mockup Realistis', 'Vektor Siap Sablon', 'Free Konsultasi'],
-        'featured'   => true,
-    ],
-    [
-        'key'        => 'video_editing',
-        'category'   => 'kreatif',
-        'icon'       => 'movie',
-        'badge'      => 'Reels & TikTok',
-        'title'      => 'Video Editing Reels & TikTok',
-        'desc'       => 'Edit video produk, promosi, atau konten edukasi dengan teks berjalan kekinian dan efek suara dinamis.',
-        'price'      => 'Rp 40.000',
-        'price_sub'  => 'Per video durasi 30-60 detik',
-        'tags'       => ['Subtitle Dinamis', 'Format 9:16 HD', 'Pengerjaan 1-2 Hari'],
-        'featured'   => false,
-    ],
-    [
-        'key'        => 'sosmed_management',
-        'category'   => 'kreatif',
-        'icon'       => 'share',
-        'badge'      => 'Kelola Sosmed',
-        'title'      => 'Kelola Akun & Konten Sosmed',
-        'desc'       => 'Layanan perancangan jadwal posting, pembuatan desain feed estetik, riset hashtag, dan teks caption menarik.',
-        'price'      => 'Rp 30.000',
-        'price_sub'  => 'Mulai tarif per konten postingan',
-        'tags'       => ['Desain Feed Estetik', 'Riset Hashtag', 'Teks Caption Menarik'],
-        'featured'   => false,
-    ],
-    [
-        'key'        => 'konsultasi_umkm',
-        'category'   => 'kreatif',
-        'icon'       => 'insights',
-        'badge'      => 'Strategi UMKM',
-        'title'      => 'Konsultasi Bisnis & Strategi UMKM',
-        'desc'       => 'Sesi diskusi privat menganalisis kelemahan promosi usaha dan menyusun strategi pertumbuhan digital.',
-        'price'      => 'Rp 30.000',
-        'price_sub'  => 'Google Meet / Call WA + PDF',
-        'tags'       => ['Audit Sosmed & Usaha', 'Rencana Aksi Jelas', 'Ringkasan Materi PDF'],
-        'featured'   => false,
-    ],
-
-    // 3. DOKUMEN & DATA
-    [
-        'key'        => 'excel_olah_data',
-        'category'   => 'office',
-        'icon'       => 'table_chart',
-        'badge'      => 'Rumus & Kas',
-        'title'      => 'Jasa Olah Data Microsoft Excel',
-        'desc'       => 'Pembuatan rumus otomatis (VLOOKUP, IF, INDEX MATCH), dashboard grafik visual, dan pembukuan kas rapi.',
-        'price'      => 'Rp 25.000',
-        'price_sub'  => 'Bebas error rumus & pengerjaan kilat',
-        'tags'       => ['Rumus Kompleks Otomatis', 'Dashboard Grafik Visual', 'Buku Kas / Tugas'],
-        'featured'   => true,
-    ],
-    [
-        'key'        => 'format_dokumen',
-        'category'   => 'office',
-        'icon'       => 'description',
-        'badge'      => 'Word & Pengetikan',
-        'title'      => 'Format Dokumen Word & SOP',
-        'desc'       => 'Perapian margin, pengetikan ulang, daftar isi otomatis, penomoran tabel & halaman berstandar resmi.',
-        'price'      => 'Rp 25.000',
-        'price_sub'  => 'Format rapi standar siap cetak',
-        'tags'       => ['Daftar Isi Otomatis', 'Margin Standar Resmi', 'Pengerjaan Cepat'],
-        'featured'   => false,
-    ],
-    [
-        'key'        => 'ppt_slide',
-        'category'   => 'office',
-        'icon'       => 'slideshow',
-        'badge'      => 'PowerPoint Presentasi',
-        'title'      => 'Slide Presentasi PPT & Pitch Deck',
-        'desc'       => 'Desain slide presentasi visual modern dengan animasi elegan untuk sidang tugas, seminar, atau proposal bisnis.',
-        'price'      => 'Rp 25.000',
-        'price_sub'  => 'Dapat file .PPTX editable & PDF',
-        'tags'       => ['Visual Modern & Bersih', 'Animasi Halus', 'Editable File PPTX'],
-        'featured'   => false,
-    ],
-
-    // 4. JOKI TUGAS & CODING
-    [
-        'key'        => 'joki_tugas',
-        'category'   => 'joki',
-        'icon'       => 'school',
-        'badge'      => 'Pelajar & Mahasiswa',
-        'title'      => 'Joki Tugas Pelajar & Kuliah',
-        'desc'       => 'Bantuan pengerjaan tugas materi umum: Word, PPT presentasi, makalah, rangkuman, dan tugas harian.',
-        'price'      => 'Rp 10.000',
-        'price_sub'  => 'Pengerjaan 1-24 jam • Privasi aman',
-        'tags'       => ['Privasi 100% Rahasia', 'Free Revisi', 'Word, PPT & PDF'],
-        'featured'   => false,
-    ],
-    [
-        'key'        => 'joki_coding',
-        'category'   => 'joki',
-        'icon'       => 'code',
-        'badge'      => 'Tugas Koding',
-        'title'      => 'Joki Website & Praktikum Coding',
-        'desc'       => 'Pengerjaan sistem web CRUD, tugas algoritma, database MySQL/SQLite, lengkap dengan penjelasan alur program.',
-        'price'      => 'Rp 30.000',
-        'price_sub'  => 'Termasuk bimbingan demo program',
-        'tags'       => ['Source Code Rapi', 'Penjelasan Alur Demo', 'Bimbingan Instalasi'],
-        'featured'   => true,
-    ],
-    [
-        'key'        => 'joki_canva',
-        'category'   => 'joki',
-        'icon'       => 'draw',
-        'badge'      => 'Desain Tugas',
-        'title'      => 'Joki Desain Canva & Infografis',
-        'desc'       => 'Desain slide Canva estetik, poster ilmiah, infografis tugas, banner presentasi, lengkap dengan link editable.',
-        'price'      => 'Rp 20.000',
-        'price_sub'  => 'Termasuk link Canva bisa diedit',
-        'tags'       => ['Template Canva Editable', 'Free 2x Revisi', 'Ekspor PDF Resolusi Tinggi'],
-        'featured'   => false,
-    ],
-];
-
+// Data Layanan Dinamis dari JSON (Admin Managed)
+$catalogItems = getProducts();
 $allServiceData = getServiceDetails();
+
+// Kalkulasi counter kategori dinamis
+$catCounts = [
+    'website' => 0,
+    'kreatif' => 0,
+    'office'  => 0,
+    'joki'    => 0,
+];
+foreach ($catalogItems as $item) {
+    $c = $item['category'] ?? 'other';
+    $catCounts[$c] = ($catCounts[$c] ?? 0) + 1;
+}
 ?>
 
     <main class="w-full">
@@ -226,19 +63,19 @@ $allServiceData = getServiceDetails();
             <!-- Category Filter Tabs -->
             <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none" id="categoryFilterContainer">
               <button type="button" data-filter="all" class="dashboard-filter-btn active-filter px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-primary text-white shadow-sm transition-all whitespace-nowrap">
-                Semua (14)
+                Semua (<?= count($catalogItems) ?>)
               </button>
               <button type="button" data-filter="website" class="dashboard-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all whitespace-nowrap">
-                🌐 Website &amp; App (3)
+                🌐 Website &amp; App (<?= $catCounts['website'] ?? 0 ?>)
               </button>
               <button type="button" data-filter="kreatif" class="dashboard-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all whitespace-nowrap">
-                🎨 Desain &amp; Bisnis (5)
+                🎨 Desain &amp; Bisnis (<?= $catCounts['kreatif'] ?? 0 ?>)
               </button>
               <button type="button" data-filter="office" class="dashboard-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all whitespace-nowrap">
-                📊 Office &amp; Data (3)
+                📊 Office &amp; Data (<?= $catCounts['office'] ?? 0 ?>)
               </button>
               <button type="button" data-filter="joki" class="dashboard-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all whitespace-nowrap">
-                ⚡ Joki Cihuyyy (3)
+                ⚡ Joki Cihuyyy (<?= $catCounts['joki'] ?? 0 ?>)
               </button>
             </div>
 
@@ -255,7 +92,7 @@ $allServiceData = getServiceDetails();
 
           <!-- Counter Status -->
           <div class="flex items-center justify-between py-4 text-xs text-on-surface-variant">
-            <span id="productCounterText">Menampilkan 14 dari 14 Layanan</span>
+            <span id="productCounterText">Menampilkan <?= count($catalogItems) ?> dari <?= count($catalogItems) ?> Layanan</span>
             <span class="hidden sm:inline font-mono">Respon WA: &lt; 15 Menit</span>
           </div>
 

@@ -20,6 +20,20 @@ Website resmi landing page dan profil bisnis untuk **Lumitech.id** — solusi pe
 
 ```
 Lumitech/
+├── admin/                   # Panel Dashboard Admin (CRUD Produk & Portofolio)
+│   ├── index.php            # Dashboard overview & statistik
+│   ├── login.php            # Autentikasi admin
+│   ├── logout.php           # Logout session
+│   ├── products.php         # Daftar & filter produk
+│   ├── product-form.php     # Form tambah & edit produk
+│   ├── portfolios.php       # Daftar & filter portofolio
+│   ├── portfolio-form.php   # Form tambah, edit & upload portofolio
+│   ├── settings.php         # Pengaturan keamanan & ganti password
+│   └── rebuild.php          # Manual trigger static generator
+├── data/                    # Penyimpanan data terstruktur JSON
+│   ├── products.json        # Database katalog produk & layanan
+│   ├── portfolios.json      # Database showcase portofolio
+│   └── admin_config.json    # Konfigurasi akun admin terenkripsi
 ├── api/
 │   ├── index.php            # Entry point Serverless Function Vercel (Halaman Utama)
 │   └── produk.php           # Entry point Serverless Function Vercel (Katalog Produk)
@@ -28,13 +42,14 @@ Lumitech/
 │       ├── app.php          # HTML <head>, favicon, SEO meta tags, dan Tailwind config
 │       ├── navhome.php      # Top notice bar kontak, navbar responsif & mobile menu drawer
 │       ├── footer.php       # Footer modular dengan kontak resmi dan navigasi
+│       ├── data_helper.php  # Core helper CRUD JSON, auth admin & auto-rebuild static
 │       └── whatsapp_helper.php # Helper pembuat format pesan & harga WhatsApp
 ├── assets/
 │   ├── img/                 # Gambar logo, icon, dan flyer
 │   └── portfolio/           # Screenshot hasil portofolio nyata
 ├── view/
-│   ├── home.php             # Halaman utama (Hero, Katalog Terpadu, Portofolio, Cara Order, Garansi, FAQ)
-│   └── katalog.php          # Halaman katalog produk & layanan berdiri sendiri
+│   ├── home.php             # Halaman utama dinamis
+│   └── katalog.php          # Halaman katalog produk dinamis
 ├── .gitignore               # Konfigurasi pengabaian Git
 ├── .vercelignore            # Konfigurasi pengabaian upload Vercel
 ├── vercel.json              # Konfigurasi runtime PHP & routing Vercel
@@ -42,6 +57,45 @@ Lumitech/
 ├── produk.php               # Entry point lokal (Laragon / Apache)
 └── README.md                # Dokumentasi proyek
 ```
+
+---
+
+## 🔐 Panel Dashboard Admin
+
+Website kini telah dilengkapi dengan **Dashboard Admin Modern** untuk mengelola seluruh konten secara visual tanpa harus menyentuh kode manual:
+
+### 1. Akses Admin
+- URL Lokal Laragon: `http://localhost/Lumitech/admin/` atau `http://localhost:8000/admin/`
+- **Username Default:** `admin`
+- **Password Default:** `admin123`
+*(Password dapat diubah kapan saja di menu **Pengaturan Akun** pada dashboard).*
+
+### 2. Fitur-Fitur Admin:
+- **Dashboard Overview:** Statistik jumlah produk, produk unggulan di beranda (featured), total portofolio, dan status sinkronisasi static site.
+- **Android & Mobile-First Experience:**
+  - **Bottom Navigation Bar Android:** Menu navigasi jempol di bawah layar (Overview, Produk, Portofolio, Database Aiven) layaknya aplikasi Android asli.
+  - **Center Floating Action Button (+):** Tombol aksi cepat di tengah dengan Bottom Sheet Modal untuk menambah produk, menambah portofolio, atau rebuild dalam 1 ketukan.
+  - **Responsive Mobile Cards:** Di layar HP, data produk otomatis berubah menjadi kartu yang rapi dengan tombol aksi besar (tanpa scroll horizontal yang menyulitkan).
+  - **Sticky Action Bar:** Tombol simpan dan batal tetap melayang di bawah layar form sehingga tidak perlu scroll ke paling bawah.
+  - **Dukungan Kamera HP:** Form portofolio mendukung upload foto langsung dari kamera smartphone maupun galeri foto.
+- **Integrasi Database Cloud Aiven MySQL:**
+  - Terhubung langsung ke cloud database **Aiven MySQL** via PDO dengan proteksi SSL bawaan.
+  - **Pengaturan Database Visual (`admin/database.php`):** Masukkan Host, Port, User, dan Password Aiven langsung dari browser atau melalui file `.env`.
+  - **Fitur Uji Koneksi:** Tes koneksi langsung dengan status real-time.
+  - **Migrasi Data 1-Klik:** Inisialisasi tabel `products`, `portfolios`, dan `admins` otomatis di Aiven serta memindahkan seluruh 14 produk dan 6 portofolio bawaan ke cloud.
+  - **Hybrid Graceful Fallback:** Jika Aiven MySQL belum diisi atau offline, sistem otomatis menggunakan cache JSON lokal sehingga website tidak akan pernah mengalami downtime.
+- **Kelola Produk & Layanan (CRUD):**
+  - Menambahkan layanan baru lengkap dengan ikon Material Symbols, badge kategori, harga, sub-harga, tags keunggulan, dan deskripsi.
+  - Mengubah (edit) seluruh detail produk kapan saja.
+  - Menghapus produk lama dengan konfirmasi aman.
+  - Toggle 1-klik untuk status **Unggulan Beranda (Featured)** agar langsung tampil di landing page depan.
+  - Integrasi otomatis dengan generator pemesanan WhatsApp.
+- **Kelola Portofolio Hasil Kerja (CRUD):**
+  - Menambahkan karya baru dengan **upload foto langsung dari kamera/galeri HP atau laptop** (JPG/PNG/WebP) atau **memilih foto yang sudah ada** di server.
+  - Mengubah judul, kategori tab filter (`desain`, `website`, `dokumen`), badge, ikon, deskripsi, dan tags spesifikasi.
+  - Menghubungkan portofolio dengan template chat WhatsApp terkait.
+  - Menghapus portofolio lama dengan konfirmasi aman.
+- **Auto-Sync & Rebuild:** Setiap kali menyimpan data dari admin, database Aiven MySQL diperbarui, cache JSON disinkronkan, dan static HTML (`index.html` & `produk.html`) otomatis dikompilasi ulang secara instan!
 
 ---
 

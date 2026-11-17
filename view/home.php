@@ -5,69 +5,28 @@ require_once __DIR__ . '/../Layout/partials/whatsapp_helper.php';
 require __DIR__ . '/../Layout/partials/app.php';
 require __DIR__ . '/../Layout/partials/navhome.php';
 
-// 6 Layanan Unggulan untuk Tampilan Beranda (Kompak & Bebas Text Bloat)
-$featuredServices = [
-    [
-        'key'        => 'starter_umkm',
-        'icon'       => 'devices',
-        'badge'      => 'Website UMKM',
-        'title'      => 'Paket Starter Website UMKM',
-        'desc'       => 'Website 1 halaman responsif & modern untuk usaha kuliner, jasa, atau profil bisnis.',
-        'price'      => 'Rp 150.000',
-        'price_sub'  => 'Domain & hosting disesuaikan',
-        'tags'       => ['1 Halaman Responsif', 'Direct Chat WhatsApp', 'Google Maps'],
-    ],
-    [
-        'key'        => 'pro_business',
-        'icon'       => 'domain',
-        'badge'      => 'Multi-Halaman',
-        'title'      => 'Website Professional Business',
-        'desc'       => 'Website 5-7 halaman untuk CV, PT, klinik, konsultan, sekolah, dan brand terpercaya.',
-        'price'      => 'Rp 1.000.000',
-        'price_sub'  => 'Gratis email bisnis resmi',
-        'tags'       => ['5-7 Halaman Menu', 'Admin Panel Mudah', 'Garansi 6 Bulan'],
-    ],
-    [
-        'key'        => 'desain_grafis',
-        'icon'       => 'palette',
-        'badge'      => 'Desain & Logo',
-        'title'      => 'Desain Grafis & Logo',
-        'desc'       => 'Pembuatan logo bisnis, kemasan produk, poster promosi, dan feed Instagram resolusi tinggi.',
-        'price'      => 'Rp 30.000',
-        'price_sub'  => 'Format HD Vektor Siap Pakai',
-        'tags'       => ['Resolusi Tinggi HD', 'Bebas Revisi', 'File PNG & PDF'],
-    ],
-    [
-        'key'        => 'desain_pakaian',
-        'icon'       => 'apparel',
-        'badge'      => 'Apparel Streetwear',
-        'title'      => 'Jasa Desain Pakaian & Apparel',
-        'desc'       => 'Mockup realistis kaos, hoodie, kemeja & celana depan-belakang siap cetak konveksi.',
-        'price'      => 'Rp 45.000',
-        'price_sub'  => 'Mockup depan & belakang',
-        'tags'       => ['Mockup Realistis', 'Vektor Siap Sablon', 'Free Konsultasi'],
-    ],
-    [
-        'key'        => 'excel_olah_data',
-        'icon'       => 'table_chart',
-        'badge'      => 'Microsoft Excel',
-        'title'      => 'Jasa Olah Data Microsoft Excel',
-        'desc'       => 'Rumus otomatis (VLOOKUP, IF, INDEX MATCH), dashboard grafik visual, dan pembukuan kas.',
-        'price'      => 'Rp 25.000',
-        'price_sub'  => 'Bebas error rumus & pengerjaan kilat',
-        'tags'       => ['Rumus Kompleks', 'Dashboard Visual', 'Rekap Buku Kas'],
-    ],
-    [
-        'key'        => 'joki_tugas',
-        'icon'       => 'school',
-        'badge'      => 'Pelajar & Mahasiswa',
-        'title'      => 'Joki Tugas Pelajar & Kuliah',
-        'desc'       => 'Bantuan tugas: Word, PPT presentasi animasi, makalah, rangkuman, dan tugas harian.',
-        'price'      => 'Rp 10.000',
-        'price_sub'  => 'Pengerjaan 1-24 jam • Privasi aman',
-        'tags'       => ['Privasi 100% Rahasia', 'Free Revisi', 'Word, PPT & PDF'],
-    ],
+require_once __DIR__ . '/../Layout/partials/data_helper.php';
+
+// Ambil semua produk dan filter yang ditandai Featured untuk beranda
+$allProducts = getProducts();
+$featuredServices = array_values(array_filter($allProducts, function($s) {
+    return !empty($s['featured']);
+}));
+if (empty($featuredServices)) {
+    $featuredServices = array_slice($allProducts, 0, 6);
+}
+
+// Data Portofolio Dinamis dari JSON
+$portfolios = getPortfolios();
+$portCatCounts = [
+    'desain'  => 0,
+    'website' => 0,
+    'dokumen' => 0,
 ];
+foreach ($portfolios as $p) {
+    $c = $p['category'] ?? 'other';
+    $portCatCounts[$c] = ($portCatCounts[$c] ?? 0) + 1;
+}
 ?>
 
     <main class="w-full">
@@ -293,29 +252,40 @@ $featuredServices = [
           <!-- Filter Kategori Portofolio -->
           <div class="flex flex-wrap items-center justify-center gap-2 pb-6">
             <button type="button" data-portfolio-filter="all" class="portfolio-filter-btn active-portfolio-filter px-4 py-1.5 rounded-full text-xs font-bold bg-primary text-white shadow-sm transition-all">
-              Semua Karya (6)
+              Semua Karya (<?= count($portfolios) ?>)
             </button>
             <button type="button" data-portfolio-filter="desain" class="portfolio-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
-              🎨 Desain &amp; Pakaian (2)
+              🎨 Desain &amp; Pakaian (<?= $portCatCounts['desain'] ?? 0 ?>)
             </button>
             <button type="button" data-portfolio-filter="website" class="portfolio-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
-              🌐 Website &amp; UI (2)
+              🌐 Website &amp; UI (<?= $portCatCounts['website'] ?? 0 ?>)
             </button>
             <button type="button" data-portfolio-filter="dokumen" class="portfolio-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-surface-container hover:bg-surface-container-high text-on-surface transition-all">
-              📄 Word &amp; Excel (2)
+              📄 Word &amp; Excel (<?= $portCatCounts['dokumen'] ?? 0 ?>)
             </button>
           </div>
 
           <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <!-- Portfolio 1: Desain Pakaian -->
-            <div class="portfolio-card flex flex-col justify-between rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 shadow-sm hover:shadow-lg transition-all duration-200" data-category="desain">
+            <?php foreach ($portfolios as $p): 
+              $imgRaw = $p['image'] ?? '';
+              $imgSrc = (strpos($imgRaw, 'http') === 0 || strpos($imgRaw, '/') === 0) ? $imgRaw : $assetBase . $imgRaw;
+              $waUrl = getWaOrderUrl($p['service_key'] ?? '');
+              $category = htmlspecialchars($p['category'] ?? 'desain');
+              $badge = htmlspecialchars($p['badge'] ?? 'Portofolio');
+              $icon = htmlspecialchars($p['icon'] ?? 'image');
+              $title = htmlspecialchars($p['title'] ?? '');
+              $desc = htmlspecialchars($p['desc'] ?? '');
+              $tags = isset($p['tags']) && is_array($p['tags']) ? $p['tags'] : [];
+              $btnText = htmlspecialchars($p['btn_text'] ?? 'Order Layanan');
+            ?>
+            <div class="portfolio-card flex flex-col justify-between rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 shadow-sm hover:shadow-lg transition-all duration-200" data-category="<?= $category ?>">
               <div>
-                <div class="h-52 w-full rounded-xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/apparel-mockup-set.jpg" data-title="Mockup Setelan Hoodie &amp; Pants LTH">
-                  <img src="<?= $assetBase ?>assets/portfolio/apparel-mockup-set.jpg" alt="Desain Pakaian Streetwear LTH" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <div class="h-52 w-full rounded-xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $imgSrc ?>" data-title="<?= $title ?>">
+                  <img src="<?= $imgSrc ?>" alt="<?= $title ?>" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                   <span class="absolute top-2.5 left-2.5 bg-surface/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] font-bold text-primary shadow-sm flex items-center gap-1">
-                    <span class="material-symbols-outlined text-xs">apparel</span>
-                    <span>Streetwear</span>
+                    <span class="material-symbols-outlined text-xs"><?= $icon ?></span>
+                    <span><?= $badge ?></span>
                   </span>
                   <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40">
                     <span class="px-3 py-1.5 rounded-full bg-surface/90 text-on-surface text-xs font-bold flex items-center gap-1 shadow-md">
@@ -324,204 +294,26 @@ $featuredServices = [
                     </span>
                   </div>
                 </div>
-                <h3 class="text-base font-bold text-on-surface pt-3">Setelan Hoodie &amp; Pants LTH</h3>
+                <h3 class="text-base font-bold text-on-surface pt-3"><?= $title ?></h3>
                 <p class="text-xs text-on-surface-variant pt-1 leading-relaxed">
-                  Desain grafis streetwear tampak depan-belakang dengan typography presisi siap produksi konveksi.
+                  <?= $desc ?>
                 </p>
                 <div class="flex flex-wrap gap-1 pt-2">
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Format HD Vektor</span>
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Siap Sablon</span>
+                  <?php foreach ($tags as $tag): ?>
+                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant"><?= htmlspecialchars($tag) ?></span>
+                  <?php endforeach; ?>
                 </div>
               </div>
               <div class="pt-3 border-t border-surface-container mt-3 flex items-center justify-between">
-                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:underline flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/apparel-mockup-set.jpg" data-title="Mockup Setelan Hoodie &amp; Pants LTH">
+                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:underline flex items-center gap-1" data-image="<?= $imgSrc ?>" data-title="<?= $title ?>">
                   <span>Lihat Detail</span>
                 </button>
-                <a href="<?= getWaOrderUrl('desain_pakaian') ?>" target="_blank" rel="noopener" class="text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition-colors">
-                  Order Desain
+                <a href="<?= $waUrl ?>" target="_blank" rel="noopener" class="text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition-colors">
+                  <?= $btnText ?>
                 </a>
               </div>
             </div>
-
-            <!-- Portfolio 2: Desain Apparel Hoodie Putih -->
-            <div class="portfolio-card flex flex-col justify-between rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 shadow-sm hover:shadow-lg transition-all duration-200" data-category="desain">
-              <div>
-                <div class="h-52 w-full rounded-xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/apparel-hoodie-white.jpg" data-title="Desain Hoodie Don't Looking Around">
-                  <img src="<?= $assetBase ?>assets/portfolio/apparel-hoodie-white.jpg" alt="Desain Hoodie Streetwear" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  <span class="absolute top-2.5 left-2.5 bg-surface/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] font-bold text-primary shadow-sm flex items-center gap-1">
-                    <span class="material-symbols-outlined text-xs">palette</span>
-                    <span>Apparel</span>
-                  </span>
-                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40">
-                    <span class="px-3 py-1.5 rounded-full bg-surface/90 text-on-surface text-xs font-bold flex items-center gap-1 shadow-md">
-                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
-                      <span>Perbesar</span>
-                    </span>
-                  </div>
-                </div>
-                <h3 class="text-base font-bold text-on-surface pt-3">Hoodie "Don't Looking Around"</h3>
-                <p class="text-xs text-on-surface-variant pt-1 leading-relaxed">
-                  Artwork pop-streetwear dengan karakter bold, tipografi 3D, dan mockup photorealistic depan-belakang.
-                </p>
-                <div class="flex flex-wrap gap-1 pt-2">
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Pop-Streetwear</span>
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Revisi Bebas</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-surface-container mt-3 flex items-center justify-between">
-                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:underline flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/apparel-hoodie-white.jpg" data-title="Desain Hoodie Don't Looking Around">
-                  <span>Lihat Detail</span>
-                </button>
-                <a href="<?= getWaOrderUrl('desain_pakaian') ?>" target="_blank" rel="noopener" class="text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition-colors">
-                  Order Desain
-                </a>
-              </div>
-            </div>
-
-            <!-- Portfolio 3: Website Outerwear Tech -->
-            <div class="portfolio-card flex flex-col justify-between rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 shadow-sm hover:shadow-lg transition-all duration-200" data-category="website">
-              <div>
-                <div class="h-52 w-full rounded-xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/lumitech-outerwear-web.jpg" data-title="Website Lumitech Outerwear Tech">
-                  <img src="<?= $assetBase ?>assets/portfolio/lumitech-outerwear-web.jpg" alt="Website Outerwear Tech" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  <span class="absolute top-2.5 left-2.5 bg-surface/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] font-bold text-primary shadow-sm flex items-center gap-1">
-                    <span class="material-symbols-outlined text-xs">language</span>
-                    <span>Website UI</span>
-                  </span>
-                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40">
-                    <span class="px-3 py-1.5 rounded-full bg-surface/90 text-on-surface text-xs font-bold flex items-center gap-1 shadow-md">
-                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
-                      <span>Perbesar</span>
-                    </span>
-                  </div>
-                </div>
-                <h3 class="text-base font-bold text-on-surface pt-3">Website Outerwear Tech Catalog</h3>
-                <p class="text-xs text-on-surface-variant pt-1 leading-relaxed">
-                  Landing page toko pakaian &amp; jaket dark mode modern dengan integrasi konsultasi WhatsApp kilat.
-                </p>
-                <div class="flex flex-wrap gap-1 pt-2">
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Dark Mode</span>
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Fast Loading</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-surface-container mt-3 flex items-center justify-between">
-                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:underline flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/lumitech-outerwear-web.jpg" data-title="Website Lumitech Outerwear Tech">
-                  <span>Lihat Detail</span>
-                </button>
-                <a href="<?= getWaOrderUrl('starter_umkm') ?>" target="_blank" rel="noopener" class="text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition-colors">
-                  Bikin Web Serupa
-                </a>
-              </div>
-            </div>
-
-            <!-- Portfolio 4: Barbershop Website -->
-            <div class="portfolio-card flex flex-col justify-between rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 shadow-sm hover:shadow-lg transition-all duration-200" data-category="website">
-              <div>
-                <div class="h-52 w-full rounded-xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/barbershop.png" data-title="Website District Studio Barbershop">
-                  <img src="<?= $assetBase ?>assets/portfolio/barbershop.png" alt="Website District Studio" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  <span class="absolute top-2.5 left-2.5 bg-surface/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] font-bold text-primary shadow-sm flex items-center gap-1">
-                    <span class="material-symbols-outlined text-xs">storefront</span>
-                    <span>UMKM Live</span>
-                  </span>
-                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40">
-                    <span class="px-3 py-1.5 rounded-full bg-surface/90 text-on-surface text-xs font-bold flex items-center gap-1 shadow-md">
-                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
-                      <span>Perbesar</span>
-                    </span>
-                  </div>
-                </div>
-                <h3 class="text-base font-bold text-on-surface pt-3">District Studio Barbershop</h3>
-                <p class="text-xs text-on-surface-variant pt-1 leading-relaxed">
-                  Platform company profile pangkas rambut dengan katalog gaya rambut &amp; booking antrean real-time.
-                </p>
-                <div class="flex flex-wrap gap-1 pt-2">
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Booking WhatsApp</span>
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Live Project</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-surface-container mt-3 flex items-center justify-between">
-                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:underline flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/barbershop.png" data-title="Website District Studio Barbershop">
-                  <span>Lihat Detail</span>
-                </button>
-                <a href="<?= getWaOrderUrl('starter_umkm') ?>" target="_blank" rel="noopener" class="text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition-colors">
-                  Bikin Web Serupa
-                </a>
-              </div>
-            </div>
-
-            <!-- Portfolio 5: Dokumen Word Resmi -->
-            <div class="portfolio-card flex flex-col justify-between rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 shadow-sm hover:shadow-lg transition-all duration-200" data-category="dokumen">
-              <div>
-                <div class="h-52 w-full rounded-xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/word-district-studio.png" data-title="Format Dokumen Word Resmi">
-                  <img src="<?= $assetBase ?>assets/portfolio/word-district-studio.png" alt="Format Dokumen Word" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  <span class="absolute top-2.5 left-2.5 bg-surface/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] font-bold text-primary shadow-sm flex items-center gap-1">
-                    <span class="material-symbols-outlined text-xs">description</span>
-                    <span>Word / SOP</span>
-                  </span>
-                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40">
-                    <span class="px-3 py-1.5 rounded-full bg-surface/90 text-on-surface text-xs font-bold flex items-center gap-1 shadow-md">
-                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
-                      <span>Perbesar</span>
-                    </span>
-                  </div>
-                </div>
-                <h3 class="text-base font-bold text-on-surface pt-3">Dokumentasi Teknis 16 Halaman</h3>
-                <p class="text-xs text-on-surface-variant pt-1 leading-relaxed">
-                  Penataan dokumen panduan teknis SOP resmi, daftar isi otomatis, dan format margin standar korporat.
-                </p>
-                <div class="flex flex-wrap gap-1 pt-2">
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Daftar Isi Otomatis</span>
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Standar Cetak</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-surface-container mt-3 flex items-center justify-between">
-                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:underline flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/word-district-studio.png" data-title="Format Dokumen Word Resmi">
-                  <span>Lihat Detail</span>
-                </button>
-                <a href="<?= getWaOrderUrl('format_dokumen') ?>" target="_blank" rel="noopener" class="text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition-colors">
-                  Order Word
-                </a>
-              </div>
-            </div>
-
-            <!-- Portfolio 6: Olah Data Excel -->
-            <div class="portfolio-card flex flex-col justify-between rounded-2xl bg-surface-container-lowest border border-surface-container hover:border-primary/50 p-4 shadow-sm hover:shadow-lg transition-all duration-200" data-category="dokumen">
-              <div>
-                <div class="h-52 w-full rounded-xl bg-slate-900 overflow-hidden relative group cursor-pointer portfolio-preview-trigger" data-image="<?= $assetBase ?>assets/portfolio/excel-district-studio.png" data-title="Laporan Keuangan Excel">
-                  <img src="<?= $assetBase ?>assets/portfolio/excel-district-studio.png" alt="Olah Data Excel" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  <span class="absolute top-2.5 left-2.5 bg-surface/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] font-bold text-primary shadow-sm flex items-center gap-1">
-                    <span class="material-symbols-outlined text-xs">table_chart</span>
-                    <span>Excel &amp; Kas</span>
-                  </span>
-                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40">
-                    <span class="px-3 py-1.5 rounded-full bg-surface/90 text-on-surface text-xs font-bold flex items-center gap-1 shadow-md">
-                      <span class="material-symbols-outlined text-sm text-primary">zoom_in</span>
-                      <span>Perbesar</span>
-                    </span>
-                  </div>
-                </div>
-                <h3 class="text-base font-bold text-on-surface pt-3">Laporan Keuangan &amp; Rekap Komisi</h3>
-                <p class="text-xs text-on-surface-variant pt-1 leading-relaxed">
-                  Spreadsheet buku kas otomatis, rekap omzet kotor, pembagian komisi, dan formula akurat bebas human error.
-                </p>
-                <div class="flex flex-wrap gap-1 pt-2">
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Rumus SUM / IF</span>
-                  <span class="text-[10px] font-medium bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Buku Kas Otomatis</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-surface-container mt-3 flex items-center justify-between">
-                <button type="button" class="portfolio-preview-trigger text-xs font-bold text-primary hover:underline flex items-center gap-1" data-image="<?= $assetBase ?>assets/portfolio/excel-district-studio.png" data-title="Laporan Keuangan Excel">
-                  <span>Lihat Detail</span>
-                </button>
-                <a href="<?= getWaOrderUrl('excel_olah_data') ?>" target="_blank" rel="noopener" class="text-xs font-bold text-white bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition-colors">
-                  Order Excel
-                </a>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </section>

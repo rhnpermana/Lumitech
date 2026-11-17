@@ -1,0 +1,240 @@
+[
+    {
+        "id": "prod_desain_grafis",
+        "key": "desain_grafis",
+        "category": "kreatif",
+        "icon": "palette",
+        "badge": "Vektor & Brand",
+        "title": "Desain Grafis & Logo",
+        "desc": "Pembuatan logo bisnis, kemasan produk, poster promosi, dan feed Instagram resolusi tinggi.",
+        "price": "Rp 30.000",
+        "price_sub": "Format PNG, JPG & PDF Siap Cetak",
+        "tags": [
+            "Resolusi Tinggi HD",
+            "Bebas Revisi",
+            "File Mentahan"
+        ],
+        "featured": true
+    },
+    {
+        "id": "prod_desain_pakaian",
+        "key": "desain_pakaian",
+        "category": "kreatif",
+        "icon": "apparel",
+        "badge": "Streetwear & Mockup",
+        "title": "Jasa Desain Pakaian & Apparel",
+        "desc": "Mockup realistis kaos, hoodie, kemeja & jaket tampak depan-belakang siap cetak sablon / bordir.",
+        "price": "Rp 45.000",
+        "price_sub": "Mockup depan & belakang",
+        "tags": [
+            "Mockup Realistis",
+            "Vektor Siap Sablon",
+            "Free Konsultasi"
+        ],
+        "featured": true
+    },
+    {
+        "id": "prod_excel_olah_data",
+        "key": "excel_olah_data",
+        "category": "office",
+        "icon": "table_chart",
+        "badge": "Rumus & Kas",
+        "title": "Jasa Olah Data Microsoft Excel",
+        "desc": "Pembuatan rumus otomatis (VLOOKUP, IF, INDEX MATCH), dashboard grafik visual, dan pembukuan kas rapi.",
+        "price": "Rp 25.000",
+        "price_sub": "Bebas error rumus & pengerjaan kilat",
+        "tags": [
+            "Rumus Kompleks Otomatis",
+            "Dashboard Grafik Visual",
+            "Buku Kas / Tugas"
+        ],
+        "featured": true
+    },
+    {
+        "id": "prod_joki_tugas",
+        "key": "joki_tugas",
+        "category": "joki",
+        "icon": "school",
+        "badge": "Pelajar & Mahasiswa",
+        "title": "Joki Tugas Pelajar & Kuliah",
+        "desc": "Bantuan pengerjaan tugas materi umum: Word, PPT presentasi, makalah, rangkuman, dan tugas harian.",
+        "price": "Rp 10.000",
+        "price_sub": "Pengerjaan 1-24 jam • Privasi aman",
+        "tags": [
+            "Privasi 100% Rahasia",
+            "Free Revisi",
+            "Word, PPT & PDF"
+        ],
+        "featured": true
+    },
+    {
+        "id": "prod_pro_business",
+        "key": "pro_business",
+        "category": "website",
+        "icon": "domain",
+        "badge": "Multi-Halaman",
+        "title": "Website Professional Business",
+        "desc": "Website profesional 5-7 halaman untuk CV, PT, klinik, sekolah, dan brand dengan reputasi tinggi.",
+        "price": "Rp 1.000.000",
+        "price_sub": "Gratis email bisnis resmi",
+        "tags": [
+            "5-7 Halaman Menu",
+            "Admin Panel Mudah",
+            "Garansi 6 Bulan"
+        ],
+        "featured": true
+    },
+    {
+        "id": "prod_starter_umkm",
+        "key": "starter_umkm",
+        "category": "website",
+        "icon": "devices",
+        "badge": "Landing Page",
+        "title": "Paket Starter Website UMKM",
+        "desc": "Website 1 halaman responsif untuk usaha kuliner, jasa, atau profil bisnis agar mudah ditemukan pelanggan.",
+        "price": "Rp 150.000",
+        "price_sub": "Domain & hosting disesuaikan",
+        "tags": [
+            "1 Halaman Responsif",
+            "Tombol WhatsApp",
+            "Google Maps & Medsos"
+        ],
+        "featured": true
+    },
+    {
+        "id": "prod_custom_app",
+        "key": "custom_app",
+        "category": "website",
+        "icon": "shopping_cart",
+        "badge": "E-Commerce / App",
+        "title": "Toko Online & Web App Custom",
+        "desc": "Sistem toko online dengan katalog produk, hitung ongkir otomatis, checkout QRIS, atau dashboard sistem.",
+        "price": "Sesuai Kebutuhan",
+        "price_sub": "Estimasi transparan via diskusi",
+        "tags": [
+            "Keranjang & QRIS",
+            "Cek Ongkir Otomatis",
+            "Database Terstruktur"
+        ],
+        "featured": false
+    },
+    {
+        "id": "prod_format_dokumen",
+        "key": "format_dokumen",
+        "category": "office",
+        "icon": "description",
+        "badge": "Word & Pengetikan",
+        "title": "Format Dokumen Word & SOP",
+        "desc": "Perapian margin, pengetikan ulang, daftar isi otomatis, penomoran tabel & halaman berstandar resmi.",
+        "price": "Rp 25.000",
+        "price_sub": "Format rapi standar siap cetak",
+        "tags": [
+            "Daftar Isi Otomatis",
+            "Margin Standar Resmi",
+            "Pengerjaan Cepat"
+        ],
+        "featured": false
+    },
+    {
+        "id": "prod_joki_canva",
+        "key": "joki_canva",
+        "category": "joki",
+        "icon": "draw",
+        "badge": "Desain Tugas",
+        "title": "Joki Desain Canva & Infografis",
+        "desc": "Desain slide Canva estetik, poster ilmiah, infografis tugas, banner presentasi, lengkap dengan link editable.",
+        "price": "Rp 20.000",
+        "price_sub": "Termasuk link Canva bisa diedit",
+        "tags": [
+            "Template Canva Editable",
+            "Free 2x Revisi",
+            "Ekspor PDF Resolusi Tinggi"
+        ],
+        "featured": false
+    },
+    {
+        "id": "prod_joki_coding",
+        "key": "joki_coding",
+        "category": "joki",
+        "icon": "code",
+        "badge": "Tugas Koding",
+        "title": "Joki Website & Praktikum Coding",
+        "desc": "Pengerjaan sistem web CRUD, tugas algoritma, database MySQL/SQLite, lengkap dengan penjelasan alur program.",
+        "price": "Rp 30.000",
+        "price_sub": "Termasuk bimbingan demo program",
+        "tags": [
+            "Source Code Rapi",
+            "Penjelasan Alur Demo",
+            "Bimbingan Instalasi"
+        ],
+        "featured": false
+    },
+    {
+        "id": "prod_konsultasi_umkm",
+        "key": "konsultasi_umkm",
+        "category": "kreatif",
+        "icon": "insights",
+        "badge": "Strategi UMKM",
+        "title": "Konsultasi Bisnis & Strategi UMKM",
+        "desc": "Sesi diskusi privat menganalisis kelemahan promosi usaha dan menyusun strategi pertumbuhan digital.",
+        "price": "Rp 30.000",
+        "price_sub": "Google Meet / Call WA + PDF",
+        "tags": [
+            "Audit Sosmed & Usaha",
+            "Rencana Aksi Jelas",
+            "Ringkasan Materi PDF"
+        ],
+        "featured": false
+    },
+    {
+        "id": "prod_ppt_slide",
+        "key": "ppt_slide",
+        "category": "office",
+        "icon": "slideshow",
+        "badge": "PowerPoint Presentasi",
+        "title": "Slide Presentasi PPT & Pitch Deck",
+        "desc": "Desain slide presentasi visual modern dengan animasi elegan untuk sidang tugas, seminar, atau proposal bisnis.",
+        "price": "Rp 25.000",
+        "price_sub": "Dapat file .PPTX editable & PDF",
+        "tags": [
+            "Visual Modern & Bersih",
+            "Animasi Halus",
+            "Editable File PPTX"
+        ],
+        "featured": false
+    },
+    {
+        "id": "prod_sosmed_management",
+        "key": "sosmed_management",
+        "category": "kreatif",
+        "icon": "share",
+        "badge": "Kelola Sosmed",
+        "title": "Kelola Akun & Konten Sosmed",
+        "desc": "Layanan perancangan jadwal posting, pembuatan desain feed estetik, riset hashtag, dan teks caption menarik.",
+        "price": "Rp 30.000",
+        "price_sub": "Mulai tarif per konten postingan",
+        "tags": [
+            "Desain Feed Estetik",
+            "Riset Hashtag",
+            "Teks Caption Menarik"
+        ],
+        "featured": false
+    },
+    {
+        "id": "prod_video_editing",
+        "key": "video_editing",
+        "category": "kreatif",
+        "icon": "movie",
+        "badge": "Reels & TikTok",
+        "title": "Video Editing Reels & TikTok",
+        "desc": "Edit video produk, promosi, atau konten edukasi dengan teks berjalan kekinian dan efek suara dinamis.",
+        "price": "Rp 40.000",
+        "price_sub": "Per video durasi 30-60 detik",
+        "tags": [
+            "Subtitle Dinamis",
+            "Format 9:16 HD",
+            "Pengerjaan 1-2 Hari"
+        ],
+        "featured": false
+    }
+]

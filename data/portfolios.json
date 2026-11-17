@@ -1,0 +1,92 @@
+[
+    {
+        "id": "port-4",
+        "title": "District Studio Barbershop",
+        "category": "website",
+        "badge": "UMKM Live",
+        "icon": "storefront",
+        "image": "assets/portfolio/barbershop.png",
+        "desc": "Platform company profile pangkas rambut dengan katalog gaya rambut & booking antrean real-time.",
+        "tags": [
+            "Booking WhatsApp",
+            "Live Project"
+        ],
+        "service_key": "starter_umkm",
+        "btn_text": "Bikin Web Serupa"
+    },
+    {
+        "id": "port-5",
+        "title": "Dokumentasi Teknis 16 Halaman",
+        "category": "dokumen",
+        "badge": "Word / SOP",
+        "icon": "description",
+        "image": "assets/portfolio/word-district-studio.png",
+        "desc": "Penataan dokumen panduan teknis SOP resmi, daftar isi otomatis, dan format margin standar korporat.",
+        "tags": [
+            "Daftar Isi Otomatis",
+            "Standar Cetak"
+        ],
+        "service_key": "format_dokumen",
+        "btn_text": "Order Word"
+    },
+    {
+        "id": "port-6",
+        "title": "Laporan Keuangan & Rekap Komisi",
+        "category": "dokumen",
+        "badge": "Excel & Kas",
+        "icon": "table_chart",
+        "image": "assets/portfolio/excel-district-studio.png",
+        "desc": "Spreadsheet buku kas otomatis, rekap omzet kotor, pembagian komisi, dan formula akurat bebas human error.",
+        "tags": [
+            "Rumus SUM / IF",
+            "Buku Kas Otomatis"
+        ],
+        "service_key": "excel_olah_data",
+        "btn_text": "Order Excel"
+    },
+    {
+        "id": "port-1",
+        "title": "Setelan Hoodie & Pants LTH",
+        "category": "desain",
+        "badge": "Streetwear",
+        "icon": "apparel",
+        "image": "assets/portfolio/apparel-mockup-set.jpg",
+        "desc": "Desain grafis streetwear tampak depan-belakang dengan typography presisi siap produksi konveksi.",
+        "tags": [
+            "Format HD Vektor",
+            "Siap Sablon"
+        ],
+        "service_key": "desain_pakaian",
+        "btn_text": "Order Desain"
+    },
+    {
+        "id": "port-2",
+        "title": "Hoodie \"Don't Looking Around\"",
+        "category": "desain",
+        "badge": "Apparel",
+        "icon": "palette",
+        "image": "assets/portfolio/apparel-hoodie-white.jpg",
+        "desc": "Artwork pop-streetwear dengan karakter bold, tipografi 3D, dan mockup photorealistic depan-belakang.",
+        "tags": [
+            "Pop-Streetwear",
+            "Revisi Bebas"
+        ],
+        "service_key": "desain_pakaian",
+        "btn_text": "Order Desain"
+    },
+    {
+        "id": "port-3",
+        "title": "Website Outerwear Tech Catalog",
+        "category": "website",
+        "badge": "Website UI",
+        "icon": "language",
+        "image": "assets/portfolio/lumitech-outerwear-web.jpg",
+        "desc": "Landing page toko pakaian & jaket dark mode modern dengan integrasi konsultasi WhatsApp kilat.",
+        "tags": [
+            "Dark Mode",
+            "Fast Loading"
+        ],
+        "service_key": "starter_umkm",
+        "btn_text": "Bikin Web Serupa"
+    }
+]
