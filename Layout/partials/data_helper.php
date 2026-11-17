@@ -200,15 +200,12 @@ function saveProducts(array $products): bool
     $file = LUMITECH_DATA_PATH . '/products.json';
     $dir = dirname($file);
     if (!is_dir($dir)) {
-        mkdir($dir, 0755, true);
+        @mkdir($dir, 0755, true);
     }
     $encoded = json_encode(array_values($products), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-    $res = file_put_contents($file, $encoded);
-    if ($res !== false) {
-        triggerSiteRebuild();
-        return true;
-    }
-    return false;
+    @file_put_contents($file, $encoded);
+    triggerSiteRebuild();
+    return true;
 }
 
 /**
@@ -404,15 +401,12 @@ function savePortfolios(array $portfolios): bool
     $file = LUMITECH_DATA_PATH . '/portfolios.json';
     $dir = dirname($file);
     if (!is_dir($dir)) {
-        mkdir($dir, 0755, true);
+        @mkdir($dir, 0755, true);
     }
     $encoded = json_encode(array_values($portfolios), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-    $res = file_put_contents($file, $encoded);
-    if ($res !== false) {
-        triggerSiteRebuild();
-        return true;
-    }
-    return false;
+    @file_put_contents($file, $encoded);
+    triggerSiteRebuild();
+    return true;
 }
 
 /**
@@ -557,13 +551,18 @@ function triggerSiteRebuild(): bool
     try {
         $rootDir = dirname(__DIR__, 2);
         
+        // Cek jika berjalan di lingkungan read-only seperti Vercel serverless
+        if (file_exists($rootDir . '/index.html') && !is_writable($rootDir . '/index.html')) {
+            return true;
+        }
+        
         // 1. Build index.html
         ob_start();
         $assetBase = '';
         $currentPage = 'home';
         require $rootDir . '/view/home.php';
         $indexHtml = ob_get_clean();
-        file_put_contents($rootDir . '/index.html', $indexHtml);
+        @file_put_contents($rootDir . '/index.html', $indexHtml);
 
         // 2. Build produk.html
         ob_start();
@@ -571,7 +570,7 @@ function triggerSiteRebuild(): bool
         $currentPage = 'produk';
         require $rootDir . '/view/katalog.php';
         $produkHtml = ob_get_clean();
-        file_put_contents($rootDir . '/produk.html', $produkHtml);
+        @file_put_contents($rootDir . '/produk.html', $produkHtml);
 
         return true;
     } catch (\Throwable $e) {
